@@ -56,21 +56,20 @@ public class SplashScreen extends Activity {
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(riddleInputStream));
                     String line;
                     while ((line = bufferedReader.readLine()) != null) {
-                        Log.v(TAG,line);
+                        Log.v(TAG, line);
                         String[] riddleData = line.split(" --- ");
                         String riddleId = riddleData[1].replaceAll("<br/>", "\n");
-                        String riddleText = riddleData[2].replaceAll("<br/>","\n");
-                        String riddleAnwser = riddleData[3].replaceAll("<br/>","\n");
-                        Log.d(TAG + " id:",riddleId);
-                        Log.d(TAG + " text:",riddleText);
-                        Log.d(TAG + " anwser:",riddleAnwser);
-                        if (dbHandler.getRiddle(riddleId).getId() == null) {
+                        String riddleText = riddleData[2].replaceAll("<br/>", "\n");
+                        String riddleAnwser = riddleData[3].replaceAll("<br/>", "\n");
+                        Log.d(TAG + " id:", riddleId);
+                        Log.d(TAG + " text:", riddleText);
+                        Log.d(TAG + " anwser:", riddleAnwser);
+                        if (dbHandler.recordIdExistsInDb(riddleId)) {
+                            Log.d(TAG, "row already exists");
+                        } else {
                             dbHandler.addRiddle(new Riddle(riddleId, riddleText, riddleAnwser, 0));
                             Log.d(TAG, "row inserted successfully");
-                        } else {
-                            Log.d(TAG, "row already exists");
                         }
-
                     }
                 } catch (Exception e) {
                     // e.printStackTrace();
@@ -82,7 +81,7 @@ public class SplashScreen extends Activity {
                 List<Riddle> riddleList = dbHandler.getAllRiddles();
 
                 for (Riddle riddle : riddleList) {
-                    String riddleLog = "Id: "+riddle.getId()
+                    String riddleLog = "Id: " + riddle.getId()
                             + " ,Text: " + riddle.getRiddleText()
                             + " ,Anwser: " + riddle.getRiddleAnwser()
                             + " ,ViewCount: " + riddle.getViewCount();
