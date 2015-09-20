@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyFirstAndroidApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_text">Bok bok ovo je prvi app</string>
+    <string name="button_one">push me</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+</resources>
