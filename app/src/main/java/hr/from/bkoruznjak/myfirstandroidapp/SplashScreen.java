@@ -76,19 +76,6 @@ public class SplashScreen extends Activity {
                     Log.e(TAG, "" + e);
                 }
 
-                // Reading all riddles
-                Log.d(TAG, "Reading all riddles..");
-                List<Riddle> riddleList = dbHandler.getAllRiddles();
-
-                for (Riddle riddle : riddleList) {
-                    String riddleLog = "Id: " + riddle.getId()
-                            + " ,Text: " + riddle.getRiddleText()
-                            + " ,Anwser: " + riddle.getRiddleAnwser()
-                            + " ,ViewCount: " + riddle.getViewCount();
-                    // Writing Riddles to log
-                    Log.d(TAG, riddleLog);
-                }
-
                 Log.v(TAG, "setting up the intent");
 
                 // This method will be executed once the timer is over
