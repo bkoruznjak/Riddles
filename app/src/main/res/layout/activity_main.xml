@@ -37,19 +37,20 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_height="match_parent"
                     android:layout_width="0dp"
-                    android:text="@string/favorite_riddle"
+                    android:layout_height="match_parent"
                     android:layout_weight="2"
                     android:gravity="right|center_vertical"
+                    android:text="@string/favorite_riddle"
 
-                    android:textDirection="rtl"/>
+                    android:textDirection="rtl" />
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/id_checkbox_riddle_favorite"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:checked="false" />
             </LinearLayout>
 
 
@@ -85,8 +86,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:enabled="true"
+
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:hint="@string/riddle_anwser"
+                android:minHeight="100dp"
+                android:onClick="buttonToggleAnwser"
                 android:textColorHint="#D7E6ED" />
 
         </LinearLayout>
@@ -103,24 +111,11 @@
             android:id="@+id/id_riddle_view_count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
             android:text="@string/riddle_view_count"
-            android:textColor="#4587de"
-            android:layout_marginRight="10dp"/>
+            android:textColor="#D7E6ED" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="@string/button_toggle_anwser"
-                android:onClick="buttonToggleAnwser" />
-
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"

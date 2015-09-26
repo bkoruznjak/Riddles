@@ -8,19 +8,21 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Random;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "push button called";
+    private static final String TAG = "MAIN_ACT";
     public static final String MESSAGE = "hr.from.bkoruznjak.MESSAGE";
     private List<Riddle> riddleList;
     private String riddleText;
@@ -43,7 +45,64 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Reading all riddles..");
         riddleList = dbHandler.getAllRiddles();
         numberOfRiddles = riddleList.size();
+        addListenerOnFavoriteCheckbox();
 
+        TextView riddleTextView = (TextView) findViewById(R.id.riddle_text);
+        TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+        TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+        TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        if (riddleList.isEmpty()) {
+            riddleTextView.setText("There appears to be no riddles");
+        } else {
+            //reach end of list condition
+            Random randomNumber = new Random();
+            riddleNumber = randomNumber.nextInt(riddleList.size() - 1);
+            //hide Anwser again if shown
+            if (showAnwser) {
+                showAnwser = !showAnwser;
+                riddleAnwserTextView.setText("");
+            }
+            //increase counter after fetched riddle
+            Riddle riddle = riddleList.get(riddleNumber);
+            riddleText = riddle.getRiddleText();
+            riddleAnwser = riddle.getRiddleAnwser();
+            riddleId = riddle.getId();
+            riddleViewCount = riddle.getViewCount();
+            riddleTextView.setText(riddleText);
+            riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+            riddleViewCount++;
+            riddleViewCountTextView.setText("view count:" + riddleViewCount);
+
+            if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+                //checkbox must be checked
+                riddleFavoriteCheckbox.setChecked(true);
+            } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+                //checkbox can't be checked
+                riddleFavoriteCheckbox.setChecked(false);
+            }
+            riddle.setViewCount(riddleViewCount);
+            dbHandler.updateRiddle(riddle);
+        }
+
+    }
+
+    private void addListenerOnFavoriteCheckbox() {
+        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        riddleFavoriteCheckbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    Riddle riddle = riddleList.get(riddleNumber);
+                    riddle.setFavorite(1);
+                    dbHandler.updateRiddle(riddle);
+                } else {
+                    Riddle riddle = riddleList.get(riddleNumber);
+                    riddle.setFavorite(0);
+                    dbHandler.updateRiddle(riddle);
+                }
+            }
+        });
     }
 
     @Override
@@ -83,6 +142,7 @@ public class MainActivity extends AppCompatActivity {
         TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
         TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
         TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -105,8 +165,18 @@ public class MainActivity extends AppCompatActivity {
             riddleViewCount = riddle.getViewCount();
             riddleTextView.setText(riddleText);
             riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
-            riddle.setViewCount(++riddleViewCount);
+            riddleViewCount++;
             riddleViewCountTextView.setText("view count:" + riddleViewCount);
+
+            if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+                //checkbox must be checked
+                riddleFavoriteCheckbox.setChecked(true);
+            } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+                //checkbox can't be checked
+                riddleFavoriteCheckbox.setChecked(false);
+            }
+
+            riddle.setViewCount(riddleViewCount);
             dbHandler.updateRiddle(riddle);
         }
     }
@@ -116,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
         TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
         TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
         TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -138,8 +209,18 @@ public class MainActivity extends AppCompatActivity {
             riddleViewCount = riddle.getViewCount();
             riddleTextView.setText(riddleText);
             riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
-            riddle.setViewCount(++riddleViewCount);
-            riddleViewCountTextView.setText("view count: " + riddleViewCount);
+            riddleViewCount++;
+            riddleViewCountTextView.setText("view count:" + riddleViewCount);
+
+            if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+                //checkbox must be checked
+                riddleFavoriteCheckbox.setChecked(true);
+            } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+                //checkbox can't be checked
+                riddleFavoriteCheckbox.setChecked(false);
+            }
+
+            riddle.setViewCount(riddleViewCount);
             dbHandler.updateRiddle(riddle);
         }
     }
