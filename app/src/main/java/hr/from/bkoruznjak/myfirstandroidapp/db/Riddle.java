@@ -11,16 +11,18 @@ public class Riddle implements Serializable {
     private String riddleText;
     private String riddleAnwser;
     private int viewCount;
+    private int favorite;
 
     public Riddle(){
 
     }
 
-    public Riddle(String id, String riddleText, String riddleAnwser, int viewCount){
+    public Riddle(String id, String riddleText, String riddleAnwser, int viewCount, int favorite){
         this.id = id;
         this.riddleText = riddleText;
         this.riddleAnwser = riddleAnwser;
         this.viewCount = viewCount;
+        this.favorite = favorite;
     }
 
     public String getId() {
@@ -53,5 +55,13 @@ public class Riddle implements Serializable {
 
     public void setViewCount(int viewCount) {
         this.viewCount = viewCount;
+    }
+
+    public int getFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(int favorite) {
+        this.favorite = favorite;
     }
 }

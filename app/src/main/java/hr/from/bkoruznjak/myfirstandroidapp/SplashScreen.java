@@ -67,7 +67,7 @@ public class SplashScreen extends Activity {
                         if (dbHandler.recordIdExistsInDb(riddleId)) {
                             Log.d(TAG, "row already exists");
                         } else {
-                            dbHandler.addRiddle(new Riddle(riddleId, riddleText, riddleAnwser, 0));
+                            dbHandler.addRiddle(new Riddle(riddleId, riddleText, riddleAnwser, 0,0));
                             Log.d(TAG, "row inserted successfully");
                         }
                     }

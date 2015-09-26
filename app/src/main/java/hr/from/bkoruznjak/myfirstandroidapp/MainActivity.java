@@ -27,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
     private String riddleAnwser;
     private String riddleId;
     private int riddleViewCount;
+    private int numberOfRiddles;
     private boolean showAnwser;
     private int riddleNumber = 0;
     private int counter = 0;
+    private DatabaseHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Reading all riddles
-        DatabaseHandler dbHandler = new DatabaseHandler(this);
+        dbHandler = new DatabaseHandler(this);
         Log.d(TAG, "Reading all riddles..");
         riddleList = dbHandler.getAllRiddles();
+        numberOfRiddles = riddleList.size();
 
     }
 
@@ -78,6 +81,8 @@ public class MainActivity extends AppCompatActivity {
     public void buttonNextRiddle(View view) {
         TextView riddleTextView = (TextView) findViewById(R.id.riddle_text);
         TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+        TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+        TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -99,12 +104,18 @@ public class MainActivity extends AppCompatActivity {
             riddleId = riddle.getId();
             riddleViewCount = riddle.getViewCount();
             riddleTextView.setText(riddleText);
+            riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+            riddle.setViewCount(++riddleViewCount);
+            riddleViewCountTextView.setText("view count:" + riddleViewCount);
+            dbHandler.updateRiddle(riddle);
         }
     }
 
     public void buttonPreviousRiddle(View view) {
         TextView riddleTextView = (TextView) findViewById(R.id.riddle_text);
         TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+        TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+        TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -126,6 +137,10 @@ public class MainActivity extends AppCompatActivity {
             riddleId = riddle.getId();
             riddleViewCount = riddle.getViewCount();
             riddleTextView.setText(riddleText);
+            riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+            riddle.setViewCount(++riddleViewCount);
+            riddleViewCountTextView.setText("view count: " + riddleViewCount);
+            dbHandler.updateRiddle(riddle);
         }
     }
 

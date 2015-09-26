@@ -16,7 +16,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     // Database Name
     private static final String DATABASE_NAME = "riddleManager";
@@ -29,6 +29,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_RIDDLE_TEXT = "riddle_text";
     private static final String KEY_RIDDLE_ANWSER = "riddle_anwser";
     private static final String KEY_VIEW_COUNT = "view_count";
+    private static final String KEY_FAVORITE = "favorite";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -43,7 +44,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_ID + " VARCHAR(10) PRIMARY KEY,"
                 + KEY_RIDDLE_TEXT + " TEXT,"
                 + KEY_RIDDLE_ANWSER + " TEXT,"
-                + KEY_VIEW_COUNT + " INTEGER"
+                + KEY_VIEW_COUNT + " INTEGER,"
+                + KEY_FAVORITE + " INTEGER"
                 + ")";
         db.execSQL(CREATE_RIDDLE_TABLE);
     }
@@ -71,6 +73,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_RIDDLE_TEXT, riddle.getRiddleText()); // Riddle text
         values.put(KEY_RIDDLE_ANWSER, riddle.getRiddleAnwser()); // Riddle anwser
         values.put(KEY_VIEW_COUNT, riddle.getViewCount()); // Riddle view count
+        values.put(KEY_FAVORITE, riddle.getFavorite()); // 1 if riddle is favorite, 0 if not
 
         // Inserting Row
         db.insert(TABLE_RIDDLES, null, values);
@@ -82,7 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_RIDDLES, new String[]{KEY_ID,
-                        KEY_RIDDLE_TEXT, KEY_RIDDLE_ANWSER, KEY_VIEW_COUNT}, KEY_ID + "=?",
+                        KEY_RIDDLE_TEXT, KEY_RIDDLE_ANWSER, KEY_VIEW_COUNT, KEY_FAVORITE}, KEY_ID + "=?",
                 new String[]{id}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
@@ -91,7 +94,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 cursor.getString(0),
                 cursor.getString(1),
                 cursor.getString(2),
-                Integer.parseInt(cursor.getString(3)));
+                Integer.parseInt(cursor.getString(3)),
+                Integer.parseInt(cursor.getString(4)));
         // return riddle
         return riddle;
     }
@@ -113,6 +117,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 riddle.setRiddleText(cursor.getString(1));
                 riddle.setRiddleAnwser(cursor.getString(2));
                 riddle.setViewCount(Integer.parseInt(cursor.getString(3)));
+                riddle.setFavorite(Integer.parseInt(cursor.getString(4)));
                 // Adding riddles to list
                 riddleList.add(riddle);
             } while (cursor.moveToNext());
@@ -130,6 +135,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_RIDDLE_TEXT, riddle.getRiddleText());
         values.put(KEY_RIDDLE_ANWSER, riddle.getRiddleAnwser());
         values.put(KEY_VIEW_COUNT, riddle.getViewCount());
+        values.put(KEY_FAVORITE,riddle.getFavorite());
 
         // updating row
         return db.update(TABLE_RIDDLES, values, KEY_ID + " = ?",

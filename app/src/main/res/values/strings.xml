@@ -12,5 +12,9 @@
     <string name="button_toggle_anwser">Show / Hide Anwser</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
     <string name="action_search">Search</string>
+    <string name="riddle_number_text">Riddle number:</string>
+    <string name="riddle_number">riddle number</string>
+    <string name="riddle_view_count">riddle view count</string>
+    <string name="favorite_riddle">Favorite</string>
 
 </resources>
