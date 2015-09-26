@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -44,9 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        // Inflate the hamburger_menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
     }
 
     @Override
@@ -64,15 +68,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void buttonMethodOne(View view) {
-        counter++;
-        Log.v(TAG, "count:" + counter);
-        Intent intentChangeView = new Intent(this, DisplayMessageActivity.class);
-        EditText editTextOfMainActivity = (EditText) findViewById(R.id.welcome_text);
-        String someTextToSend = editTextOfMainActivity.getText().toString();
-        intentChangeView.putExtra(MESSAGE, someTextToSend);
-        startActivity(intentChangeView);
-    }
 
     @Override
     public void onBackPressed() {
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             riddleTextView.setText("There appears to be no riddles");
         } else {
             //reach end of list condition
-            if (riddleNumber == riddleList.size()-1) {
+            if (riddleNumber == riddleList.size() - 1) {
                 riddleNumber = 0;
             } else {
                 riddleNumber++;
@@ -115,8 +110,8 @@ public class MainActivity extends AppCompatActivity {
         } else {
             //reach end of list condition
             if (riddleNumber == 0) {
-                riddleNumber = riddleList.size() -1;
-            } else{
+                riddleNumber = riddleList.size() - 1;
+            } else {
                 riddleNumber--;
             }
             //hide Anwser again if shown

@@ -1,15 +1,16 @@
 <resources>
-    <string name="app_name">MyFirstAndroidApp</string>
+    <string name="app_name">Smarter every day</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="welcome_text">Bok bok ovo je prvi app</string>
-    <string name="riddle_text">Riddle placeholder</string>
+    <string name="riddle_text">Tap next to view riddle</string>
     <string name="riddle_anwser">Hidden Anwser</string>
     <string name="button_one">push me</string>
     <string name="button_previous_riddle">Previous</string>
     <string name="button_next_riddle">Next</string>
     <string name="button_toggle_anwser">Show / Hide Anwser</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="action_search">Search</string>
 
 </resources>
