@@ -1,9 +1,11 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,6 +13,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -19,6 +22,7 @@ import java.util.Random;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
+import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,24 +38,27 @@ public class MainActivity extends AppCompatActivity {
     private int riddleNumber = 0;
     private int counter = 0;
     private DatabaseHandler dbHandler;
+    private TextView riddleTextView;
+    private TextView riddleAnwserTextView;
+    private TextView riddleNumberTextView;
+    private TextView riddleViewCountTextView;
+    private CheckBox riddleFavoriteCheckbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // Reading all riddles
         dbHandler = new DatabaseHandler(this);
-        Log.d(TAG, "Reading all riddles..");
+        riddleTextView = (TextView) findViewById(R.id.riddle_text);
+        riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+        riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+        riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+        riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+
         riddleList = dbHandler.getAllRiddles();
         numberOfRiddles = riddleList.size();
         addListenerOnFavoriteCheckbox();
 
-        TextView riddleTextView = (TextView) findViewById(R.id.riddle_text);
-        TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
-        TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
-        TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
-        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -82,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
                 riddleFavoriteCheckbox.setChecked(false);
             }
             riddle.setViewCount(riddleViewCount);
-            dbHandler.updateRiddle(riddle);
+            //dbHandler.updateRiddle(riddle);
+            (new Thread(new RiddleUpdater(this, riddle))).start();
+
         }
 
     }
@@ -95,11 +104,15 @@ public class MainActivity extends AppCompatActivity {
                 if (((CheckBox) v).isChecked()) {
                     Riddle riddle = riddleList.get(riddleNumber);
                     riddle.setFavorite(1);
-                    dbHandler.updateRiddle(riddle);
+                    //dbHandler.updateRiddle(riddle);
+                    (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
+                    addToFavoritesToast(MainActivity.this, "Riddle added to favorites");
                 } else {
                     Riddle riddle = riddleList.get(riddleNumber);
                     riddle.setFavorite(0);
-                    dbHandler.updateRiddle(riddle);
+                    //dbHandler.updateRiddle(riddle);
+                    (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
+                    addToFavoritesToast(MainActivity.this, "Riddle removed from favorites");
                 }
             }
         });
@@ -107,22 +120,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the hamburger_menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
-//        getMenuInflater().inflate(R.menu.menu_main, menu);
-//        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -138,11 +144,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonNextRiddle(View view) {
-        TextView riddleTextView = (TextView) findViewById(R.id.riddle_text);
-        TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
-        TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
-        TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
-        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -177,16 +178,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
             riddle.setViewCount(riddleViewCount);
-            dbHandler.updateRiddle(riddle);
+            //dbHandler.updateRiddle(riddle);
+            (new Thread(new RiddleUpdater(this, riddle))).start();
         }
     }
 
     public void buttonPreviousRiddle(View view) {
-        TextView riddleTextView = (TextView) findViewById(R.id.riddle_text);
-        TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
-        TextView riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
-        TextView riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
-        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -221,7 +218,8 @@ public class MainActivity extends AppCompatActivity {
             }
 
             riddle.setViewCount(riddleViewCount);
-            dbHandler.updateRiddle(riddle);
+            //dbHandler.updateRiddle(riddle);
+            (new Thread(new RiddleUpdater(this, riddle))).start();
         }
     }
 
@@ -235,6 +233,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void addToFavoritesToast(Context context, String message) {
+        CharSequence text = message;
+        int duration = Toast.LENGTH_SHORT;
 
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.setGravity(Gravity.BOTTOM, 0, 0);
+        toast.show();
+    }
 }
 

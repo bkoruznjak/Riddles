@@ -135,7 +135,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_RIDDLE_TEXT, riddle.getRiddleText());
         values.put(KEY_RIDDLE_ANWSER, riddle.getRiddleAnwser());
         values.put(KEY_VIEW_COUNT, riddle.getViewCount());
-        values.put(KEY_FAVORITE,riddle.getFavorite());
+        values.put(KEY_FAVORITE, riddle.getFavorite());
 
         // updating row
         return db.update(TABLE_RIDDLES, values, KEY_ID + " = ?",
@@ -167,7 +167,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         String Query = "Select * from " + TABLE_RIDDLES + " where " + KEY_ID + " = " + idValue;
         Cursor cursor = db.rawQuery(Query, null);
-        if(cursor.getCount() <= 0){
+        if (cursor.getCount() <= 0) {
             cursor.close();
             return false;
         }
