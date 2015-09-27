@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/main_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -69,6 +70,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:hint="@string/riddle_text"
+                android:background="@drawable/riddle_container"
 
                 android:minHeight="100dp"
                 android:textColorHint="#4587de" />
@@ -89,6 +91,7 @@
                 android:clickable="true"
                 android:enabled="true"
                 android:textSize="30dp"
+                android:background="@drawable/riddle_container"
 
                 android:focusable="true"
                 android:focusableInTouchMode="true"
