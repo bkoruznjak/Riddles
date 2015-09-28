@@ -71,6 +71,7 @@
                 android:gravity="center"
                 android:hint="@string/riddle_text"
                 android:background="@drawable/riddle_container"
+                android:padding="10dp"
 
                 android:minHeight="100dp"
                 android:textColorHint="#4587de" />
@@ -131,14 +132,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:hint="@string/button_previous_riddle"
-                android:onClick="buttonPreviousRiddle" />
+                android:onClick="buttonPreviousRiddle"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:hint="@string/button_next_riddle"
-                android:onClick="buttonNextRiddle" />
+                android:onClick="buttonNextRiddle"/>
 
         </LinearLayout>
 
