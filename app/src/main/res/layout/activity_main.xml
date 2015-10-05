@@ -100,7 +100,7 @@
                 android:hint="@string/riddle_anwser"
                 android:minHeight="100dp"
                 android:onClick="buttonToggleAnwser"
-                android:textColorHint="#D7E6ED" />
+                android:textColorHint="#38000000" />
 
         </LinearLayout>
 
@@ -119,7 +119,7 @@
             android:layout_marginRight="10dp"
             android:gravity="right|center_vertical"
             android:text="@string/riddle_view_count"
-            android:textColor="#D7E6ED" />
+            android:textColor="#fdfdff" />
 
     </LinearLayout>
 

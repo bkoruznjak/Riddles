@@ -286,7 +286,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
 
     @Override
     public void onDoubleTap() {
-        Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
     }
 }
 
