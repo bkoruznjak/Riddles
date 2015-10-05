@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -23,8 +25,10 @@ import java.util.Random;
 import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
+import hr.from.bkoruznjak.myfirstandroidapp.util.SimpleGestureFilter;
+import hr.from.bkoruznjak.myfirstandroidapp.util.SimpleGestureFilter.SimpleGestureListener;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SimpleGestureListener {
 
     private static final String TAG = "MAIN_ACT";
     public static final String MESSAGE = "hr.from.bkoruznjak.MESSAGE";
@@ -43,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView riddleNumberTextView;
     private TextView riddleViewCountTextView;
     private CheckBox riddleFavoriteCheckbox;
+    private SimpleGestureFilter detector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
         riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
         riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        //detect touched area
+        detector = new SimpleGestureFilter(this, this);
 
         riddleList = dbHandler.getAllRiddles();
         numberOfRiddles = riddleList.size();
@@ -143,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void buttonNextRiddle(View view) {
+    public void nextRiddle() {
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -183,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void buttonPreviousRiddle(View view) {
+    public void previousRiddle() {
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
         } else {
@@ -240,6 +247,46 @@ public class MainActivity extends AppCompatActivity {
         Toast toast = Toast.makeText(context, text, duration);
         toast.setGravity(Gravity.BOTTOM, 0, 65);
         toast.show();
+    }
+
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent me) {
+        // Call onTouchEvent of SimpleGestureFilter class
+        this.detector.onTouchEvent(me);
+        return super.dispatchTouchEvent(me);
+    }
+
+    @Override
+    public void onSwipe(int direction) {
+        String str = "";
+        switch (direction) {
+            case SimpleGestureFilter.SWIPE_RIGHT:
+                str = "Swipe Right";
+                Log.d(TAG, str);
+                previousRiddle();
+                break;
+            case SimpleGestureFilter.SWIPE_LEFT:
+                str = "Swipe Left";
+                Log.d(TAG, str);
+                nextRiddle();
+                break;
+            case SimpleGestureFilter.SWIPE_DOWN:
+                str = "Swipe Down";
+                Log.d(TAG, str);
+                break;
+            case SimpleGestureFilter.SWIPE_UP:
+                str = "Swipe Up";
+                Log.d(TAG, str);
+                break;
+
+        }
+        //Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onDoubleTap() {
+        Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
     }
 }
 
