@@ -2,6 +2,7 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -48,58 +49,103 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     private TextView riddleViewCountTextView;
     private CheckBox riddleFavoriteCheckbox;
     private SimpleGestureFilter detector;
+    private Riddle onCreateRiddle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dbHandler = new DatabaseHandler(this);
-
-        riddleTextView = (TextView) findViewById(R.id.riddle_text);
-        riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
-        riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
-        riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
-        riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         //detect touched area
         detector = new SimpleGestureFilter(this, this);
+        if (savedInstanceState != null) {
+            Log.d(TAG, "FOUND SAVED INSTANCE STATE");
+            onCreateRiddle = (Riddle) savedInstanceState.getSerializable("onCreateRiddle");
+            riddleNumber = savedInstanceState.getInt("riddleNumber");
 
-        riddleList = dbHandler.getAllRiddles();
-        numberOfRiddles = riddleList.size();
-        addListenerOnFavoriteCheckbox();
+            riddleTextView = (TextView) findViewById(R.id.riddle_text);
+            riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+            riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+            riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+            riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+            riddleList = dbHandler.getAllRiddles();
+            numberOfRiddles = riddleList.size();
+            addListenerOnFavoriteCheckbox();
 
-        if (riddleList.isEmpty()) {
-            riddleTextView.setText("There appears to be no riddles");
-        } else {
-            //reach end of list condition
-            Random randomNumber = new Random();
-            riddleNumber = randomNumber.nextInt(riddleList.size() - 1);
-            //hide Anwser again if shown
-            if (showAnwser) {
-                showAnwser = !showAnwser;
-                riddleAnwserTextView.setText("");
-            }
-            //increase counter after fetched riddle
-            Riddle riddle = riddleList.get(riddleNumber);
-            riddleText = riddle.getRiddleText();
-            riddleAnwser = riddle.getRiddleAnwser();
-            riddleId = riddle.getId();
-            riddleViewCount = riddle.getViewCount();
+            riddleText = onCreateRiddle.getRiddleText();
+            riddleAnwser = onCreateRiddle.getRiddleAnwser();
+            riddleId = onCreateRiddle.getId();
+            riddleViewCount = onCreateRiddle.getViewCount();
             riddleTextView.setText(riddleText);
-            riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
-            riddleViewCount++;
+            riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
             riddleViewCountTextView.setText("view count:" + riddleViewCount);
 
-            if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+            if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
                 //checkbox must be checked
                 riddleFavoriteCheckbox.setChecked(true);
-            } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+            } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
                 //checkbox can't be checked
                 riddleFavoriteCheckbox.setChecked(false);
             }
-            riddle.setViewCount(riddleViewCount);
-            //dbHandler.updateRiddle(riddle);
-            (new Thread(new RiddleUpdater(this, riddle))).start();
+            onCreateRiddle.setViewCount(riddleViewCount);
+        } else {
+            Log.d(TAG, "NEW INSTANCE STATE");
+
+
+            riddleTextView = (TextView) findViewById(R.id.riddle_text);
+            riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+            riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+            riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+            riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+
+            riddleList = dbHandler.getAllRiddles();
+            numberOfRiddles = riddleList.size();
+            addListenerOnFavoriteCheckbox();
+
+            if (riddleList.isEmpty()) {
+                riddleTextView.setText("There appears to be no riddles");
+            } else {
+                //reach end of list condition
+                Random randomNumber = new Random();
+                riddleNumber = randomNumber.nextInt(riddleList.size() - 1);
+                //hide Anwser again if shown
+                if (showAnwser) {
+                    showAnwser = !showAnwser;
+                    riddleAnwserTextView.setText("");
+                }
+                //increase counter after fetched riddle
+                onCreateRiddle = riddleList.get(riddleNumber);
+                riddleText = onCreateRiddle.getRiddleText();
+                riddleAnwser = onCreateRiddle.getRiddleAnwser();
+                riddleId = onCreateRiddle.getId();
+                riddleViewCount = onCreateRiddle.getViewCount();
+                riddleTextView.setText(riddleText);
+                riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
+                riddleViewCount++;
+                riddleViewCountTextView.setText("view count:" + riddleViewCount);
+
+                if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+                    //checkbox must be checked
+                    riddleFavoriteCheckbox.setChecked(true);
+                } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+                    //checkbox can't be checked
+                    riddleFavoriteCheckbox.setChecked(false);
+                }
+                onCreateRiddle.setViewCount(riddleViewCount);
+                //dbHandler.updateRiddle(riddle);
+                (new Thread(new RiddleUpdater(this, onCreateRiddle))).start();
+            }
         }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+        savedInstanceState.putSerializable("onCreateRiddle", onCreateRiddle);
+        savedInstanceState.putInt("riddleNumber", riddleNumber);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     private void addListenerOnFavoriteCheckbox() {
@@ -165,27 +211,27 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 riddleAnwserTextView.setText("");
             }
             //increase counter after fetched riddle
-            Riddle riddle = riddleList.get(riddleNumber);
-            riddleText = riddle.getRiddleText();
-            riddleAnwser = riddle.getRiddleAnwser();
-            riddleId = riddle.getId();
-            riddleViewCount = riddle.getViewCount();
+            onCreateRiddle = riddleList.get(riddleNumber);
+            riddleText = onCreateRiddle.getRiddleText();
+            riddleAnwser = onCreateRiddle.getRiddleAnwser();
+            riddleId = onCreateRiddle.getId();
+            riddleViewCount = onCreateRiddle.getViewCount();
             riddleTextView.setText(riddleText);
-            riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+            riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
             riddleViewCount++;
             riddleViewCountTextView.setText("view count:" + riddleViewCount);
 
-            if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+            if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
                 //checkbox must be checked
                 riddleFavoriteCheckbox.setChecked(true);
-            } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+            } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
                 //checkbox can't be checked
                 riddleFavoriteCheckbox.setChecked(false);
             }
 
-            riddle.setViewCount(riddleViewCount);
+            onCreateRiddle.setViewCount(riddleViewCount);
             //dbHandler.updateRiddle(riddle);
-            (new Thread(new RiddleUpdater(this, riddle))).start();
+            (new Thread(new RiddleUpdater(this, onCreateRiddle))).start();
         }
     }
 
@@ -205,27 +251,27 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 riddleAnwserTextView.setText("");
             }
             //decrease counter after fetched riddle
-            Riddle riddle = riddleList.get(riddleNumber);
-            riddleText = riddle.getRiddleText();
-            riddleAnwser = riddle.getRiddleAnwser();
-            riddleId = riddle.getId();
-            riddleViewCount = riddle.getViewCount();
+            onCreateRiddle = riddleList.get(riddleNumber);
+            riddleText = onCreateRiddle.getRiddleText();
+            riddleAnwser = onCreateRiddle.getRiddleAnwser();
+            riddleId = onCreateRiddle.getId();
+            riddleViewCount = onCreateRiddle.getViewCount();
             riddleTextView.setText(riddleText);
-            riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+            riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
             riddleViewCount++;
             riddleViewCountTextView.setText("view count:" + riddleViewCount);
 
-            if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+            if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
                 //checkbox must be checked
                 riddleFavoriteCheckbox.setChecked(true);
-            } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+            } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
                 //checkbox can't be checked
                 riddleFavoriteCheckbox.setChecked(false);
             }
 
-            riddle.setViewCount(riddleViewCount);
+            onCreateRiddle.setViewCount(riddleViewCount);
             //dbHandler.updateRiddle(riddle);
-            (new Thread(new RiddleUpdater(this, riddle))).start();
+            (new Thread(new RiddleUpdater(this, onCreateRiddle))).start();
         }
     }
 
