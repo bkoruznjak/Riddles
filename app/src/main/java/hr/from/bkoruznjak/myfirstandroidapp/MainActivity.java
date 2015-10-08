@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dbHandler = new DatabaseHandler(this);
+
         riddleTextView = (TextView) findViewById(R.id.riddle_text);
         riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
         riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
@@ -98,9 +99,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             riddle.setViewCount(riddleViewCount);
             //dbHandler.updateRiddle(riddle);
             (new Thread(new RiddleUpdater(this, riddle))).start();
-
         }
-
     }
 
     private void addListenerOnFavoriteCheckbox() {

@@ -41,10 +41,8 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="2"
-                    android:gravity="right|center_vertical"
-                    android:text="@string/favorite_riddle"
-
-                    android:textDirection="rtl" />
+                    android:gravity="end|center_vertical"
+                    android:text="@string/favorite_riddle" />
 
                 <CheckBox
                     android:id="@+id/id_checkbox_riddle_favorite"
@@ -91,7 +89,7 @@
                 android:layout_weight="1"
                 android:clickable="true"
                 android:enabled="true"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:background="@drawable/riddle_container"
 
                 android:focusable="true"
