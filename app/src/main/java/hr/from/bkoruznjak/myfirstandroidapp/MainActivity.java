@@ -53,6 +53,13 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        doWork(savedInstanceState);
+    }
+
+    /*
+     * @desc initialises the main activity
+     */
+    private void doWork(Bundle savedInstanceState) {
         dbHandler = new DatabaseHandler(this);
         //detect touched area
         detector = new SimpleGestureFilter(this, this);
@@ -127,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         riddleAnwser = riddle.getRiddleAnwser();
         riddleViewCount = riddle.getViewCount();
         riddleTextView.setText(riddleText);
-        riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+        riddleNumberTextView.setText(riddleNumber + 1 + " of " + numberOfRiddles);
         riddleViewCount++;
         riddleViewCountTextView.setText(getResources().getString(R.string.view_count) + riddleViewCount);
     }
