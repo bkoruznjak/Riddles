@@ -51,6 +51,13 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     private SimpleGestureFilter detector;
     private Riddle onCreateRiddle;
 
+    /*
+     * @desc if there was no instance generates new riddle
+     * if instance exists just changes layout on create and
+     * keeps the settings
+     *
+     * @param saved instance state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,46 +65,24 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         dbHandler = new DatabaseHandler(this);
         //detect touched area
         detector = new SimpleGestureFilter(this, this);
+        //set all views
+        riddleTextView = (TextView) findViewById(R.id.riddle_text);
+        riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
+        riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
+        riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
+        riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         if (savedInstanceState != null) {
             Log.d(TAG, "FOUND SAVED INSTANCE STATE");
             onCreateRiddle = (Riddle) savedInstanceState.getSerializable("onCreateRiddle");
             riddleNumber = savedInstanceState.getInt("riddleNumber");
-
-            riddleTextView = (TextView) findViewById(R.id.riddle_text);
-            riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
-            riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
-            riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
-            riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
             riddleList = dbHandler.getAllRiddles();
             numberOfRiddles = riddleList.size();
             addListenerOnFavoriteCheckbox();
-
-            riddleText = onCreateRiddle.getRiddleText();
-            riddleAnwser = onCreateRiddle.getRiddleAnwser();
-            riddleId = onCreateRiddle.getId();
-            riddleViewCount = onCreateRiddle.getViewCount();
-            riddleTextView.setText(riddleText);
-            riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
-            riddleViewCountTextView.setText("view count:" + riddleViewCount);
-
-            if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
-                //checkbox must be checked
-                riddleFavoriteCheckbox.setChecked(true);
-            } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
-                //checkbox can't be checked
-                riddleFavoriteCheckbox.setChecked(false);
-            }
+            setTextFields(onCreateRiddle);
+            favoriteStatusHandler(onCreateRiddle);
             onCreateRiddle.setViewCount(riddleViewCount);
         } else {
             Log.d(TAG, "NEW INSTANCE STATE");
-
-
-            riddleTextView = (TextView) findViewById(R.id.riddle_text);
-            riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
-            riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
-            riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
-            riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
-
             riddleList = dbHandler.getAllRiddles();
             numberOfRiddles = riddleList.size();
             addListenerOnFavoriteCheckbox();
@@ -115,22 +100,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 }
                 //increase counter after fetched riddle
                 onCreateRiddle = riddleList.get(riddleNumber);
-                riddleText = onCreateRiddle.getRiddleText();
-                riddleAnwser = onCreateRiddle.getRiddleAnwser();
-                riddleId = onCreateRiddle.getId();
-                riddleViewCount = onCreateRiddle.getViewCount();
-                riddleTextView.setText(riddleText);
-                riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
-                riddleViewCount++;
-                riddleViewCountTextView.setText("view count:" + riddleViewCount);
+                setTextFields(onCreateRiddle);
 
-                if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
-                    //checkbox must be checked
-                    riddleFavoriteCheckbox.setChecked(true);
-                } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
-                    //checkbox can't be checked
-                    riddleFavoriteCheckbox.setChecked(false);
-                }
+                favoriteStatusHandler(onCreateRiddle);
                 onCreateRiddle.setViewCount(riddleViewCount);
                 //dbHandler.updateRiddle(riddle);
                 (new Thread(new RiddleUpdater(this, onCreateRiddle))).start();
@@ -138,6 +110,11 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         }
     }
 
+    /*
+     * @desc saves the current riddle in the instance state
+     *
+     * @param saved instance state
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         // Save the user's current game state
@@ -148,6 +125,25 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    /*
+     * @desc sets all the activity text fields based on the riddle values
+     *
+     * @param riddle object
+     */
+    private void setTextFields(Riddle riddle) {
+        riddleText = riddle.getRiddleText();
+        riddleAnwser = riddle.getRiddleAnwser();
+        riddleId = riddle.getId();
+        riddleViewCount = riddle.getViewCount();
+        riddleTextView.setText(riddleText);
+        riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
+        riddleViewCount++;
+        riddleViewCountTextView.setText("view count:" + riddleViewCount);
+    }
+
+    /*
+     * @desc updates riddle object upon tap on favorites checkbox
+     */
     private void addListenerOnFavoriteCheckbox() {
         CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         riddleFavoriteCheckbox.setOnClickListener(new View.OnClickListener() {
@@ -180,21 +176,24 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
 
+    /*
+     * @desc kill the application on back pressed
+     */
     @Override
     public void onBackPressed() {
         System.exit(0);
-
     }
 
+    /*
+     * @desc handles the next riddle swipe
+     */
     public void nextRiddle() {
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
@@ -212,22 +211,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             }
             //increase counter after fetched riddle
             onCreateRiddle = riddleList.get(riddleNumber);
-            riddleText = onCreateRiddle.getRiddleText();
-            riddleAnwser = onCreateRiddle.getRiddleAnwser();
-            riddleId = onCreateRiddle.getId();
-            riddleViewCount = onCreateRiddle.getViewCount();
-            riddleTextView.setText(riddleText);
-            riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
-            riddleViewCount++;
-            riddleViewCountTextView.setText("view count:" + riddleViewCount);
+            setTextFields(onCreateRiddle);
 
-            if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
-                //checkbox must be checked
-                riddleFavoriteCheckbox.setChecked(true);
-            } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
-                //checkbox can't be checked
-                riddleFavoriteCheckbox.setChecked(false);
-            }
+            favoriteStatusHandler(onCreateRiddle);
 
             onCreateRiddle.setViewCount(riddleViewCount);
             //dbHandler.updateRiddle(riddle);
@@ -235,6 +221,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         }
     }
 
+    /*
+     * @desc handles the previous riddle swipe
+     */
     public void previousRiddle() {
         if (riddleList.isEmpty()) {
             riddleTextView.setText("There appears to be no riddles");
@@ -252,22 +241,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             }
             //decrease counter after fetched riddle
             onCreateRiddle = riddleList.get(riddleNumber);
-            riddleText = onCreateRiddle.getRiddleText();
-            riddleAnwser = onCreateRiddle.getRiddleAnwser();
-            riddleId = onCreateRiddle.getId();
-            riddleViewCount = onCreateRiddle.getViewCount();
-            riddleTextView.setText(riddleText);
-            riddleNumberTextView.setText(onCreateRiddle.getId() + " of " + numberOfRiddles);
-            riddleViewCount++;
-            riddleViewCountTextView.setText("view count:" + riddleViewCount);
+            setTextFields(onCreateRiddle);
 
-            if (onCreateRiddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
-                //checkbox must be checked
-                riddleFavoriteCheckbox.setChecked(true);
-            } else if (onCreateRiddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
-                //checkbox can't be checked
-                riddleFavoriteCheckbox.setChecked(false);
-            }
+            favoriteStatusHandler(onCreateRiddle);
 
             onCreateRiddle.setViewCount(riddleViewCount);
             //dbHandler.updateRiddle(riddle);
@@ -275,6 +251,11 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         }
     }
 
+    /*
+     * @desc shows or hides the anwser to the riddle
+     *
+     * @param clicked view
+     */
     public void buttonToggleAnwser(View view) {
         showAnwser = !showAnwser;
         TextView riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
@@ -285,6 +266,30 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         }
     }
 
+
+    /*
+     * @desc checks or unchecks the favorite checkbox based
+     * on the riddle status
+     *
+     * @param riddle object
+     */
+    private void favoriteStatusHandler(Riddle riddle) {
+        if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+            //checkbox must be checked
+            riddleFavoriteCheckbox.setChecked(true);
+        } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+            //checkbox can't be checked
+            riddleFavoriteCheckbox.setChecked(false);
+        }
+    }
+
+
+    /*
+     * @desc handles the Toast display when favorites checkbox is clicked
+     *
+     * @param application context
+     * @param message to toast display
+     */
     public void addToFavoritesToast(Context context, String message) {
         CharSequence text = message;
         int duration = Toast.LENGTH_SHORT;
@@ -294,7 +299,11 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         toast.show();
     }
 
-
+    /*
+     * @desc handles touch events
+     *
+     * @param screen motion events swipes, touches
+     */
     @Override
     public boolean dispatchTouchEvent(MotionEvent me) {
         // Call onTouchEvent of SimpleGestureFilter class
@@ -302,6 +311,11 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         return super.dispatchTouchEvent(me);
     }
 
+    /*
+     * @desc handles swipe events
+     *
+     * @param direction of a swipe
+     */
     @Override
     public void onSwipe(int direction) {
         String str = "";
