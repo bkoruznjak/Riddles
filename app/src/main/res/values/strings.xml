@@ -17,4 +17,9 @@
     <string name="riddle_view_count">riddle view count</string>
     <string name="favorite_riddle">Favorite</string>
 
+    <!-- MAIN ACTIVITY TEXT -->
+    <string name="no_riddles">There appears to be no riddles</string>
+    <string name="view_count">view count:</string>
+
+
 </resources>

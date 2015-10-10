@@ -1,12 +1,9 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.GestureDetector;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,11 +11,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.List;
 import java.util.Random;
@@ -34,14 +28,11 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     private static final String TAG = "MAIN_ACT";
     public static final String MESSAGE = "hr.from.bkoruznjak.MESSAGE";
     private List<Riddle> riddleList;
-    private String riddleText;
     private String riddleAnwser;
-    private String riddleId;
     private int riddleViewCount;
     private int numberOfRiddles;
     private boolean showAnwser;
     private int riddleNumber = 0;
-    private int counter = 0;
     private DatabaseHandler dbHandler;
     private TextView riddleTextView;
     private TextView riddleAnwserTextView;
@@ -88,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             addListenerOnFavoriteCheckbox();
 
             if (riddleList.isEmpty()) {
-                riddleTextView.setText("There appears to be no riddles");
+                riddleTextView.setText(getResources().getString(R.string.no_riddles));
             } else {
                 //reach end of list condition
                 Random randomNumber = new Random();
@@ -131,14 +122,14 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      * @param riddle object
      */
     private void setTextFields(Riddle riddle) {
+        String riddleText;
         riddleText = riddle.getRiddleText();
         riddleAnwser = riddle.getRiddleAnwser();
-        riddleId = riddle.getId();
         riddleViewCount = riddle.getViewCount();
         riddleTextView.setText(riddleText);
         riddleNumberTextView.setText(riddle.getId() + " of " + numberOfRiddles);
         riddleViewCount++;
-        riddleViewCountTextView.setText("view count:" + riddleViewCount);
+        riddleViewCountTextView.setText(getResources().getString(R.string.view_count) + riddleViewCount);
     }
 
     /*
@@ -196,7 +187,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      */
     public void nextRiddle() {
         if (riddleList.isEmpty()) {
-            riddleTextView.setText("There appears to be no riddles");
+            riddleTextView.setText(getResources().getString(R.string.no_riddles));
         } else {
             //reach end of list condition
             if (riddleNumber == riddleList.size() - 1) {
@@ -226,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      */
     public void previousRiddle() {
         if (riddleList.isEmpty()) {
-            riddleTextView.setText("There appears to be no riddles");
+            riddleTextView.setText(getResources().getString(R.string.no_riddles));
         } else {
             //reach end of list condition
             if (riddleNumber == 0) {
@@ -291,10 +282,8 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      * @param message to toast display
      */
     public void addToFavoritesToast(Context context, String message) {
-        CharSequence text = message;
         int duration = Toast.LENGTH_SHORT;
-
-        Toast toast = Toast.makeText(context, text, duration);
+        Toast toast = Toast.makeText(context, message, duration);
         toast.setGravity(Gravity.BOTTOM, 0, 65);
         toast.show();
     }
@@ -318,29 +307,23 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      */
     @Override
     public void onSwipe(int direction) {
-        String str = "";
         switch (direction) {
             case SimpleGestureFilter.SWIPE_RIGHT:
-                str = "Swipe Right";
-                Log.d(TAG, str);
+                Log.d(TAG, "Swipe Right");
                 previousRiddle();
                 break;
             case SimpleGestureFilter.SWIPE_LEFT:
-                str = "Swipe Left";
-                Log.d(TAG, str);
+                Log.d(TAG, "Swipe Left");
                 nextRiddle();
                 break;
             case SimpleGestureFilter.SWIPE_DOWN:
-                str = "Swipe Down";
-                Log.d(TAG, str);
+                Log.d(TAG, "Swipe Down");
                 break;
             case SimpleGestureFilter.SWIPE_UP:
-                str = "Swipe Up";
-                Log.d(TAG, str);
+                Log.d(TAG, "Swipe Up");
                 break;
 
         }
-        //Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
     }
 
     @Override
