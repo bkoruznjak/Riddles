@@ -1,6 +1,7 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -174,8 +175,23 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_about:
+                Log.d(TAG, "about");
+                Intent aboutIntent = new Intent(this, AboutActivity.class);
+                Riddle currentRiddle = onCreateRiddle;
+                aboutIntent.putExtra("onCreateRiddle", currentRiddle);
+                startActivity(aboutIntent);
+                return true;
+            case R.id.action_favorites:
+                Log.d(TAG, "favs");
+                return true;
+            case R.id.action_challenge:
+                Log.d(TAG, "challenge");
+                return true;
+            case R.id.action_contribute:
+                Log.d(TAG, "cotnributes");
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -336,6 +352,30 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     @Override
     public void onDoubleTap() {
         //Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
+    }
+
+    public void onRestart(Bundle savedInstanceState){
+        Log.d(TAG,"onrestart called");
+    }
+
+    public void onStart(Bundle savedInstanceState){
+        Log.d(TAG,"onstart called");
+    }
+
+    public void onResume(Bundle savedInstanceState){
+        Log.d(TAG,"onresume called");
+    }
+
+    public void onPause(Bundle savedInstanceState){
+        Log.d(TAG,"onpause called");
+    }
+
+    public void onStop(Bundle savedInstanceState){
+        Log.d(TAG,"onstop called");
+    }
+
+    public void onDestroy(Bundle savedInstanceState){
+        Log.d(TAG,"ondestroy called");
     }
 }
 

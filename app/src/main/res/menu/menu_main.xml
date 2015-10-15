@@ -5,9 +5,24 @@
 
     <!-- Settings, should always be in the overflow -->
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+        android:id="@+id/action_about"
+        android:title="@string/action_about"
         android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_favorites"
+        android:title="@string/action_favorites"
+        android:orderInCategory="101"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_challenge"
+        android:title="@string/action_challenge"
+        android:orderInCategory="102"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_contribute"
+        android:title="@string/action_contribute"
+        android:orderInCategory="103"
         app:showAsAction="never" />
 
 </menu>

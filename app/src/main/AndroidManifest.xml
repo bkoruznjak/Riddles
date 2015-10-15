@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hr.from.bkoruznjak.myfirstandroidapp">
+    package="hr.from.bkoruznjak.myfirstandroidapp" >
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_sed_launch"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
+
         <!-- Splash screen -->
         <activity
-            android:name="hr.from.bkoruznjak.myfirstandroidapp.SplashScreen"
+            android:name=".SplashScreen"
             android:label="@string/app_name"
             android:noHistory="true"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar">
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,12 +23,15 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:configChanges="screenSize|screenLayout">
-            android:label="@string/app_name"></activity>
+            android:configChanges="screenSize|screenLayout" >
+            android:label="@string/app_name">
+        </activity>
         <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName=".MainActivity">
+            android:name=".AboutActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/FullscreenTheme" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
