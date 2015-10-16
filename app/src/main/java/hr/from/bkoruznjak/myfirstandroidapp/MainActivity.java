@@ -2,6 +2,10 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +16,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +31,9 @@ import hr.from.bkoruznjak.myfirstandroidapp.util.SimpleGestureFilter.SimpleGestu
 
 public class MainActivity extends AppCompatActivity implements SimpleGestureListener {
 
+    View.OnClickListener mOnClickListener;
+    View.OnClickListener addFavoriteOnClickListener;
+    View.OnClickListener removeFavoriteOnClickListener;
     private static final String TAG = "MAIN_ACT";
     public static final String MESSAGE = "hr.from.bkoruznjak.MESSAGE";
     private List<Riddle> riddleList;
@@ -70,13 +78,14 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
         riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
         riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        addListenerOnFavoriteCheckbox();
+        addListenerOnFavoriteFab();
         if (savedInstanceState != null) {
             Log.d(TAG, "FOUND SAVED INSTANCE STATE");
             onCreateRiddle = (Riddle) savedInstanceState.getSerializable("onCreateRiddle");
             riddleNumber = savedInstanceState.getInt("riddleNumber");
             riddleList = dbHandler.getAllRiddles();
             numberOfRiddles = riddleList.size();
-            addListenerOnFavoriteCheckbox();
             setTextFields(onCreateRiddle);
             favoriteStatusHandler(onCreateRiddle);
             onCreateRiddle.setViewCount(riddleViewCount);
@@ -84,8 +93,6 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             Log.d(TAG, "NEW INSTANCE STATE");
             riddleList = dbHandler.getAllRiddles();
             numberOfRiddles = riddleList.size();
-            addListenerOnFavoriteCheckbox();
-
             if (riddleList.isEmpty()) {
                 riddleTextView.setText(getResources().getString(R.string.no_riddles));
             } else {
@@ -103,10 +110,88 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
 
                 favoriteStatusHandler(onCreateRiddle);
                 onCreateRiddle.setViewCount(riddleViewCount);
-                //dbHandler.updateRiddle(riddle);
                 (new Thread(new RiddleUpdater(this, onCreateRiddle))).start();
             }
         }
+    }
+
+    /*
+     * @desc updates riddle object upon tap on favorites checkbox
+     */
+    private void addListenerOnFavoriteCheckbox() {
+        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        riddleFavoriteCheckbox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    Riddle riddle = riddleList.get(riddleNumber);
+                    riddle.setFavorite(1);
+                    (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
+                    addToFavoritesToast(MainActivity.this, "Riddle added to favorites");
+                } else {
+                    Riddle riddle = riddleList.get(riddleNumber);
+                    riddle.setFavorite(0);
+                    (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
+                    addToFavoritesToast(MainActivity.this, "Riddle removed from favorites");
+                }
+            }
+        });
+    }
+
+    /*
+     * @desc adds listener to floating action button
+     */
+    private void addListenerOnFavoriteFab() {
+        FloatingActionButton favoriteFab = (FloatingActionButton) findViewById(R.id.favorite_fab);
+        final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                .coordinatorLayout);
+        final CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        favoriteFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (riddleFavoriteCheckbox.isChecked()) {
+                    Snackbar favoriteSnackbar = Snackbar
+                            .make(coordinatorLayout, "This is your favorite riddle", Snackbar.LENGTH_LONG)
+                            .setAction("Remove", removeFavoriteOnClickListener);
+                    favoriteSnackbar.setActionTextColor(Color.RED);
+                    View snackbarView = favoriteSnackbar.getView();
+                    snackbarView.setBackgroundColor(Color.DKGRAY);
+                    TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(Color.BLUE);
+                    favoriteSnackbar.show();
+                } else {
+                    Snackbar favoriteSnackbar = Snackbar
+                            .make(coordinatorLayout, "You like this riddle?", Snackbar.LENGTH_LONG)
+                            .setAction("Favorite", addFavoriteOnClickListener);
+                    favoriteSnackbar.setActionTextColor(Color.GREEN);
+                    View snackbarView = favoriteSnackbar.getView();
+                    snackbarView.setBackgroundColor(Color.DKGRAY);
+                    TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                    textView.setTextColor(Color.BLUE);
+                    favoriteSnackbar.show();
+                }
+            }
+        });
+
+        addFavoriteOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                riddleFavoriteCheckbox.setChecked(true);
+                Riddle riddle = riddleList.get(riddleNumber);
+                riddle.setFavorite(1);
+                (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
+            }
+        };
+
+        removeFavoriteOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                riddleFavoriteCheckbox.setChecked(false);
+                Riddle riddle = riddleList.get(riddleNumber);
+                riddle.setFavorite(0);
+                (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
+            }
+        };
     }
 
     /*
@@ -140,31 +225,6 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         riddleViewCountTextView.setText(getResources().getString(R.string.view_count) + riddleViewCount);
     }
 
-    /*
-     * @desc updates riddle object upon tap on favorites checkbox
-     */
-    private void addListenerOnFavoriteCheckbox() {
-        CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
-        riddleFavoriteCheckbox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (((CheckBox) v).isChecked()) {
-                    Riddle riddle = riddleList.get(riddleNumber);
-                    riddle.setFavorite(1);
-                    //dbHandler.updateRiddle(riddle);
-                    (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
-                    addToFavoritesToast(MainActivity.this, "Riddle added to favorites");
-                } else {
-                    Riddle riddle = riddleList.get(riddleNumber);
-                    riddle.setFavorite(0);
-                    //dbHandler.updateRiddle(riddle);
-                    (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
-                    addToFavoritesToast(MainActivity.this, "Riddle removed from favorites");
-                }
-            }
-        });
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -175,11 +235,11 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        Riddle currentRiddle = onCreateRiddle;
         switch (id) {
             case R.id.action_about:
                 Log.d(TAG, "about");
                 Intent aboutIntent = new Intent(this, AboutActivity.class);
-                Riddle currentRiddle = onCreateRiddle;
                 aboutIntent.putExtra("onCreateRiddle", currentRiddle);
                 startActivity(aboutIntent);
                 return true;
@@ -188,6 +248,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 return true;
             case R.id.action_challenge:
                 Log.d(TAG, "challenge");
+                Intent aboutAppIntent = new Intent(this, AboutAppActivity.class);
+                aboutAppIntent.putExtra("onCreateRiddle", currentRiddle);
+                startActivity(aboutAppIntent);
                 return true;
             case R.id.action_contribute:
                 Log.d(TAG, "cotnributes");
@@ -354,28 +417,28 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         //Toast.makeText(this, "Double Tap", Toast.LENGTH_SHORT).show();
     }
 
-    public void onRestart(Bundle savedInstanceState){
-        Log.d(TAG,"onrestart called");
+    public void onRestart(Bundle savedInstanceState) {
+        Log.d(TAG, "onrestart called");
     }
 
-    public void onStart(Bundle savedInstanceState){
-        Log.d(TAG,"onstart called");
+    public void onStart(Bundle savedInstanceState) {
+        Log.d(TAG, "onstart called");
     }
 
-    public void onResume(Bundle savedInstanceState){
-        Log.d(TAG,"onresume called");
+    public void onResume(Bundle savedInstanceState) {
+        Log.d(TAG, "onresume called");
     }
 
-    public void onPause(Bundle savedInstanceState){
-        Log.d(TAG,"onpause called");
+    public void onPause(Bundle savedInstanceState) {
+        Log.d(TAG, "onpause called");
     }
 
-    public void onStop(Bundle savedInstanceState){
-        Log.d(TAG,"onstop called");
+    public void onStop(Bundle savedInstanceState) {
+        Log.d(TAG, "onstop called");
     }
 
-    public void onDestroy(Bundle savedInstanceState){
-        Log.d(TAG,"ondestroy called");
+    public void onDestroy(Bundle savedInstanceState) {
+        Log.d(TAG, "ondestroy called");
     }
 }
 

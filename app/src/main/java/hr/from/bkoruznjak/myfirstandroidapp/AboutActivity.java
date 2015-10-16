@@ -32,7 +32,7 @@ public class AboutActivity extends AppCompatActivity {
      * Some older devices needs a small delay between UI widget updates
      * and a change of the status and navigation bar.
      */
-    private static final int UI_ANIMATION_DELAY = 300;
+    private static final int UI_ANIMATION_DELAY = 1000;
 
     private View mContentView;
     private View mControlsView;
@@ -73,7 +73,7 @@ public class AboutActivity extends AppCompatActivity {
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(100);
+        delayedHide(3000);
     }
 
     /**

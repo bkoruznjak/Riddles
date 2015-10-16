@@ -36,6 +36,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".AboutAppActivity"
+            android:label="@string/title_activity_about_app"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
