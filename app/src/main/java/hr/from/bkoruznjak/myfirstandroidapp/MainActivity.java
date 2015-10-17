@@ -3,6 +3,7 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,7 +17,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +31,6 @@ import hr.from.bkoruznjak.myfirstandroidapp.util.SimpleGestureFilter.SimpleGestu
 
 public class MainActivity extends AppCompatActivity implements SimpleGestureListener {
 
-    View.OnClickListener mOnClickListener;
     View.OnClickListener addFavoriteOnClickListener;
     View.OnClickListener removeFavoriteOnClickListener;
     private static final String TAG = "MAIN_ACT";
@@ -73,11 +72,21 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         //detect touched area
         detector = new SimpleGestureFilter(this, this);
         //set all views
+        Typeface ubuntuRTypeFace=Typeface.createFromAsset(getAssets(),"fonts/Ubuntu-R.ttf");
+        Typeface ubuntuBTypeFace=Typeface.createFromAsset(getAssets(),"fonts/Ubuntu-B.ttf");
+        Typeface ubuntuLTypeFace=Typeface.createFromAsset(getAssets(),"fonts/Ubuntu-L.ttf");
+        //get views
         riddleTextView = (TextView) findViewById(R.id.riddle_text);
         riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
         riddleNumberTextView = (TextView) findViewById(R.id.id_riddle_number);
         riddleViewCountTextView = (TextView) findViewById(R.id.id_riddle_view_count);
         riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
+        //set fonts
+        riddleTextView.setTypeface(ubuntuRTypeFace);
+        riddleAnwserTextView.setTypeface(ubuntuLTypeFace);
+        riddleNumberTextView.setTypeface(ubuntuLTypeFace);
+        riddleViewCountTextView.setTypeface(ubuntuLTypeFace);
+        riddleFavoriteCheckbox.setTypeface(ubuntuLTypeFace);
         addListenerOnFavoriteCheckbox();
         addListenerOnFavoriteFab();
         if (savedInstanceState != null) {
