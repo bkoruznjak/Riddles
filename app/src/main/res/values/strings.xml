@@ -20,7 +20,7 @@
 
     <!-- ABOUT ACTIVITY TEXT -->
     <string name="title_activity_about">About</string>
-    <string name="about_text">Smarter every day is an app you can use to train your brain during transportation.\nit is made free of adds and other annoing content to ensure maximum fun and joy.\nhappy learning</string>
+    <string name="about_text">Smarter every day is an app you can use to train your brain during transportation.\nIt is made free of adds and other annoing content to ensure maximum fun and joy.\nHappy learning.</string>
     <string name="credits_title">Credits</string>
     <string name="credits_text">coding and design: Borna Koružnjak\napp name: Andreas Söderberg\nfont: Ubuntu\nriddles: Wiki</string>
     <string name="title_activity_about_app">AboutAppActivity</string>

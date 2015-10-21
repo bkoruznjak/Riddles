@@ -248,18 +248,18 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         switch (id) {
             case R.id.action_about:
                 Log.d(TAG, "about");
-                Intent aboutIntent = new Intent(this, AboutActivity.class);
-                aboutIntent.putExtra("onCreateRiddle", currentRiddle);
-                startActivity(aboutIntent);
+//                Intent aboutIntent = new Intent(this, AboutActivity.class);
+//                aboutIntent.putExtra("onCreateRiddle", currentRiddle);
+//                startActivity(aboutIntent);
+                Intent aboutAppIntent = new Intent(this, AboutAppActivity.class);
+                aboutAppIntent.putExtra("onCreateRiddle", currentRiddle);
+                startActivity(aboutAppIntent);
                 return true;
             case R.id.action_favorites:
                 Log.d(TAG, "favs");
                 return true;
             case R.id.action_challenge:
                 Log.d(TAG, "challenge");
-                Intent aboutAppIntent = new Intent(this, AboutAppActivity.class);
-                aboutAppIntent.putExtra("onCreateRiddle", currentRiddle);
-                startActivity(aboutAppIntent);
                 return true;
             case R.id.action_contribute:
                 Log.d(TAG, "cotnributes");
