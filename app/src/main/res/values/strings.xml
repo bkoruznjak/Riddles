@@ -26,5 +26,16 @@
     <string name="title_activity_about_app">AboutAppActivity</string>
 
 
+    <!-- FAVORITES ACTIVITY TEXT -->
+    <string name="message_empty_favorites_list">You currently have no favorite riddles, go back and get some...</string>
+    <string name="action_remove_item">Remove item</string>
+    <string name="action_add_item">Add item</string>
+    <string name="title_activity_app_favorites">Favorites Activity</string>
+    <string name="title_activity_favorites">Favorites Activity</string>
+
+
+
+
+
 
 </resources>

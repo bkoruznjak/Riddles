@@ -9,6 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 import java.util.List;
 
+import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
+
 /**
  * Created by borna on 20.09.15..
  */
@@ -101,10 +103,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Getting All Riddles
-    public List<Riddle> getAllRiddles() {
+    public List<Riddle> getAllRiddles(RiddleParameterEnum parameter) {
+        String selectQuery = "";
+        if(parameter == RiddleParameterEnum.DEFAULT) {
+            // Select All Query
+            selectQuery = "SELECT  * FROM " + TABLE_RIDDLES;
+        } else if(parameter == RiddleParameterEnum.FAVORITE) {
+            // Select Only favorites
+            selectQuery = "SELECT  * FROM " + TABLE_RIDDLES + " WHERE " + KEY_FAVORITE + " = 1";
+        }
         List<Riddle> riddleList = new ArrayList<Riddle>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE_RIDDLES;
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

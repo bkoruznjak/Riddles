@@ -25,6 +25,7 @@ import java.util.Random;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
+import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
 import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
 import hr.from.bkoruznjak.myfirstandroidapp.util.SimpleGestureFilter;
 import hr.from.bkoruznjak.myfirstandroidapp.util.SimpleGestureFilter.SimpleGestureListener;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
 
     View.OnClickListener addFavoriteOnClickListener;
     View.OnClickListener removeFavoriteOnClickListener;
-    private static final String TAG = "MAIN_ACT";
+    public static final String TAG = "MAIN_ACT";
     public static final String MESSAGE = "hr.from.bkoruznjak.MESSAGE";
     private List<Riddle> riddleList;
     private String riddleAnwser;
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     private CheckBox riddleFavoriteCheckbox;
     private SimpleGestureFilter detector;
     private Riddle onCreateRiddle;
+    private Snackbar favoriteSnackbar;
 
     /*
      * @desc if there was no instance generates new riddle
@@ -72,9 +74,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         //detect touched area
         detector = new SimpleGestureFilter(this, this);
         //set all views
-        Typeface ubuntuRTypeFace=Typeface.createFromAsset(getAssets(),"fonts/Ubuntu-R.ttf");
-        Typeface ubuntuBTypeFace=Typeface.createFromAsset(getAssets(),"fonts/Ubuntu-B.ttf");
-        Typeface ubuntuLTypeFace=Typeface.createFromAsset(getAssets(),"fonts/Ubuntu-L.ttf");
+        Typeface ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
+        Typeface ubuntuBTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
+        Typeface ubuntuLTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-L.ttf");
         //get views
         riddleTextView = (TextView) findViewById(R.id.riddle_text);
         riddleAnwserTextView = (TextView) findViewById(R.id.riddle_anwser);
@@ -93,14 +95,14 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             Log.d(TAG, "FOUND SAVED INSTANCE STATE");
             onCreateRiddle = (Riddle) savedInstanceState.getSerializable("onCreateRiddle");
             riddleNumber = savedInstanceState.getInt("riddleNumber");
-            riddleList = dbHandler.getAllRiddles();
+            riddleList = dbHandler.getAllRiddles(RiddleParameterEnum.DEFAULT);
             numberOfRiddles = riddleList.size();
             setTextFields(onCreateRiddle);
             favoriteStatusHandler(onCreateRiddle);
             onCreateRiddle.setViewCount(riddleViewCount);
         } else {
             Log.d(TAG, "NEW INSTANCE STATE");
-            riddleList = dbHandler.getAllRiddles();
+            riddleList = dbHandler.getAllRiddles(RiddleParameterEnum.DEFAULT);
             numberOfRiddles = riddleList.size();
             if (riddleList.isEmpty()) {
                 riddleTextView.setText(getResources().getString(R.string.no_riddles));
@@ -152,52 +154,68 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      */
     private void addListenerOnFavoriteFab() {
         FloatingActionButton favoriteFab = (FloatingActionButton) findViewById(R.id.favorite_fab);
-        final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id
-                .coordinatorLayout);
         final CheckBox riddleFavoriteCheckbox = (CheckBox) findViewById(R.id.id_checkbox_riddle_favorite);
         favoriteFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (riddleFavoriteCheckbox.isChecked()) {
-                    Snackbar favoriteSnackbar = Snackbar
-                            .make(coordinatorLayout, "This is your favorite riddle", Snackbar.LENGTH_LONG)
-                            .setAction("Remove", removeFavoriteOnClickListener);
-                    favoriteSnackbar.setActionTextColor(Color.RED);
-                    View snackbarView = favoriteSnackbar.getView();
-                    snackbarView.setBackgroundColor(Color.DKGRAY);
-                    TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
-                    textView.setTextColor(Color.BLUE);
-                    favoriteSnackbar.show();
+                    Log.d(TAG, "if snackbar shown:" + favoriteSnackbar.isShown());
+                    if (favoriteSnackbar.isShown()) {
+                        favoriteSnackbar.dismiss();
+                    } else {
+                        favoriteSnackbar.show();
+                    }
                 } else {
-                    Snackbar favoriteSnackbar = Snackbar
-                            .make(coordinatorLayout, "You like this riddle?", Snackbar.LENGTH_LONG)
-                            .setAction("Favorite", addFavoriteOnClickListener);
-                    favoriteSnackbar.setActionTextColor(Color.GREEN);
-                    View snackbarView = favoriteSnackbar.getView();
-                    snackbarView.setBackgroundColor(Color.DKGRAY);
-                    TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
-                    textView.setTextColor(Color.BLUE);
-                    favoriteSnackbar.show();
+                    Log.d(TAG, "else snackbar shown:" + favoriteSnackbar.isShown());
+                    if (favoriteSnackbar.isShown()) {
+                        favoriteSnackbar.dismiss();
+                    } else {
+                        favoriteSnackbar.show();
+                    }
                 }
             }
         });
 
         addFavoriteOnClickListener = new View.OnClickListener() {
+            final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                    .coordinatorLayout);
+
             @Override
             public void onClick(View v) {
                 riddleFavoriteCheckbox.setChecked(true);
                 Riddle riddle = riddleList.get(riddleNumber);
                 riddle.setFavorite(1);
+                Log.d(TAG, "changing the snackbar to red");
+                favoriteSnackbar = Snackbar
+                        .make(coordinatorLayout, "This is your favorite riddle", Snackbar.LENGTH_LONG)
+                        .setAction("Remove", removeFavoriteOnClickListener);
+                favoriteSnackbar.setActionTextColor(Color.RED);
+                View snackbarView = favoriteSnackbar.getView();
+                snackbarView.setBackgroundColor(Color.DKGRAY);
+                TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.BLUE);
                 (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
             }
         };
 
         removeFavoriteOnClickListener = new View.OnClickListener() {
+            final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                    .coordinatorLayout);
+
             @Override
             public void onClick(View v) {
                 riddleFavoriteCheckbox.setChecked(false);
                 Riddle riddle = riddleList.get(riddleNumber);
                 riddle.setFavorite(0);
+                Log.d(TAG, "changing the snackbar to green");
+                favoriteSnackbar = Snackbar
+                        .make(coordinatorLayout, "You like this riddle?", Snackbar.LENGTH_LONG)
+                        .setAction("Favorite", addFavoriteOnClickListener);
+                favoriteSnackbar.setActionTextColor(Color.GREEN);
+                View snackbarView = favoriteSnackbar.getView();
+                snackbarView.setBackgroundColor(Color.DKGRAY);
+                TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+                textView.setTextColor(Color.BLUE);
                 (new Thread(new RiddleUpdater(MainActivity.this, riddle))).start();
             }
         };
@@ -232,6 +250,31 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         riddleNumberTextView.setText(riddleNumber + 1 + " of " + numberOfRiddles);
         riddleViewCount++;
         riddleViewCountTextView.setText(getResources().getString(R.string.view_count) + riddleViewCount);
+
+        final CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                .coordinatorLayout);
+        //initialize the snackbar view
+        if (riddle.getFavorite() == 1) {
+            Log.d(TAG, "riddle is favorite");
+            favoriteSnackbar = Snackbar
+                    .make(coordinatorLayout, "This is your favorite riddle", Snackbar.LENGTH_LONG)
+                    .setAction("Remove", removeFavoriteOnClickListener);
+            favoriteSnackbar.setActionTextColor(Color.RED);
+            View snackbarView = favoriteSnackbar.getView();
+            snackbarView.setBackgroundColor(Color.DKGRAY);
+            TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.BLUE);
+        } else if (riddle.getFavorite() == 0) {
+            Log.d(TAG, "riddle isn't favorite");
+            favoriteSnackbar = Snackbar
+                    .make(coordinatorLayout, "You like this riddle?", Snackbar.LENGTH_LONG)
+                    .setAction("Favorite", addFavoriteOnClickListener);
+            favoriteSnackbar.setActionTextColor(Color.GREEN);
+            View snackbarView = favoriteSnackbar.getView();
+            snackbarView.setBackgroundColor(Color.DKGRAY);
+            TextView textView = (TextView) snackbarView.findViewById(android.support.design.R.id.snackbar_text);
+            textView.setTextColor(Color.BLUE);
+        }
     }
 
     @Override
@@ -257,6 +300,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 return true;
             case R.id.action_favorites:
                 Log.d(TAG, "favs");
+                Intent favoritesIntent = new Intent(this, FavoritesAppActivity.class);
+                favoritesIntent.putExtra("onCreateRiddle", currentRiddle);
+                startActivity(favoritesIntent);
                 return true;
             case R.id.action_challenge:
                 Log.d(TAG, "challenge");
