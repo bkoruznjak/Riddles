@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
 
     View.OnClickListener addFavoriteOnClickListener;
     View.OnClickListener removeFavoriteOnClickListener;
-    public static final String TAG = "MAIN_ACT";
+    public static final String TAG = "MY_R_APP";
     public static final String MESSAGE = "hr.from.bkoruznjak.MESSAGE";
     private List<Riddle> riddleList;
     private String riddleAnwser;
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     private SimpleGestureFilter detector;
     private Riddle onCreateRiddle;
     private Snackbar favoriteSnackbar;
+    private Riddle returnedRiddle;
 
     /*
      * @desc if there was no instance generates new riddle
@@ -91,6 +92,9 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         riddleFavoriteCheckbox.setTypeface(ubuntuLTypeFace);
         addListenerOnFavoriteCheckbox();
         addListenerOnFavoriteFab();
+
+        //check for callback riddles from other intents
+        returnedRiddle = (Riddle)(this.getIntent().getSerializableExtra("returnToMainRiddle"));
         if (savedInstanceState != null) {
             Log.d(TAG, "FOUND SAVED INSTANCE STATE");
             onCreateRiddle = (Riddle) savedInstanceState.getSerializable("onCreateRiddle");
@@ -106,6 +110,20 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
             numberOfRiddles = riddleList.size();
             if (riddleList.isEmpty()) {
                 riddleTextView.setText(getResources().getString(R.string.no_riddles));
+            } else if(returnedRiddle != null) {
+                Log.d(TAG, "got the return riddle sucessfully");
+                //hide Anwser again if shown
+                if (showAnwser) {
+                    showAnwser = !showAnwser;
+                    riddleAnwserTextView.setText("");
+                }
+                //increase counter after fetched riddle
+                onCreateRiddle = returnedRiddle;
+                setTextFields(onCreateRiddle);
+
+                favoriteStatusHandler(onCreateRiddle);
+                onCreateRiddle.setViewCount(riddleViewCount);
+                (new Thread(new RiddleUpdater(this, onCreateRiddle))).start();
             } else {
                 //reach end of list condition
                 Random randomNumber = new Random();
@@ -291,9 +309,6 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         switch (id) {
             case R.id.action_about:
                 Log.d(TAG, "about");
-//                Intent aboutIntent = new Intent(this, AboutActivity.class);
-//                aboutIntent.putExtra("onCreateRiddle", currentRiddle);
-//                startActivity(aboutIntent);
                 Intent aboutAppIntent = new Intent(this, AboutAppActivity.class);
                 aboutAppIntent.putExtra("onCreateRiddle", currentRiddle);
                 startActivity(aboutAppIntent);
@@ -303,6 +318,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 Intent favoritesIntent = new Intent(this, FavoritesAppActivity.class);
                 favoritesIntent.putExtra("onCreateRiddle", currentRiddle);
                 startActivity(favoritesIntent);
+                finish();
                 return true;
             case R.id.action_challenge:
                 Log.d(TAG, "challenge");
@@ -320,6 +336,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
      */
     @Override
     public void onBackPressed() {
+        Log.d(TAG, "Exiting app...");
         System.exit(0);
     }
 

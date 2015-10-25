@@ -19,6 +19,7 @@ import java.util.List;
 import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
+import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
 
 public class FavoritesAppActivity extends AppCompatActivity {
 
@@ -27,34 +28,40 @@ public class FavoritesAppActivity extends AppCompatActivity {
      * is a {@link android.widget.LinearLayout}.
      */
     private ViewGroup mContainerView;
-    public static final String TAG = "FAV_ACT";
+    public static final String TAG = "MY_R_APP";
     private DatabaseHandler dbHandler;
     private List<Riddle> favoriteRiddleList;
     private String[] favoriteRiddleTextArray;
+    private String[] favoriteRiddleIdArray;
+    private final int FAVORITE_RIDDLE_SUBSTRING_LENGTH = 40;
+    private Typeface ubuntuRTypeFace;
+    private Riddle returnRiddle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites_app);
-        Typeface ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
+        ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
         favoriteRiddleList = fetchRiddleList();
 
         //get the list container
         mContainerView = (ViewGroup) findViewById(R.id.container);
-        favoriteRiddleTextArray = fetchFavoriteRiddleIds(favoriteRiddleList);
+        favoriteRiddleTextArray = fetchFavoriteRiddleTexts(favoriteRiddleList);
+        favoriteRiddleIdArray = fetchFavoriteRiddleIds(favoriteRiddleList);
         Log.d(TAG, "populating the list...");
-        populateTheListLayout(favoriteRiddleTextArray);
+        populateTheListLayout(favoriteRiddleTextArray, favoriteRiddleIdArray);
         Log.d(TAG, "popularing finished...");
     }
 
+
     /*
-* @desc populates the layout with list items
-*
-* @param String array of riddle id's
-*/
-    private void populateTheListLayout(String[] favoriteRiddleIdArray) {
-        for (int i = 0; i < favoriteRiddleIdArray.length; i++) {
-            addItem(favoriteRiddleIdArray, i);
+    * @desc populates the layout with list items
+    *
+    * @param String array of riddle id's
+    */
+    private void populateTheListLayout(String[] favoriteRiddleTextArray, String[] favoriteRiddleIdArray) {
+        for (int i = 0; i < favoriteRiddleTextArray.length; i++) {
+            addItem(favoriteRiddleTextArray, favoriteRiddleIdArray, i);
         }
     }
 
@@ -71,21 +78,48 @@ public class FavoritesAppActivity extends AppCompatActivity {
     *
     * @param List of riddles with the favorite value of 1
     */
-    private String[] fetchFavoriteRiddleIds(List<Riddle> favoriteRiddleList) {
+    private String[] fetchFavoriteRiddleTexts(List<Riddle> favoriteRiddleList) {
         //hide the empty list text if there are elements in list
         if (favoriteRiddleList.size() > 0) {
             findViewById(android.R.id.empty).setVisibility(View.GONE);
         }
         favoriteRiddleTextArray = new String[favoriteRiddleList.size()];
         for (int i = 0; i < favoriteRiddleList.size(); i++) {
-            if (((Riddle) favoriteRiddleList.get(i)).getRiddleText().length() > 55) {
-                favoriteRiddleTextArray[i] = ((Riddle) favoriteRiddleList.get(i)).getRiddleText().substring(0,54);
+            String favoriteRiddleDisplayMessage;
+            //limit the length to be displayed
+            if (((Riddle) favoriteRiddleList.get(i)).getRiddleText().length() > FAVORITE_RIDDLE_SUBSTRING_LENGTH) {
+                favoriteRiddleDisplayMessage = ((Riddle) favoriteRiddleList.get(i)).getRiddleText().substring(0, FAVORITE_RIDDLE_SUBSTRING_LENGTH - 1);
             } else {
-                favoriteRiddleTextArray[i] = ((Riddle) favoriteRiddleList.get(i)).getRiddleText();
+                favoriteRiddleDisplayMessage = favoriteRiddleTextArray[i] = ((Riddle) favoriteRiddleList.get(i)).getRiddleText();
             }
+            //add periods to make it look more nice
+            if (favoriteRiddleDisplayMessage.endsWith(".")) {
+                favoriteRiddleDisplayMessage = favoriteRiddleDisplayMessage + "..";
+            } else if (favoriteRiddleDisplayMessage.matches(".*[\\w]$")) {
+                favoriteRiddleDisplayMessage = favoriteRiddleDisplayMessage + "...";
+            }
+            favoriteRiddleTextArray[i] = favoriteRiddleDisplayMessage;
 
         }
         return favoriteRiddleTextArray;
+    }
+
+    /*
+    * @desc returns the Id's of the favorite riddles
+    *
+    * @param List of riddles with the favorite value of 1
+    */
+    private String[] fetchFavoriteRiddleIds(List<Riddle> favoriteRiddleList) {
+        //hide the empty list text if there are elements in list
+        if (favoriteRiddleList.size() > 0) {
+            findViewById(android.R.id.empty).setVisibility(View.GONE);
+        }
+        favoriteRiddleIdArray = new String[favoriteRiddleList.size()];
+        for (int i = 0; i < favoriteRiddleList.size(); i++) {
+            Riddle riddle = favoriteRiddleList.get(i);
+            favoriteRiddleIdArray[i] = riddle.getId();
+        }
+        return favoriteRiddleIdArray;
     }
 
     @Override
@@ -103,31 +137,56 @@ public class FavoritesAppActivity extends AppCompatActivity {
     }
 
 
+    private void returnRiddleToMainActivity(Riddle returnRiddle) {
+        Intent returnToMainIntent = new Intent(this, MainActivity.class);
+        returnToMainIntent.putExtra("returnToMainRiddle", returnRiddle);
+        startActivity(returnToMainIntent);
+        finish();
+    }
+
     /*
- * @desc adds an item to the list layout
- *
- * @param integer value of the list index number
- */
-    private void addItem(String[] favoriteRiddleIdArray, int itemIndex) {
+    * @desc adds an item to the list layout
+    *
+    * @param integer value of the list index number
+    */
+    private void addItem(final String[] favoriteRiddleTextArray, final String[] favoriteRiddleIdArray, final int itemIndex) {
         // Instantiate a new "row" view.
         final ViewGroup newView = (ViewGroup) LayoutInflater.from(this).inflate(
                 R.layout.list_item, mContainerView, false);
 
         // Set the text in the new row to a random country.
         ((TextView) newView.findViewById(android.R.id.text1)).setText(
-                favoriteRiddleIdArray[itemIndex]);
+                favoriteRiddleTextArray[itemIndex]);
+        ((TextView)newView.findViewById(android.R.id.text1)).setTypeface(ubuntuRTypeFace);
+
+        // Set a click listener for the favorite riddle textview in the row that will go to that riddle.
+        newView.findViewById(android.R.id.text1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Get details about the riddle and open that particular favorite riddle
+                Log.d(TAG, "setting up the main activity with the riddle id:" + favoriteRiddleIdArray[itemIndex] + " : " + favoriteRiddleTextArray[itemIndex]);
+                returnRiddle = dbHandler.getRiddle(favoriteRiddleIdArray[itemIndex]);
+                Log.d(TAG, "returning to main...");
+                returnRiddleToMainActivity(returnRiddle);
+            }
+        });
 
         // Set a click listener for the "X" button in the row that will remove the row.
         newView.findViewById(R.id.delete_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //remove riddle from favorites
+                returnRiddle = dbHandler.getRiddle(favoriteRiddleIdArray[itemIndex]);
+                returnRiddle.setFavorite(0);
+                Log.d(TAG, "removing riddle: " + returnRiddle.getId() + " from favorites...");
+                (new Thread(new RiddleUpdater(FavoritesAppActivity.this, returnRiddle))).start();
+
                 // Remove the row from its parent (the container view).
                 // Because mContainerView has android:animateLayoutChanges set to true,
                 // this removal is automatically animated.
                 mContainerView.removeView(newView);
 
                 // If there are no rows remaining, show the empty view.
-                Log.d(TAG, "mContainerView child count:" + mContainerView.getChildCount());
                 if (mContainerView.getChildCount() == 0) {
                     findViewById(android.R.id.empty).setVisibility(View.VISIBLE);
                 }

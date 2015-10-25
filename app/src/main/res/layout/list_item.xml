@@ -13,6 +13,7 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
         android:paddingLeft="?android:listPreferredItemPaddingLeft" />
 
     <!-- A button that, when pressed, will delete this list item row from its container. -->
