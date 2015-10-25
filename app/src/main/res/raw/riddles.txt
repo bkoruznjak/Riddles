@@ -8,7 +8,6 @@
  --- 8 --- Does a ton of feathers or a ton of bricks weigh more? --- They both weigh a ton.
  --- 9 --- 7 months have 31 days. How many months have 28 days? --- All of them.
  --- 10 --- I have Eighty-eight keys but cannot open a single door?<br/><br/>What am I? --- A piano.
- --- 11 --- What has a head yet it never weeps, has a bed but never sleeps, can run but can not walks, and has a bank but not a cent to its name? --- A river.
  --- 12 --- The more it dries, the wetter it becomes.<br/><br/>What is it? --- A towel.
  --- 13 --- What starts with "P" and ends with "E" and has more than 1000 letters? --- A post office.
  --- 14 --- What loses its head in the morning and gets it back at night? --- A pillow.
@@ -17,11 +16,7 @@
  --- 17 --- What's black and white and red all over? --- A newspaper.
  --- 18 --- Give me food, and I will live. Give me water, and I will die. What am I? --- A fire.
  --- 19 --- You use a knife to slice my head and weep beside me when I am dead.<br/><br/>What am I? --- An onion.
- --- 20 --- I am weightless, but you can see me. Put me in a bucket, and I'll make it lighter.<br/><br/> What am I? --- A hole.
  --- 21 --- I'm light as a feather, yet the strongest man can't hold me for more than 5 minutes. What am I? --- Breath.
- --- 22 --- At night they come without being fetched, and by day they are lost without being stolen.<br/><br/>What are they? --- Stars.
- --- 23 --- Whoever makes it, tells it not. Whoever takes it, knows it not. Whoever knows it, wants it not.<br/><br/>What is it? --- Counterfeit money.
- --- 24 --- I fly, yet I have no wings. I cry, yet I have no eyes. Darkness follows me; lower light I never see.<br/><br/>What am I? --- A cloud.
  --- 25 --- What is it that after you take away the whole, some still remains? --- Wholesome.
  --- 26 --- What kind of coat can only be put on when wet? --- A coat of paint.
  --- 27 --- What jumps when it walks and sits when it stands? --- A kangaroo.
@@ -30,65 +25,665 @@
  --- 32 --- Why did the hamburger go to the gym? --- It wanted better buns.
  --- 33 --- What is the center of gravity? --- V.
  --- 34 --- What goes on four legs in the morning, on two legs at noon, and on three legs in the evening? --- Man. He crawls as a baby, walks, then uses a cane in old age.
- --- 35 --- When you need me, you throw me away. But when you're done with me, you bring me back.<br/><br/>What am I? --- An anchor.
- --- 36 --- When you fall in me your as happy as could be, but you fall into depression when you lose me.<br/><br/>What am I? --- Love.
  --- 37 --- Many have heard me, but nobody has seen me, and I will not speak back until spoken to.What am I? --- An echo.
- --- 38 --- The person who buys me doesn't need me, the person who makes me doesn't want me, and the person who uses me can't appreciate me.<br/><br/>What am I? --- A coffin.
- --- 39 --- I am greater than God, more evil than the devil, the poor have me, the rich don't,  and if you eat me, you'll die.What am I? --- Nothing.
  --- 40 --- A cowboy rode to an inn on Friday. He stayed two nights and left on Friday. How could that be? --- His horses name was Friday.
  --- 41 --- Can a man legally marry his widow's sister in the state of California? --- No, he's dead.
  --- 42 --- He has married many women, but has never been married. Who is he? --- A priest.
- --- 43 --- I am taken from a mine, and shut up in a wooden case, from which I am never released, and yet I am used by almost everybody.<br/><br/>What am I? --- Pencil lead.
  --- 44 --- What goes round the house and in the house but never touches the house? --- The sun.
- --- 45 --- There were five men going to church and it started to rain. The four that ran got wet and the one that stood still stayed dry. Which one stayed dry? --- The one in the coffin.
- --- 46 --- Poke your fingers in my eyes and I will open wide my jaws. Linen cloth, quills, or paper, my greedy lust devours them all. <br/><br/>What am I? --- Scissors.
  --- 47 --- What belongs to you but others use it more than you do? --- Your name.
  --- 48 --- What fastens two people yet touches only one? --- A wedding ring.
  --- 49 --- What did the red light say to the green light? --- "Don't look! I am changing!"
- --- 50 --- There is a one story house. The walls are blue, the floor is pink, the stove and cupboards are red. What color are the stairs? --- There are no stairs because it is a one story house.
  --- 51 --- There are 20 birds in a tree. A man comes and shoots one of the birds. How many birds are left? --- None, because all the birds flew away after hearing the gun shot.
  --- 52 --- What has 3 feet but cannot walk? --- A yardstick.
  --- 53 --- What is brown or silver, has a head and tail but no arms or legs? --- A coin.
- --- 54 --- If you count 20 houses on your right going to the store and 20 houses on your left coming home, how many houses did you count? --- 20, they are the same houses.
  --- 55 --- Can you think of a crime that is punishable if attempted but not punishable is actually committed? --- Suicide.
  --- 56 --- How many eggs can you put in an empty basket? --- Only one, the basket is no longer empty after this.
- --- 57 --- A magician was boasting one day at how long he could hold his breath under water. His record was 6 minutes. A kid that was listening said, "that's nothing, I can stay under water for 10 minutes using no types of equipment or air pockets!" The magician told the kid if he could do that, he'd give him $10,000. The kid did it and won the money. Can you figure out how? --- The kid filled a glass of water and held it over his head for 10 minutes.
  --- 58 --- Why can't Kevin, who is now living in Canada, not be buried in the USA? --- He's still alive.
  --- 59 --- What relation would your father's sister's sister-in-law be to you? --- Your mother (or it could be your aunt-in-law).
- --- 60 --- A horse travels a certain distance each day. Strangely enough, two of its legs travel 30 miles each day and the other two legs travel nearly 31 miles. How is this situation possible? --- The horse goes around a mill all day.
- --- 61 --- In a pond there are some flowers with some bees hovering over the flowers. How many flowers and bees are there if both the following statements are true: 1. If each bee lands on a flower, one bee doesn't get a flower. 2. If two bees share each flower there is one flower left out. --- 4 bees and 3 flowers.
- --- 62 --- Six glasses are in a row. The first three are filled with milk and the last three are empty. By moving only one glass, can you arrange them so that the full and the empty glasses alternate? --- Pour one of the glasses of milk into an empty glass.
  --- 63 --- A man is twenty years old but has only had five birthdays. How is that possible? --- He was born on Leap Year Day.
- --- 64 --- The doctor gives you three pills and tells you to take one every half hour. How long before you run out of pills? --- One hour, 0 min, 30 min, 60 min.
- --- 65 --- There are 2 fathers and 2 sons going on a fishing trip. Every person catches one fish. In total, there were only 3 fish. How is that so? --- They were a grandpa, his son, and his grandson.
- --- 66 --- There was a window cleaner who was cleaning a window on the 25th floor of a skyscraper. He suddenly slips and falls. He has no safety equipment and nothing to soften his fall, but he is not hurt at all. How do you account for that? --- He was inside cleaning windows.
- --- 67 --- There are 3 switches downstairs, each corresponding to one of the light bulbs upstairs. How can you figure out which light switch goes to which light bulb by only making 1 trip upstairs? --- You turn on one light bulb. Leave it on for a while. Then, turn that one off and turn another one on. Go upstairs. One light bulb will be cold, one will be warm, and one will be on.
- --- 68 --- Mr. Paige is an only child. Mr and Mrs Paige have 3 daughters and for each daughter in the family there is a brother how many members are in the Paige family? --- 9, because including Mrs. Paige there is 4 daughters.
  --- 69 --- If you're in 3rd place and you passed the person in 2nd, what place are you in? --- 2nd.
- --- 70 --- A murderer is condemned to death. He has to choose between three rooms. The first is full of raging fires, the second is full of assassins with loaded guns, and the third is full of lions that haven't eaten in 3 years. Which room is safest for him? --- The third room. Lions that haven't eaten in three years are dead.
- --- 71 --- A woman shoots her husband. Then she holds him under water for over 5 minutes. Finally, she hangs him. But 5 minutes later they both go out together and enjoy a wonderful dinner together. How can this be? --- The woman was a photographer.
  --- 72 --- What is black when you buy it, red when you use it, and gray when you throw it away? --- Charcoal.
  --- 73 --- Can you name three consecutive days without using the words Wednesday, Friday, or Sunday? --- Yesterday, today, and tomorrow!
- --- 74 --- This is an unusual paragraph. I'm curious as to just how quickly you can find out what is so unusual about it. It looks so ordinary and plain that you would think nothing was wrong with it. In fact, nothing is wrong with it! It is highly unusual though. Study it and think about it, but you still may not find anything odd. But if you work at it a bit, you might find out. Try to do so without any coaching! --- The letter E, which is the most common letter used in the Englishlanguage, does not appear in the paragraph.
- --- 75 --- There are 100 coins scattered in a dark room. 90 have heads facing up and 10 are facing tails up. You cannot tell which coins are which. How do you sort the coins into two piles that contain the same number of tails up coins? --- The piles don't need to be the same size, so make a pile of 10 coins and a pile of 90 coins, flip all of the ten coins and it is guaranteed that the piles have the same number of tails.
- --- 76 --- When the day after tomorrow is yesterday, today will be as far from Wednesday as today was from Wednesday when the day before yesterday was tomorrow. What is tomorrow? --- Thursday.
- --- 77 --- I run over fields and woods all day. Under the bed at night I sit not alone. My tongue hangs out, up and to the rear, awaiting to be filled in the morning.<br/><br/>What am I? --- A shoe.
- --- 78 --- A surgeon named Hal and a bus driver named Al are both in love with the same woman named Paige. Al needs to go for a long trip of 10 days. Before he left he gave Paige 10 apples. Why? --- An apple a day keeps the doctor away.
- --- 79 --- One evening a man started to run. Then he turned left. Soon after, he turned left again. Then he started running home. When he got home there were 2 masked men waiting for him. Who were they? --- The umpire and the catcher. He was playing baseball.
- --- 80 --- A man in prison has a visitor. Afterward a guard asks the inmate who the visitor was to him. The inmate replies: "brothers and sisters I have none, but that man's father is my father's son." Who was the visitor to the inmate? --- His son.
- --- 81 --- A person has one lion, one lamb and a bundle of grass. He wants to cross a river but there is only one boat and it can't sustain the weight of more than two articles at time. Also, he has to make sure that the lion doesn't eat the lamb and the lamb doesn't eat the grass. How will he get to the other side of the river with all three intact? --- Take the lamb across, then the bundle of grass. Take the lamb back across and then take the lion across. Then take the lamb back across and they are all unharmed.
- --- 82 --- A man was found dead in his study. He was slumped over his desk and a gun was in his hand. There was a cassette recorder on his desk. When the police entered the room and pressed the play button on the tape recorder they heard: "I can't go on. I have nothing to live for." Then there was the sound of a gunshot. How did the detective immediately know that the man had been murdered and it wasn't a suicide? --- Someone had to have rewound the tape.
- --- 83 --- There was once three trees. The first tree did whatever the third tree did, and the third tree did what ever the second one does. What happens if tree number two gets cut down? --- They all get cut down.
- --- 84 --- There are 3 stoves. A glass stove, a brick stove , and a wood stove. You only have 1 match. Which do you light up first? --- You light the match first.
- --- 85 --- A young man walks through the forest. He comes to a bridge. In front of the bridge is a large man carrying an axe. The man says, "If you want to cross this bridge, you must tell me a statement. If I think the statement is true, you will be strangled to death. If I say the statement is false, your head will be chopped off."  A few minutes later, the young man walked over the bridge, while the larger man stood pondering.  What was the statement the young man had given? --- The man said, "My head will be chopped off."
  --- 86 --- A blue man lives in a blue house. A green man lives in a green house. Who lives in the white house? --- The president.
- --- 87 --- A man committed suicide in a room with nothing but a chandelier and the rope that he hung from. There is a puddle of water under him. How did he commit suicide without anyone helping him? --- He stood on the block of ice and waited for it to melt.
- --- 88 --- A man goes out drinking every night, returning to his home early every morning. No matter how much he drinks, he never gets a hangover. This drink is very well known, but is rarely consumed, served warm and taken straight from its source. The man is a sucker for a free drink, especially since he can't live without it. <br/><br/>What is his favorite drink? --- Blood, he is a vampire.
- --- 89 --- Four cars come to a four way stop, all coming from a different direction. They can't decide who got there first, so they all go forward at the same time. They do not crash into each other, but all four cars go. How is this possible? --- They all turned right.
- --- 91 ---  You stand at a fork in the road. Next to each of the two forks, there stands a guard. You know the following things: First that one path leads to paradise, the other leads to Death. You cannot distinguish between the two paths. You also know that one of the two guards always tells the truth and the other always lies. You have permission to ask one guard one question to discover which path leads to paradise. What one question would you ask to guarantee you take the path to paradise? --- Ask one of the gaurds 'Which door would the other guard say leads to paradise?' If you ask the truthful one he will say the lying guard would say the wrong door. If you ask the lying guard he would say the truthful gaurd would pick the wrong door as well (since he is lying). So no matter what you could choose the door opposite of what they say and end up in paradise.
- --- 92 ---  A man leaves a $100,000 dollar bill on his desk and leaves work. When he returns the money is gone. He has three suspects: the cook, the cleaning lady, and the mail guy. The cook says he put the money under a book on his desk to keep it safe. They check and it is no longer there. The maid says she moved it when she was cleaning to the inside of the book between page 1 and 2. They open the book and look between page number 1 and 2 but it isn't there. The mail guy says he saw it sticking out of the book and to keep it safe he moved it to between page number 2 and 3. Once they are done the culprit is promptly arrested.Who did it and how did he know? ---  The mail guy did it because if he checked between page numbers 1 and 2 page numbers 2 and 3 are opposite sides of one page and could not hold the dollar bill.
- --- 93 --- There is a prison with 100 prisoners, each in separate cells with no form of contact. There is an area in the prison with a single light bulb in it. Each day, the warden picks one of the prisoners at random, even if they have been picked before, and takes them out to the lobby. The prisoner will have the choice to flip the switch if they want. The light bulb starts off.<br/><br/>When a prisoner is taken into the area with the light bulb, he can also say "Every prisoner has been brought to the light bulb." If this is true all prisoners will go free. However, if a prisoner chooses to say this and it's wrong, all the prisoners will be executed. So a prisoner should only say this if he knows it is true for sure.<br/><br/>Before the first day of this process begins, all the prisoners are allowed to get together to discuss a strategy to eventually save themselves.<br/><br/>What strategy could they use to ensure they will go free? --- Only allow one prisoner to turn the light bulb off and all of the others turn it on if they have never turned it on before. If they have turned it on before they do nothing. The prisoner that can turn it off then knows they have all been there and saves them all when he has turned it off 99 times.
- --- 95 --- When my first is a task to a young girl of spirit,<br/>And my second confines her to finish the piece,<br/>How hard is her fate! But how great is her merit<br/>If by taking my whole she effects her release! --- Hem-lock.
- --- 96 --- I talk, but I do not speak my mind<br/>I hear words, but I do not listen to thoughts<br/>When I wake, all see me<br/>When I sleep, all hear me<br/>Many heads are on my shoulders<br/>Many hands are at my feet<br/>The strongest steel cannot break my visage<br/>But the softest whisper can destroy me<br/>The quietest whimper can be heard. --- An actor
- --- 97 --- Three guests check into a hotel room. The clerk says the bill is $30, so each guest pays $10. Later the clerk realizes the bill should only be $25. To rectify this, he gives the bellhop $5 to return to the guests. On the way to the room, the bellhop realizes that he cannot divide the money equally. As the guests didn't know the total of the revised bill, the bellhop decides to just give each guest $1 and keep $2 for himself. Each guest got $1 back: so now each guest only paid $9; bringing the total paid to $27. The bellhop has $2. And $27 + $2 = $29 so, if the guests originally handed over $30, what happened to the remaining $1? --- The $9 paid by each guest accounts for the $2 that went to the bellhop. So rather than adding $27 to the $2 kept by the bellhop, the $27 accounts for the bellhops money. The $27 plus the $3 kept by the guests does add up to $30. 
- --- 98 --- Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a sports car; behind all of the others is bicycles. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 2, revealing a bicycle. He then says to you, "Do you want to pick door No. 3?" Is it to your advantage to switch your choice? --- Yes, by changing your answer your chances of winning actually goes up from 1/3 to 2/3.<br/><br/>This becomes obvious when expanding the example. Suppose there was 100 doors rather than 3. You pick one and the host shows you that the car is not behind 98 of the doors then asks you to switch to the remaining door or keep the door you picked. Of course you would switch your door because chances are you didn't pick the correct door initially.<br/><br/>For more explanation go to http://en.wikipedia.org/wiki/Monty_Hall_problem#Solutions
+ --- 102 --- What time is spelled the same forwards and backwards? --- Noon
+ --- 103 --- What do thief's get for stealing calendars? --- 12 months.
+ --- 104 --- What starts with an e but only has a single letter in it? --- An envelope.
+ --- 105 --- What can one not keep, two hold, and three destroy? --- A secret
+ --- 106 --- Who was buried in Grant's Tomb? --- Grant!
+ --- 113 --- The more you take, the more you leave behind. <br/>What are they? --- Steps
+ --- 116 --- In what year did Christmas and New Year's fall on the same year? --- Every year.
+ --- 121 --- There are 11 bananas and you take 4, how many do you have? --- 4.
+ --- 124 --- A rooster lays an egg at 6:00 AM. When does the farmer find it? --- Never, roosters don't lay eggs.
+ --- 132 --- On a clock, how many times a day do the minute and hour hand overlap? --- 22 times: 12:00:00, 1:05:27, 2:10:55, 3:16:22, 4:21:49, 5:27:16, 6:32:44, 7:38:11, 8:43:38, 9:49:05, 10:54:33. Each twice a day.
+ --- 137 --- Can you rearrange the letters in new door to make one word? --- Yes, it's an anagram. 'New door' and 'one word' contain the same letters.
+ --- 139 --- What number do you get when you multiply all of the numbers on a telephone's number pad? --- 0.
+ --- 140 --- What 3 positive numbers give the same result when multiplied and added together? --- 1, 2, and 3.
+ --- 141 --- How can you throw a ball 20 meters, and have it come back to you without hitting anything? --- Throw it straight up.
+ --- 142 --- Which came first, the chicken or the egg? --- The egg... or maybe the chicken.
+ --- 143 --- A man has 3 children and half of them are girls, how is this possible? --- They are all girls (technically 2 or 3 must be girls).
+ --- 144 --- If 1/2 of 5 is 3, then what is 1/3 of 10? --- 4 (think proportions).
+ --- 145 --- Why did the chicken cross the road? --- To get to the other side.
+ --- 146 --- The more places I be, the less you can see.<br/><br/>What am I? --- Darkness.
+ --- 150 --- Why don't mountains catch colds? --- They have a snow cap.
+ --- 153 --- 2 men catch 2 fish in 2 minutes. At this rate, how many men could catch 500 fish in  500 minutes? --- 2 men.
+ --- 155 --- A computer walks up to two stores, one called '1', and one called '0'. Which does it choose? --- 1, because 0 is always closed. In computer science 1 and 0 correspond to whether a transistor is opened (1) or closed (0).
+ --- 166 --- Smell me, buy me, and deliver me.<br/>I won't change.<br/><br/>What am I? --- Cent, scent, and sent.
+ --- 168 --- To look cool wrap me around your head.<br/>Remove a letter and eat me instead.<br/><br/>What am I? --- Bandanna. (actually 2, but close enough).
+ --- 170 --- How can you add 8 8's to make 1000? --- 888 + 88 + 8 + 8 + 8 = 1000.
+ --- 173 --- I have no wallet but I pay my way.I travel the world but in the corner I stay.<br/><br/>What am I? --- A stamp.
+ --- 182 --- I attach to your hip and I sing all day.<br/>All I want to do is play. --- A child.
+ --- 183 --- I plow and plow, but never sow.<br/><br/>What am I? --- A pig.
+ --- 187 --- I have no wings but I fly,<br/>I have no teeth but I bite.<br/><br/>What am I? --- A bullet.
+ --- 188 --- A butcher named butch is 6 feet tall and has size 12 shoes.<br/><br/>What does he weigh? --- Meat, he is a butcher.
+ --- 190 --- A man drives from San Francisco to Honolulu without any of his tires.<br/><br/>How does he do this? --- He uses a boat!
+ --- 199 --- What is 1/2 of 2/3 of 3/4 of 4/5 of 5/6 of 6/7 of 7/8 of 8/9 of 9/10 of 10,000? --- 1000, if you multiply all of the fractions everything cancels out except for 1/10.
+ --- 211 --- <p>What is the most common use of cowhides?</p> --- To keep cows warm.
+ --- 223 --- You are my brother, but I am not your brother. Who am I? --- I am your sister.
+ --- 224 --- How far can a bear run INTO the forest? --- half way, if he runs past half way he'll be running out of the forest.
+ --- 232 --- Which Boston Red Sox player wears the biggest hat? --- The one with the biggest head.
+ --- 233 --- You throw away the outside, eat the inside, and throw away the inside. --- Corn on the cob
+ --- 238 --- Which is correct, 9 and 5 is 13 or 9 plus 5 is 13? --- Neither. 9 and (plus) 5 is 14, not 13.
+ --- 239 --- Why does the second shape have an open block when the first shape does not? --- The two triangles have different slopes so in the second shape the two triangles cause the shape to bulge out to account for the extra square unit.
+ --- 241 --- How can you flip the shape upside down by moving only two of the sticks? --- Move the bottom two sticks (highlighted in blue).
+ --- 242 --- I have lakes with no fish.<br/>I have roads with no cars.<br/><br/>What am I? --- A map.
+ --- 246 --- Before man discovered Mt. Everest, what was the tallest mountain in the world? --- Still Mt. Everest, it doesn't have to be discovered to be the tallest. 
+ --- 249 --- What English word is always spelled incorrectly? --- I-n-c-o-r-r-e-c-t-l-y.
+ --- 255 --- If you have a cake, how many pieces of cake can you form with 3 straight cuts? --- 8 pieces. Make two cuts like you normally would then one horizontal cut from the side of the cake.
+ --- 258 --- What is he that builds stronger than either the mason, the shipwright, or the carpenter? --- The gravedigger, for his houses will last forever (he says until Doomsday).
+ --- 272 --- How many seconds are in a year? --- Only 12. January 2nd, February 2nd, etc.
+ --- 274 --- How can you create 3 squares moving exactly 3 sticks? --- The three blue sticks are the ones that were moved.
+ --- 275 --- What is your relation to your grandfather's only daughter? --- Your Mother.
+ --- 276 --- A rooster lays an egg on the top of a roof. Which side does the egg roll off of left or right? --- Neither! (Roosters don't lay eggs)
+ --- 280 --- A thousand wheels, but move I do not.<br/>Call me what I am, call me a lot.<br/><br/>What am I? --- A parking lot or garage.
+ --- 281 --- A man walks all the way around the world without getting wet.<br/><br/>How does he do this? --- He is on a plane or ship that goes around the world.
+ --- 282 --- What word links these images? --- Fall. The season (top-left), waterfall (top-right), rain fall (bottom-left), and the fall of Saddam Hussein.
+ --- 283 --- What is your relation to your grandfather's only daughter? --- Your Mother. Because "Grandfather's only daughter" means your grandfather has only one daughter, and that is your mother.
+ --- 287 --- Which is correct "The yolk of the egg is white" or "The egg yolk is white?" --- Neither, egg yolks are yellow.
+ --- 289 --- What is the longest word in the dictionary? --- Smiles because there is a mile between each 's'!
+ --- 290 --- What goes down but never goes back up??? --- Rain...
+ --- 297 --- A box of marbles costs $20. If the marbles are worth $19 more than the box, what is the box worth? --- $.50. The marbles are worth $19 more than the box. $19 + $.50 = $19.50. The marbles ($19.50) plus the box ($.50) is worth the total price ($20).
+ --- 298 --- We have what we did not find; what we did find we left behind.<br/><br/>[What do we have?] --- Lice.<br/><br/>This riddle is part of a legend regarding the death of Homer, the ancient poet.
+ --- 299 --- How many apples grow on a tree? --- All apples grow on trees.
+ --- 314 --- How much dirt is in a hole that has a radius of 33.2 meters and a height of 78.2 meters? --- None. A hole doesn't have anything in it.
+ --- 317 --- I do not eat food. But I do enjoy a light meal everyday.<br/><br/>What am I? --- A plant (photosynthesis).
+ --- 327 --- What goes up but never comes down --- rain
+ --- 334 --- What goes up and never comes down? --- Your age.
+ --- 338 --- An electric train is traveling south. Which way does the smoke go? --- An electric train doesn't produce smoke.
+ --- 339 --- It is as light as a feather but nobody can hold it for a few minutes. What is it? --- Breath.
+ --- 340 --- It is so delicate that saying its name breaks it. What is it? --- Silence.
+ --- 341 --- It gets broken without being touched. What is it? --- A promise.
+ --- 342 --- There was a man in a mask. Why was the other man afraid to go home with the man in the mask?  --- It was a baseball game.
+ --- 351 --- What is black when it is clean but white when it is dirty? --- A chalk board.
+ --- 353 --- I am a cave full of bones,<br>and the house of a worm.<br/><br/>What am I? --- Your mouth. The inside of a mouth is full of teeth and looks like a cave. The worm is your tongue.
+ --- 354 --- I give you a can flipped upside down. In the sea it dives. What is that can?  --- The sun. In the sea it's upside down . And with the waves it looks like it's diving. 
+ --- 360 --- Which word does not belong in the following list:<br/><br/>Stop cop mop chop prop shop or crop? --- The word 'or' is the only one that doesn't end with 'op'.
+ --- 361 --- If you have two twins, three triplets and four quadruplets; how many people do you have? --- 9. Two twins are 2 people, three triplets are 3 people, and four quadruplets are 4 people. 2 + 3 + 4 = 9.
+ --- 363 --- Which side of a cat has the most fur? --- The outside.
+ --- 373 --- What is the coolest letter in the alphabet? --- 'B',  because it's always surrounded by AC.
+ --- 374 --- Which is Yours. But Mostly Used by Others? --- Answer is Your Name.
+ --- 376 --- How do you Write 'రాముడు' in two words?  --- రా3. (Read number three in telugu as moodu).
+ --- 377 --- Which Side Does Cup have Handle? --- OutSide
+ --- 378 --- If a farmer has 5 chickens, two horses, and a wife.<br/><br/>How many feet are on his farm? --- Just four. His wife has two feet, he has two feet, each chicken has two claws, each horse has four hoofs.
+ --- 381 --- What do you use when your wet to get dry --- A towel
+ --- 385 --- How do cats like things to be? --- Prrrrrfect
+ --- 391 --- Which comes first, chicken or egg? --- Chicken. Ever heard of a dictionary?
+ --- 393 --- Which is the Biggest Word in English? --- SmileS. because a mile distance between two 'S'.
+ --- 394 --- Which 3 words Are Rhyming And Said At The Same Time?   --- If It Is.. 
+ --- 395 --- Does Caramel Have One Foot Or Does The Pudding Have One Foot? --- Neither Of Them.. Because Those both are things We Eat.. So It Does'nt Have A Foot! :P
+ --- 399 --- What can you catch but not see? --- A cold
+ --- 400 --- I am an instrument that you can hear, but you can not touch or see me.<br/><br/>What am I? --- Your voice.
+ --- 401 --- What do cows do on the weekends? --- They go to the moovies.
+ --- 402 --- there are 10 birds sitting on a tree, a person shot one down, how many are left on the tree? --- 0, they all flew away!
+ --- 406 --- What starts with 'T' ends with 'T' and has 'T' in it? --- teapot
+ --- 408 --- Grows green grows brown dies brown dies brown never loses green before it turns brown and dies. --- A evergreen tree.
+ --- 410 --- When is 1500 plus 20 and 1600 minus 40 the same thing? --- Military time.
+ --- 411 --- What is the only question you can't answer yes to? --- Are you dead? (assuming you are dead) Every other question you can answer 'yes' even if you are wrong.
+ --- 412 --- If a white house is white and a yellow house is yellow, what color is a green house? --- A greenhouse (for plants) is made of glass generally so it is clear. 
+ --- 415 --- I'm tall when I'm young and I'm short when I'm old.What am I? --- A candle.
+ --- 416 --- How do you make the number one disappear by adding to it? --- Add the letter 'G' and it's 'Gone'.
+ --- 422 --- What goes up and down the stairs without moving? --- Carpet.
+ --- 424 --- A man and his boss have the same parents, but are not siblings. How is this possible? --- He is self-employed. He is his own boss.
+ --- 431 --- Which word in the English language becomes shorter when it is lengthened? --- Short.
+ --- 432 --- If you have three oranges and you take away two, how many will you have? --- Two. The two you took.
+ --- 437 --- What is the difference between a dollar and a half and thirty five-cents? --- Nothing. A dollar and a half is the same as thirty five-cents (nickels). But not the same as thirty-five cents.
+ --- 439 --- What word doesn't belong in this group? That, hat, what, mat, cat, sat, pat, or chat? --- What. It's pronounced differently; all of the others rhyme.
+ --- 443 --- what is the only question you can not answer yes to? --- are you dead? 
+ --- 444 --- what is the only question you can not answer yes to? --- are you dead? 
+ --- 446 --- What is a bagel that can fly?  --- A plain bagel. 
+ --- 448 --- a plane crashed between the New York and Massachusetts were do you bury the survivors? --- you don't bury survivors,
+ --- 450 --- What has four legs and can't walk? --- A table or chair (or a lot of other furniture).
+ --- 451 --- a gate made of coal --- coalgate
+ --- 452 --- a gate made of coal --- coalgate
+ --- 453 --- a city you cannot enter --- electricity
+ --- 458 --- How high would you have to count before you use the letter 'A' in the spelling of a number? --- One thousand.
+ --- 461 --- You are running in a 400 meter race and you overtake the last person, what place are you now in? --- This cannot happen. You cannot overtake the person who is in last place, as there is no-one behind them!
+ --- 468 --- Why can't the Tyrannosaurus rex clap? --- They are extinct.
+ --- 469 --- What goes up and never comes down? --- Your age!
+ --- 470 --- He is bald .He kills people for a living.He works for a person called Diana. Who is he? --- Hitman (from the game hitman 47)
+ --- 471 --- What English word is as long as it is valued? --- Four (4 letters long).
+ --- 474 --- I'm written with two letters, said with one and seen with two.What am I? --- Eye ('e' and 'y' are the only letters).
+ --- 476 --- a man was in a plane he got pushed off and he survived how did he survive  --- the plane was still on the ground 
+ --- 477 --- Whats the end of beginning --- ing
+ --- 479 ---  I'm so fragile, really fragile, that when someone says my name... well, I break! What am I? --- slience
+ --- 481 --- Which moves faster: heat or cold? --- Heat, everybody can catch a cold.
+ --- 482 --- What type of cheese is made backwards? --- Edam.
+ --- 486 --- A person was born in 1940. Today is his 18th birthday.<br/><br/>How is that possible? --- He was born in hospital room 1940.
+ --- 488 --- What runs around the house but doesn't move? --- A fence.
+ --- 489 --- JIMMY went into the water,  when he went back up , what was has name? --- Jimmy, the fact that he was under water doesn't change his name
+ --- 492 --- What heavy seven letter word can you take two away from and be left with eight? --- Weights.
+ --- 493 --- I fasten to walk,<br/>and unfasten to stop.<br/><br/>What am I?  --- A sandal.
+ --- 494 --- How many letters are in the alphabet? --- There are 11 letters in 'the alphabet.'
+ --- 497 --- What has 4 fingers and a thumb, but is not living? --- A glove.
+ --- 499 --- How is a Raven like a Writing Desk? --- Secretly there is no answer! Or is there?
+ --- 501 --- What happens when you throw a blue rock into the yellow sea? --- It sinks...
+ --- 505 --- I'm short when I'm young, I'm big when I'm big. what am i? --- you!( people, small young, big old)
+ --- 506 --- No matter how much rain comes down on it it won't get any wetter.<br/><br/>What is it? --- Water.
+ --- 516 --- Is an older one-hundred dollar bill worth more than a newer one? --- Of course it is. A $100 bill is worth more than a $1 bill (newer one).
+ --- 517 --- What cheese is made backwards? --- Edam.
+ --- 518 --- what runs, but has no legs? --- a river
+ --- 521 --- On Monday morning, two kids have been reported,Who took the kids? --- A teacher,because on Monday kids go to SCHOOL
+ --- 524 --- Two is company and 3 is a crowd. What is 4 and 5? --- 9, 4 and 5 is 9.
+ --- 525 --- In Michigan you cannot take a picture of a man in a green hat.<br/><br/>Why? --- You can't steal (take) pictures anywhere!
+ --- 526 --- What grows up and down at the same time? --- A goose.
+ --- 532 --- What is the best way to keep your hat from falling off your head? --- Don't put it on your head.
+ --- 535 --- if 0+0 =0, what does 1+1=? --- window, 1+1 and = is on the top
+ --- 543 --- How many letters are in the answer to this riddle? --- Four (this is the only number that makes the statement true).
+ --- 550 --- What is brown and sticky? --- A stick!
+ --- 552 --- What's made of wood but can't be sawed? --- Sawdust.
+ --- 553 --- Who gets paid when they drive away their customers? --- A taxi driver.
+ --- 556 --- I take what you receive and surrender it all by waving my flag.What am I? --- A mailbox.
+ --- 558 --- Why is a raven like a writing desk? --- Edgar Allan Poe wrote on both of them.
+ --- 560 --- Scientists are trying to figure out what is between Heaven and Earth.What is it?  --- The word 'and.'
+ --- 563 --- What travels all over the world but stays in one corner? --- A stamp!
+ --- 569 --- What demands an answer, but asks no question? --- A telephone.
+ --- 571 --- What is something that you always have with you but you always leave behind? --- Fingerprints.
+ --- 572 --- What has thousands of ears but can't hear a thing? --- A corn field, full of ears of corn.
+ --- 578 --- Which bird does not belong in this group? Finch, gull, eagle, ostrich, or sparrow?  --- The Ostrich. It's the only one that doesn't fly.
+ --- 582 --- What kind of coat can be put on only when wet? --- A coat of paint!
+ --- 584 --- What is as ancient as the earth but new every month? --- The moon.
+ --- 585 --- What always eats but is always hungry? --- Fire
+ --- 586 --- What can run but not walk --- A nose
+ --- 587 --- What goes up a mountain, down a mountain, but never moves? --- A path
+ --- 589 --- What starts off with four legs, then two and ends with three? --- A human! Babies crawl (four legs), then you walk (two legs) and then you have a walking stick (three legs)!
+ --- 591 --- What is everybody born with, some died with but some died without --- A mother
+ --- 592 --- What building has the most stories? --- A library.
+ --- 594 --- What goes up when the rain goes down? --- An umbrella.
+ --- 596 --- It smokes but it is cold. --- Ice 
+ --- 597 --- What is brown & sticky ? --- A Honey
+ --- 598 --- what stays in a corner but travels all around the world? --- a stamp
+ --- 600 --- i am red and spotted but i am not ill what am i --- a ladybird
+ --- 601 --- what comes first egg or chicken --- chicken so say scientists 
+ --- 603 --- Which is faster Hot or Cold --- Hot because you can always catch a cold
+ --- 608 --- What has a head and a tail, but no legs? --- A penny.
+ --- 609 --- What is yours but your friends use it more than you do? --- Your name.
+ --- 611 --- What loses its head every morning and gets it back every night? --- A pillow.
+ --- 618 --- You put me on a table and cut me, but you don't eat me.<br/><br/>What am I? --- A pack of cards.
+ --- 619 --- A man was sitting on his couch and searching for the English Channel.<br/><br/>How did he find it? --- Probably a map, it is between England and France.
+ --- 620 --- What is one in every doll, in every doll, in every doll? --- Russian (Russian dolls).
+ --- 624 --- What is the easiest way to poke a balloon without popping it? --- Do it when it's not blown up!
+ --- 627 --- What is 1+1? --- Window
+ --- 629 --- How can you make 7 even? --- Remove the 's' from 'seven' to make it 'even.'
+ --- 631 --- Where doesn't the sun shine --- In the shade.....that's the purpose of getting away from the sun
+ --- 632 --- What is the only question you can't say no to? --- Are you awake. If you are asleep you can't reply
+ --- 633 --- How do you know you are cold --- You can feel it!!!!!
+ --- 637 --- It takes one word to separate them; otherwise they are inseparable.<br/><br/>What are they? --- Your lips
+ --- 640 --- It makes doctors but not the ones who work in hospitals. What is it? --- A PhD thesis
+ --- 641 --- Whoever makes me can hear me, but nobody else can.<br/><br/>What am I? --- A thought.
+ --- 647 --- We are twelve in the family. I am the second one, as well as the youngest.<br/><br/>Who am I? --- The month of February: it has the least number of days among the twelve month of the year
+ --- 649 --- Why would a hair stylist rather cut the hair of two brunettes than one red head? --- They would get paid more for two haircuts than one.
+ --- 651 --- I can go up a chimney down but not down a chimney up?<br/><br/>What am I? --- An umbrella.
+ --- 654 --- The shorter I am, the bigger I am.<br/><br/>What am I? --- A temper.
+ --- 655 --- What two letters can spell the word candy? --- C and Y. If you take away the spaces, it will become the word CandY.
+ --- 667 --- WHAT GOES UP BUT NEVER COMES DOWN? --- HEIGHT
+ --- 674 --- Before Mount Everest was discovered, what mountain was the highest mountain in the world? --- Mount Everest was still the tallest, even though it wasn't discovered until 1847.
+ --- 681 --- what Can You Put In A Wooden Box To Make it Lighter (as in weight) FYI not air or helium --- Holes
+ --- 684 --- Is it legal in the state of Texas for a man to marry his widow's sister? --- No. A dead man can't get married.  If a man has a widow, then that means he Is dead and the widow is alive.
+ --- 689 --- I make up all literature, but I'm often sealed.<br/><br/>What am I? --- Letters.
+ --- 690 --- I go into the water red and come out black.<br/><br/>What am I? --- Red-hot iron.
+ --- 692 --- What is "MOM" upside down? --- A mom with a headache!!!
+ --- 694 --- Buy turtle-neck,go home,pull string,girl dies. Why? --- The string was on the turtle neck near her neck so she choked and died.
+ --- 696 --- What has a head and a tail but no Legs  --- A penny 
+ --- 697 --- I am six letters. When you take one away it makes twelve. --- Dozens.
+ --- 701 --- Draw, fire, or fill me;<br/>I'm still empty.<br/><br/>What am I? --- A blank.
+ --- 703 --- What is the best way to stop a dog from barking in, and digging up the front yard? --- Put it in the backyard.
+ --- 706 --- What has ten letters and starts with gas? --- An automobile.
+ --- 707 --- During what month do people sleep the least? --- February, it's the shortest month after all.
+ --- 711 --- What gets wetter as it dries? --- A towel
+ --- 712 --- What has holes on each side, but can still can hold water? --- A sponge.
+ --- 715 --- 2+2 when done with abacus is ? --- 4
+ --- 718 --- How do you make seven an even number? --- Remove the "S"
+ --- 730 --- What is the easiest way to double your money --- Put in front of a mirror
+ --- 733 --- What has one foot but not a single leg? --- A snail.
+ --- 734 --- poor people have it.Rich people need it. if you eat it you will die. what is it? --- Nothing
+ --- 735 --- I'm tall when im young and short when im old. what am i? --- a candle
+ --- 736 --- what goes up when rain comes down? --- an umbrella
+ --- 737 --- I go up but never comes down  --- age
+ --- 740 --- What is center of water ? --- E.
+ --- 742 --- What's big, red and eats rocks? --- A big red rock eater!
+ --- 746 --- how many seconds are in a year --- 12 2 of every month
+ --- 748 --- In the math equation 2a(3+9b) + c, why isn't the c multiplied by 2a? --- Because it is outstanding the bracket
+ --- 751 --- What time is it when an elephant sits on your fence? --- It is time to buy a new fence.
+ --- 757 --- A man rode into town on Sunday, and slept 2 days, then left on Sunday. How is this possible? --- The horses name is Sunday!
+ --- 765 --- what goes up, but never goes down? --- age
+ --- 774 --- What starts With a "P" and ends with an "e" and has a million (or less or more) letters in it? --- Post Office. The word "letter" has 2 meanings, but in this case, it means the type of letter you send to someone.
+ --- 775 --- When is 99 more than 100? --- A microwave.Generally when you run a microwave for '99' it runs for 1 minute and 39 seconds. '100' runs for 1 minute.
+ --- 780 --- The two of us are very bright, yet we are both locked in a never-ending game of chase. Who are we? --- The Sun and the Moon. 
+ --- 783 --- What is it that no man wants, but no man wants to lose? --- A lawsuit.
+ --- 793 --- what has roots you con not see is taller than trees and keeps growing --- mountains
+ --- 795 --- What is round,black and white, and hard too? --- A soccer ball!
+ --- 800 --- If you aim to give us a shot, we'll riddle you.<br/><br/>What are we? --- Bullets.
+ --- 807 --- When is homework not homework? --- When it's turned into the teacher.
+ --- 809 --- Which dress we cant wear? --- Address
+ --- 810 --- It has many teeths if the teeth is broken it cant get back ? --- comb 
+ --- 811 --- Which suit we cant wear ? --- Suitcase
+ --- 812 --- Which Jam we cant eat ? --- Traffic Jam
+ --- 813 --- A thing which has many dresses ? --- Onion
+ --- 817 --- If you look at my face there won't be 13 any place. --- A clock
+ --- 818 --- A man finds a small iron coin dated 154 B.C., what's it worth? --- The coin is fake, the dating system that uses B.C. and A.D. wasn't created until the year 525. So it is essentially worthless.
+ --- 821 --- I am very easy to get into,but it is hard to get out of me.What am I? --- Trouble.
+ --- 822 --- A man shaves several times a day, yet he still has a beard.<br/><br/>Who is this man? --- He's a barber.
+ --- 824 --- Round like a dishpan and smaller than a bathtub.But the ocean can't fill it.What is it? --- A sieve.
+ --- 827 --- When four 1's become large number? --- 11 power 11
+ --- 834 --- Has a mouth but does not speak, has a bed but never sleeps --- A River
+ --- 835 --- What has roots as nobody sees, Is taller than trees, Up, up it goes, And yet never grows. --- A mountain.
+ --- 841 --- Does England have a 4th of July? --- Yeah, right after the 3rd of July.
+ --- 842 --- What is 40 divided by 1/2, plus 15? --- 95. Dividing by 1/2 is the same as multiplying by 2. So, 40 * 2 + 15 = 95.
+ --- 847 --- What can you put in a box that will make it lighter? --- A hole.
+ --- 848 --- I have every color, but no gold.<br/><br/>What am I? --- A rainbow.
+ --- 850 --- What has one eye and cannot see? --- A hurricane or a needle!
+ --- 851 --- What will you name a person who likes just one tea? --- Jaswanti (Just-One-Tea). You'll get it when you say it fast
+ --- 856 --- How do you share 34 apples among 33 people? --- Make applesauce.
+ --- 866 --- Spell the sentence. --- spell th sentence
+ --- 873 --- What goes in the water black and comes out red? --- A lobster.
+ --- 880 --- The word starts with E and only has one letter in it --- an envolope
+ --- 882 --- Riddle me this Riddle me that, who's afraid of the big black bat? --- Bruce Wayne
+ --- 886 --- Everyone has me but nobody can lose me.What am I? --- A shadow.
+ --- 888 --- everyone has it, but no one can lose. what is it? --- a shadow
+ --- 896 --- Marry's father has 5 daughters. They are Nana, Nene, Nini, Nono. Who is the fifth one? --- Marry! Not Nunu
+ --- 904 --- I ALWAYS BATH BUT I STILL PROTECT YOU..WHO AM I? --- UMBRELLA
+ --- 912 --- what can u drink but cant see  --- Walter 
+ --- 914 --- Why don't most buildings have a 13th floor? --- They aren't that tall.
+ --- 915 --- I wear a red coat and have a stone in my throat.<br/><br/>What am I? --- A cherry.
+ --- 916 --- Lights downfall and shadows pride --- Night
+ --- 918 --- What can you catch, but not throw? --- A Cold!
+ --- 921 --- What's always coming, but never arrives? --- Tomorrow!
+ --- 925 --- What is as light as a feather but the worlds strongest man cant even hold it for a minute. --- His Breath!
+ --- 927 --- I'm heavy but not backwards.<br/><br/>What am I? --- The word 'ton', spelled backwards it is 'not'.
+ --- 929 --- What occurs once in a minute, twice in a moment and never in one thousand years? --- The letter M 
+ --- 930 --- i am tape but not sticky what am i? --- a measuring tape.
+ --- 934 --- What gets wetter and wetter the more it dries? --- A Towel
+ --- 935 --- I can run but not walk. Wherever I go, thought follows close behind. What am I? --- A Nose
+ --- 936 --- What goes around the world but stays in a corner? --- A Stamp
+ --- 938 --- Give me food, and I will live; give me water, and I will die. What am I? --- Fire
+ --- 940 --- No sooner spoken than broken. What is it? --- Silence
+ --- 941 --- I am weightless, but you can see me. Put me in a bucket, and I'll make it lighter. What am I? --- A Hole
+ --- 943 --- Weight in my stomach,trees on my back,nails in my ribs,it's feet I lack.What am I? --- A ship.
+ --- 944 --- I am a bringer and take of life. --- Water
+ --- 946 --- You will kill me. But you will cry!!! --- onion
+ --- 947 --- What is a wave you can't see --- A micowave
+ --- 948 --- If someone have it, it's because of cold, but if you touch someone who has it,it is hot.What is it? --- Fever
+ --- 953 --- What does a man do only once in his lifetime, but women do once a year after they are 29? --- Turn 30.
+ --- 956 --- Poor people have it. Rich people need it. If you eat it, you die. What is it? --- Nothing
+ --- 957 --- There is no question. --- I don't know.
+ --- 958 --- what is the center of a box? --- O 
+ --- 960 --- Poor people have it, Rich people need it, if u eat it you die what is it? --- Nothing.
+ --- 961 --- Mary's father has five daughters, Nene, Nini, Nana and Nono. What is the fith daughters name? --- Mary!
+ --- 972 --- Ten copycats are in a boat. One jumps out. How many cats are left? --- None. They all copied the first one, so they all jumped out and drowned.
+ --- 975 --- Using only eight 8's and addition only, how can you make 1000? --- 888 + 88 + 8 + 8 + 8 = 1000
+ --- 983 --- What's square but travels the world? --- A stamp
+ --- 986 --- Why would a cat eat a chicken? --- So the cat could bawwk and meow
+ --- 987 --- A man rode a horse into town on friday. And he left on Friday how did he do it?  --- His horses name was Friday
+ --- 988 --- What is green? You can smoke and you can eat? --- Weed
+ --- 989 --- What has a long neck yet no head? --- Nothing. Its not a bottle because a bottle also lacks feet, not just a head.
+ --- 990 --- The Kaltz Family had a wonderful Christmas. But it was no fun. How is this? --- Someone forgot to BRING Christmas.
+ --- 991 --- Max left for school, but when he got out his teeth were dirty! How is this? --- Max forgot to brush his teeth and bits of breakfast got stuck in his teeth.
+ --- 994 --- If you just learned a school lesson and Taught a new student would he understand the lesson --- Yes because he is In high school
+ --- 997 --- What two things can you never eat for breakfast? --- Lunch and dinner!
+ --- 1005 --- What do one eye say to the another? --- "Between us something smells."
+ --- 1008 --- http://herbsandwonders.wordpress.com/2014/03/07/riddle-if-you-keep/ --- http://herbsandwonders.wordpress.com/2014/03/07/riddle-if-you-keep/#comments
+ --- 1009 --- You are trapped in a wooden jail cell with only a mirror. How do you get out? --- You look in the mirror to see what you saw. You use the saw to cut yourself out. 
+ --- 1011 --- how many letters are there in ALPHABETS --- 9
+ --- 1012 --- I have all of your knowledge but could fit in your hands.<br/><br/>What am I? --- Your brain.
+ --- 1013 --- I am a digit, but two of the ten.<br/>Two of me make a promise.<br/><br/>What am I? --- The pinky or little finger.
+ --- 1015 --- Why does the second shape have an open block when the first shape does not? --- The two triangles have different slopes so in the second shape the two triangles cause the shape to bulge out to account for the extra square unit.
+ --- 1018 --- A man leaves home and takes three left's upon arriving home he comes across two men Who are they ? --- The catcher and the umpire
+ --- 1022 --- What building has the most stories? --- The library!
+ --- 1024 --- I SLEEP BY DAY,I FLY BY NIGHT. I HAVE NO FEATHERS TO AID MY FLIGHT.WHAT AM I? --- BAT
+ --- 1026 --- what do you call a cow crossing Mobray? --- Moooobray LoL
+ --- 1031 --- How do you put a giraffe into a refridgerater? --- You open the refridgerater, force the giraffe into the refridgerater, and then close the refridgerater. 
+ --- 1034 --- What can you take but cannot give,can throw but cannot retrieve? --- Lives
+ --- 1037 --- I am found deep within hay, yet in liquid I lay. --- I need the answer
+ --- 1038 --- I run and never loose breath, but i don't have legs. what am I? --- a river.
+ --- 1040 --- What has a bed but never sleeps what has a mouth but never eats  ---  River
+ --- 1046 --- Three girls walked to school under one umbrella, why didn't any of them get wet? ---  It wasn't raining
+ --- 1047 --- What international catastrophe would be caused by a waiter who dropped a platter on thanksgiving? --- It would be the downfall of Turkey, the overthrow of Greece, and the destruction of china.
+ --- 1048 --- Johnnies Mom had 3 children, April and May what was the name of the third child? --- johnny
+ --- 1049 --- one vendor selling fruits and vegetables is 6 feet tall and wears 9 size shoes what does he weigh --- he weighs fruits and vegetables 
+ --- 1061 --- What goes up with the intention of falling down? --- Sky diving.
+ --- 1062 --- What pours like green paint, smells like paint, and looks like a red truck? --- Red paint
+ --- 1063 --- What begins with "E", ends with "E" but only has one letter in it ?  --- Envelope
+ --- 1065 --- What gets more wet as it dries? --- A Towel.
+ --- 1070 --- What do these things all have in common: Laughter, living well, and a good offense? --- They are all the best. Laughter is the best medicine, living well is the best revenge, and a good offense is the best defense.
+ --- 1075 --- What goes up and never comes down? --- age
+ --- 1077 --- Rupas Father is Rahul . Then Rahul Is the ------- of Rupas Father --- Name
+ --- 1082 --- What is loud and clear but can't be heard by humans? --- DogWhistle
+ --- 1085 --- Dave works at a  butcher shop. Hes 6 ft tall, his shoe size is 12. What does he weigh? --- Meat
+ --- 1091 --- A man leaves his hometown for vacation on Monday, but comes back on Thursday. How is this possible? --- He comes back on a horse named Thursday.
+ --- 1093 --- What do you call when a shark dies? --- Shark Fin
+ --- 1094 --- How many bricks does it take to complete a 20 foot high by 20 foot long house? --- One brick. The emphasis is on complete...it only takes one brick to complete the house; the last one.
+ --- 1095 --- What did the mitten say to the hat  --- The mitten say I will stay behind and you go up ahead 
+ --- 1099 --- When is homework not homework? --- When you finish it at school.
+ --- 1101 --- What is owned by you but others use more --- Your name
+ --- 1111 --- DOCTOR CAME TO THE HOUSE AND GAVE A MEDICINE BUT HE RAN AWAY WHILE I AM GIVING MONEY? --- MOSQUITO
+ --- 1128 --- How many animals of each kind did Moses bring on the ark? --- None, Noah built the ark, not Moses.
+ --- 1134 --- I am here and there but you cannot see me. You use me, but not in your grave. What am I? --- Air
+ --- 1135 --- What's orange and sounds like a parrot? --- A carrot!
+ --- 1137 --- whats green, red and goes a mile an hour? --- a frog in a blender:D
+ --- 1145 --- What has a neck but no head? --- A bottle
+ --- 1146 --- What has to be broken before you can use it? --- An egg.
+ --- 1150 --- I lie between to circles, What am I? --- Anus
+ --- 1151 --- 16 06 68 88 ? 98.<br/><br/>What is the '?'? --- The '?' is 'L8'. All of the numbers, when read upside down, are the numbers 86 - 91.
+ --- 1152 --- What weighs more a pound of feather or a pound of rock? --- They both weigh the same ( a pound)
+ --- 1153 --- What have a foot but no leg --- snail
+ --- 1158 --- How many days does it takes man to do something? --- 365 days (year)
+ --- 1166 --- What has each others back and one fixes one sometimes makes mistakes --- pencil 
+ --- 1168 --- There are men who can talk in space, even thought it is a vacuum. Who are they.   --- Astronauts.
+ --- 1169 --- You may always chase me but you are always about 3 miles away.<br/><br/>What am I? --- The horizon.
+ --- 1173 --- If it takes three men two days to dig a hole, how long does it take one man to dig half of a hole? --- You can't dig half of a hole, a hole's a hole. As soon as digging starts there is a hole, so there is also half a hole.
+ --- 1175 --- Washington wife washes Washington wonderful windows how many W's are there in all --- None  because All does not have W's in there
+ --- 1176 --- What tree do you always carry in your hand? --- Palmtree
+ --- 1177 --- Railroad crossing, watch for cars. How do you spell it without any r's? --- IT
+ --- 1181 --- It turns into a different story.<br/><br/>What is it? --- Spiral staircase.
+ --- 1182 --- What was the president of the United State's name in 1980? --- Barack Obama, his name was still Barack Obama in 1980.
+ --- 1184 --- Why do birds lay eggs? --- To eat them.
+ --- 1188 --- How long is a piece of string? --- Twice the distance from the middle to one end
+ --- 1189 --- How far can a rabbit run into the woods? --- Only halfway. After that he is running OUT of the woods!
+ --- 1194 --- What is at the end of a Rainbow --- Letter "w"
+ --- 1197 --- Name an 8 wheeled vehicle. --- Rollerblades
+ --- 1201 --- What gets madder as it speeds? --- A bus driver 
+ --- 1208 --- What occurs once in love,once in marriage, but never in f***ing?  --- An ending with the letter E
+ --- 1210 --- why did 6 take away 7 --- its because 7 8(pronounced as ate) 9
+ --- 1222 --- What has a foot but no leg? --- A ruler.
+ --- 1225 --- A man rode into town on Friday, he stayed for three nights and then left on Friday. How come? --- His horse was named Friday!
+ --- 1230 --- Paul is 20 years old in 1980, but only 15 years old in 1985.How is this possible? --- The dates are BC.
+ --- 1240 --- I'm round at the ends and high in the middle.What am I? --- Ohio.
+ --- 1241 --- shining brilliantly, shimmering through the shadows deep. Found only where the price is steep. --- Pearl
+ --- 1245 --- You use me from your head to your toes,<br/>the more I work the thinner I grow.<br/><br/>What am I? --- A bar of soap.
+ --- 1249 --- If red is not a color, what is it? --- A word, spelled "RED".
+ --- 1250 --- What makes life bland if lost, and yet is very annoying to have? --- Problems.
+ --- 1255 --- Which bird is tall and rich? --- Ostrich
+ --- 1256 --- What did the blanket say to the bed? --- Do not worry, I will keep you warm.
+ --- 1266 --- what starts with a e and ends with a e and usually has one letter? --- envelope 
+ --- 1267 --- When a bird and a fish fall in love where do they live --- The bird eats the fish because it may be a fish eating bird
+ --- 1271 --- I am not grass am strawberry  --- I am bush
+ --- 1283 --- We have no numbers but many digits. What are we? --- Hands & Feet
+ --- 1288 --- What gets easier to pick up the larger it gets? --- A woman.
+ --- 1292 --- Which friend we can consume? --- Friend-fries
+ --- 1293 --- What's gets wetter he more it dries? --- A towel 
+ --- 1294 --- What asks but never answers? --- An owl!
+ --- 1295 --- How many days are their in a week? --- 5, because their are 5 week days, and 2 week ends
+ --- 1298 --- What is the longest word in any book? --- Book, since any only has 3 letters and book has 4.
+ --- 1299 --- A man rides into town on Sunday, stays two days, and leaves on Saturday. How is this possible? --- He had a horse named Sunday.
+ --- 1300 --- What can you put in a box to make it lighter? --- Holes
+ --- 1307 --- There's a place in the world where the wind blows south then suddenly north.<br/><br/>Where is it? --- The South Pole. Until it reaches the pole it is going south, then as it passes the pole it is going north.
+ --- 1315 --- What has to be broken before you use it? --- A promise
+ --- 1319 --- Change a long pause into a short one by doubling a letter.What are the words? --- Coma into comma.
+ --- 1320 --- A man threw something down and it came up by it's self. How did it happen and what was it ? --- A ball he threw the ball down and it bounces back up by it's self !!!!!!!!!!
+ --- 1324 --- which city you cannot enter --- electricity
+ --- 1325 --- If it takes 3 men 2 days to dig a hole how long will it take for 1 man to dig half a hole? --- you can't dig half a hole everything you dig would be a hole.
+ --- 1327 --- What sport starts with a T, has four letters, and is played around the world? --- Golf.
+ --- 1328 --- What tastes better than it smells? --- A tongue.
+ --- 1336 --- What is thrown to both kings and beggars? --- A toilet (porcelain throne).
+ --- 1337 --- What looks like bread, but moves? --- A cat
+ --- 1338 --- What's a ship that never sinks? --- A friendship!
+ --- 1349 --- What cheese is made backwards? --- Edam cheese!
+ --- 1351 --- What is the most amount of moneta you can male without exchanging it for a dollar? --- 1.19
+ --- 1354 --- A cat had hair like a human, but why didn't it go to the barber?  --- The barber was a dog.
+ --- 1356 --- I only point in one direction,<br/>but I guide people around the world.<br/><br/>What am I? --- A compass.
+ --- 1357 --- This sentence is false.<br/><br/>Is the preceding sentence true or false? --- It is neither, the sentence forms a paradox. If it is true than it must be false and vice versa.
+ --- 1358 --- A person that your mother and your father born and not your brother and sister. Who is it? --- you
+ --- 1361 --- A man gave one son 10 cents and the other 15 cents.<br/><br/>What time was it? --- 1:45 (quarter to two).
+ --- 1363 --- Six men shares one umbrella. why did none of them got wet? --- Who said it was raining?
+ --- 1378 --- If I have it, I don't share it. If I share it I don't have it, what is it? --- A secret
+ --- 1382 --- How can forty elephants have forty-fore heads? --- All of the forty elephants have foreheads.
+ --- 1383 --- What is harder to catch the faster you run? --- Your breath.
+ --- 1384 --- A man is pushing his along the road when he comes to a hotel. He shouts, "I'm bankrupt!" Why? --- He was playing Monopoly
+ --- 1388 --- which is the vehicle that it never stops from running   and it has also no wheels. --- TIME
+ --- 1395 --- What is as big as you are and yet does not weigh anything? --- Your shadow.
+ --- 1396 --- What types of words are these? Madam, civic, eye, level? --- They are palindromes; they read the same both ways.
+ --- 1397 --- A certain five letter word becomes shorter when you add two letters to it. What is the word? --- Short.
+ --- 1399 --- i start with P and end with D.and i have hundreds of letters in me. --- post box
+ --- 1401 --- many that live deserve death, some die but deserve life --- this isnt a riddle just a quote ;)
+ --- 1402 --- what is the thing that saves us all but kills so many --- money
+ --- 1405 --- What is black and white and red all over? ---  A zebra with a sunburn!
+ --- 1407 --- If you have me you want to share me but if you share me ill be gone. What Am I? --- Secrets
+ --- 1410 --- I'm a part of your body, and i'm read like one of your alphabeth, what am I ? --- eye, because the way it read like one of our alphabeth 'I'
+ --- 1411 --- what goes all the way around the world but can't move? --- the moon.
+ --- 1415 --- Why isn't Dracula popular? --- Beacuse he's a pain in the neck
+ --- 1417 --- A wife shot her husband, dip him in water, hanged him the next day they had a good breakfast. How? --- His wife is a photographer.
+ --- 1432 --- What is an 8 letter that has "kst" in the middle in the beginning and at the end. --- Inkstand
+ --- 1434 --- There was a plane crash every single person died you lived? --- All the couples
+ --- 1441 --- What will go up a chimney down, but won't go down a chimney up? --- An umbrella
+ --- 1442 --- When is a door not a door? --- When it's ajar.
+ --- 1444 --- What did the blanket say when it fell off the bed? --- Oh Sheet
+ --- 1445 --- What is a door when its not a door.  --- When its ajar
+ --- 1451 --- lips              lips --- Tulips
+ --- 1455 --- Divide 30 by half and add ten. What is it? --- 70, a half is .50 so 30 divided by .50= 60 add ten =70
+ --- 1459 --- what can travel the world while staying in a corner????????? --- A stamp : )
+ --- 1461 --- What is brown and sticky? --- A stick!
+ --- 1463 --- I am the only organ that named myself.What am I? --- The brain!
+ --- 1474 --- What has feet and legs, but nothing else? --- Stockings
+ --- 1481 --- A box with out hinges key or lid but golden treasure inside is hid  --- An egg
+ --- 1484 --- First letter is e ends a what is it --- Elsa
+ --- 1488 --- How did the butcher introduce his wife? --- Meat patty
+ --- 1492 --- one night a king and queen stood by a wall and it fell towards them. Who survived??? --- the knight
+ --- 1497 --- How can you make a TV, a bed, a dog, and a car liquid? --- Sell them.
+ --- 1500 --- When do you go at red, but stop at green? --- When you are eating a watermelon!
+ --- 1501 --- 100 feet in the air, yet its back is on the ground.<br/><br/>What is it? --- A centipede on its back.
+ --- 1502 --- Inside is a lattice but outside is a plank boards. --- gourd
+ --- 1505 --- Why can't you bury a man living in New York in Chicago? --- Because he is living in New York, and is not dead.
+ --- 1507 --- When is a door not a door? --- When it's ajar/a jar.
+ --- 1508 --- What is easier done than said? --- Silence
+ --- 1509 --- Mary’s father has 5 daughters – Nana, Nene, Nini, Nono. What is the fifth daughters name? --- Mary! It is Mary's father.
+ --- 1516 --- What am I? --- A question.
+ --- 1521 --- i am a big snake* i swallow my people nd vomit them in a pleasant place.wat am i --- train
+ --- 1522 --- What goes up, lets out a load, then goes back down? --- An elevator!
+ --- 1531 --- What can be swallowed, but can swallow you? --- Pride!
+ --- 1535 --- What kind of ears does a train has? --- Engineer
+ --- 1543 --- What goes around the world but stays in the corner --- A stamp
+ --- 1547 --- What breathes both air and water, but swims in air and flys in water? --- A flying fish!
+ --- 1548 --- A cowboy goes into town on Friday and stays three days and leaves on Friday. How is thus possible? --- His horse's name was Friday!
+ --- 1552 --- What does the Griffin family have that the Simpson family does not? --- A talking dog!
+ --- 1559 --- a rooster layed a egg on a pointed roof what way did it go?? --- no where roosters dont lay eggs
+ --- 1560 --- Between 1-100 how many numbers have the letter a in it --- 0
+ --- 1562 --- What is a young of a knee? (Clue:Its an internal organ) --- A kidney!!!
+ --- 1563 --- There is a 1-storey house, everythink inside it is blue.What is the stairs colour? --- It doesn't have stairs!!
+ --- 1568 --- I have 13 arms, 10 legs, 2 head, and smell like burnt denim.<br/><br/>What am I? --- A liar.
+ --- 1576 --- A king, queen, and two twins all lay in a large room.<br/><br/>How are there no adults in the room? --- They're all beds!
+ --- 1578 --- It's a name it's a game it's in a deck of cards.  --- Jack
+ --- 1584 --- Different lights make me strange,<br/>for each one my size will change.<br/><br/>What am I? --- The pupil.
+ --- 1585 --- I'm hard to catch, but easy to get catched by, what am I? --- A mosquito.
+ --- 1586 --- What always goes to bed with its shoes on? --- A horse.
+ --- 1587 --- I am something that happens once in this riddle, twice in a challenge and four times in a title? --- the letter L (the title is a LittLe chaLLenge)
+ --- 1589 --- I know a riddle that is back to front! can you find it?... cat --- what's my favourite animal?
+ --- 1595 --- What is 12 ounces, a hashtag and a fast, strong, sudden event? --- Pound
+ --- 1598 --- What walks in four legs in the morning, two in the afternoon, and three in the evening? --- A man-A baby crawl in when it's born and a regular person use two leg and a old person use two legs plus a cane
+ --- 1599 --- What stays where it is when it goes off? --- An alarm clock.
+ --- 1600 --- A man was born in 1492. Today is his 22nd birthday, How is this possible? --- 1492 was the hospital room number.
+ --- 1605 --- One night, a lady and boy went to a castle . Three people came out. Who was the thrid person?! --- A knight
+ --- 1606 --- What runs but never walks and has two mouths> --- A river
+ --- 1610 --- I give refuge to the blind and repeat everything they say.<br/><br/>What am I? --- A cave, the blind are bats.
+ --- 1611 --- I'm smaller than your table and you but your kitchen is too small to compare to me. What am I? --- China
+ --- 1612 --- Nobody makes me fall but I fall everytime people see me because I am tall. --- The waterfall
+ --- 1616 --- I can sing naturally but can't talk naturally. When I open my mouth I can make you laugh.  --- Parrot
+ --- 1621 --- I was the first and now I am the one.<br/><br/>What am I? --- George Washington.
+ --- 1622 --- How can "L" be greater in size than "XL"? --- Roman Numerals.
+ --- 1625 --- What do you call a country with many pink cars? --- A pinkcarnation!!!!!
+ --- 1632 --- Fill in the blank: Ebere is the Michael's daughter. So Michael is the ____ of Ebere's father? --- Name. 
+ --- 1638 --- What is bought by the yard by is worn by the foot? --- Carpet!
+ --- 1640 --- Why is it so hot? --- Because your hot!!
+ --- 1641 --- I'm measured in temperature and time, but have neither.<br/><br/>What am I? --- Longitude and latitude.
+ --- 1642 --- I build bridges of silver and crowns of gold.Who am I? --- A dentist!
+ --- 1644 --- how much dirt is in a hole --- none ;)
+ --- 1657 --- There are several different kinds, but the one you pick doesn't do its job.<br/><br/>What is it? --- A lock.
+ --- 1663 --- What do you use to hoe a row, slay a foe, and wring with woe? --- Your hands.
+ --- 1667 --- A boy bought a dog on July 14 til march 3rd when it got hit by a car. How long did he have the dog? --- Impossible to know the riddle didn't say what year he got the dog or when it died.
+ --- 1668 --- A cowboy goes into town on Friday stays 3 days and leaves on Friday. How did he do it?  --- His horses name is Friday
+ --- 1669 --- what jumps higher than a building? --- Everything, buildings don't jump 
+ --- 1672 --- What does the rich need and the poor have? --- Nothing.
+ --- 1673 --- What asks,  but the answer's ? --- An owl
+ --- 1676 --- What is Harder to catch the faster you Run? --- Breath
+ --- 1677 --- What room has no Windows,floors,ceiling or doors --- Muchroom
+ --- 1678 --- What bank never has any money --- Riverbank
+ --- 1681 --- which ire is dangerous? --- vampire
+ --- 1684 --- If you say my name, I disappear,Who am I ? --- Silence
+ --- 1692 --- what is the square root of -1? --- this is not one
+ --- 1693 --- Which word becomes shorter when we add 2 letters to it ? --- Shorter
+ --- 1694 --- How can you put an elephant into a fridge? --- Open the fridge and put it in!
+ --- 1703 --- What flies when it's born, lies when it's alive, and runs when it's dead? --- A snowflake.
+ --- 1706 --- What goes up but never comes down? --- Age
+ --- 1707 --- What stays in the corner and travels around the world? --- A postage stamp
+ --- 1708 --- What comes down and goes back up? --- Rain
+ --- 1709 --- Some months have 30 days, and some have 31. How many months have 28 days? --- All of them!
+ --- 1710 --- There are 60 seconds in a minute. How many are there in a year? --- 12 (January 2nd, February 2nd, March 2nd, April 2nd...)
+ --- 1714 --- You're in a room with no doors or windows. Just a mirror and a table.<br/><br/>How do you get out? --- You look in the mirror and see what you saw. You take the saw and cut it in half. Two halves make a whole. Put the hole on the wall and climb out.
+ --- 1718 --- If Rohit's father's name is Amit.So Amit is Rohit's father's what? --- Name
+ --- 1719 --- I brighten your day but live in the shade.<br/><br/>What am I? --- A lamp.
+ --- 1723 --- I have eight to spare and am covered with hair.<br/><br/>What am I? --- A cat.
+ --- 1724 --- Dracula was out getting a drink but his watch was broken so he died.<br/><br/>Why? --- Dracula is a vampire and it was a solar eclipse but his watch said it was night. So the sun came out after a few minutes killing him.
+ --- 1725 --- What did the envelope say to the stamp? --- "Stick with me and we will go to places!"
+ --- 1726 --- How can you say, 'Richard and Robert purchased Golden Retrievers.' without using the letter 'r'? --- Dick and Bob bought dogs.
+ --- 1728 --- Two men walk into a bar, they both get knocked out, how is this possible? --- They walk into a literal "bar", like a pole.
+ --- 1733 --- The more there is, the lesser you see . --- Darkness
+ --- 1735 --- I am often held, but never touched. Some say I am because you work too much. --- A title.
+ --- 1737 --- What common English verb becomes its own past tense by rearranging its letters....???? --- EAT -> ATE
+ --- 1738 --- What has a head and tail but no body?  --- A Coin
+ --- 1739 --- What did the tree say when it found out it was a tree? --- Geometry
+ --- 1740 --- What do volcanoes eat ? --- Ask potatoes
+ --- 1745 --- Two men play five sets of tennis together and each win three sets.<br/><br/>How is this possible? --- They were partners playing doubles.
+ --- 1748 --- how do you own the one you love --- i dont know the answer
+ --- 1753 --- What kills us, but makes us eternal? --- Fame. Fame can get you money, and drugs. Drugs kill you. Fame also marks your spot in history. Thus, fame will both kill you, and make you eternal.
+ --- 1756 --- My name can have any letter of the alphabet, but I always have 2 X's.<br/><br/>What am I? --- A woman.<br/><br/>They have 2 X chromosomes.
+ --- 1757 --- A man goes to jail and knows exactly when he is going to die.<br/><br/>How is this possible? --- He was sentenced to death.
+ --- 1758 --- I am here once in a minute, twice in a moment, but never in a thousand years. Who am I? --- The letter 'M'
+ --- 1759 --- I have a friend, Joe. Joe is 36. He is 6'2. He works as a butcher's assistant. What does he weigh? --- The meat
+ --- 1764 --- What goes up but never goes down? --- Your Age
+ --- 1767 --- Railroad crossing without any cars. Can you spell that without any R's? --- T-H-A-T.
+ --- 1769 --- I multiply and add when you divide me with others. What am I? --- Love
+ --- 1779 --- If you do not know what I am, I am something; but if you know what I am, I am nothing.  What am I? --- A riddle.
+ --- 1781 --- If a elephant is green and a parrot it red,what color is a leaf.  --- Red. 
+ --- 1783 --- What has no beginning, only because it does not exist before its beginning? --- Time
+ --- 1791 --- If 5 and 3 is eight, then what is 1 and 1? --- 3, 1 plus 1 equals two or a 3 lettered word, t-w-o.
+ --- 1792 --- Can the cat who could climb the tower climb what that man can't build? --- No, the tower is refers to a cat tower made out of yarn and string and such, if man couldn't build it, cat couldn't climb it.
+ --- 1794 --- Can a cat conquer a dog, Whats wrong with this sentence? --- Dog is the only word that doesn't start with c or a.
+ --- 1795 --- When the gods punish us, we get eaten by small frost beasts, but what are they? --- Snowflakes, they will make you colder when you touch them and they are made with freezing temperatures.
+ --- 1799 --- There's a B in my hand. So what's in my eye? --- Beauty.<br/><br/>If 'b' is in your hand you are the b-holder (beholder) and "beauty is in the eye of the beholder" (a popular idiom).
+ --- 1803 --- What goes up and never comes down? --- Age
+ --- 1807 --- I often run, but never get tired. I need your help to stop running? --- Drink Water
+ --- 1808 --- If I was in the sun and you were out of the sun, what would the sun be? --- Sin.
+ --- 1810 --- what did the milk say when I finished all the cereal? --- serial killer
+ --- 1814 --- Which is the table which no legs ? --- Timetable
+ --- 1819 --- What gets wet the more it dry's? --- A towel!
+ --- 1820 --- What goes slower, the more it goes fast, and what goes faster, the more it slows? --- Wind
+ --- 1822 --- I have seas with no water, and flags with no nations. What am I? --- The moon
+ --- 1823 --- You can serve here, but you won't see any royalty. What am I? --- Tennis court
+ --- 1824 --- I am, where nothing now is. Not even light can show you my hunger. What am I? --- A black hole. 
+ --- 1826 --- What happens when you throw a blue rock into a red sea? --- It gets wet!
+ --- 1827 --- I can be guilty and convicted, though I'll never serve any time. What am I? --- A conscience.
+ --- 1828 --- I am, where down is up. What am I? --- The south pole. 
+ --- 1829 --- I have a bridge with no water, and a neck covered in worries. What am I? --- A guitar
+ --- 1831 --- What has an eye but cannot see? --- A blind penguin.
+ --- 1832 --- What has an eye but cannot see? --- A blind man.
+ --- 1835 --- What is the most cynical thing, yet happiest thing about a person? --- Their laugh
+ --- 1837 --- What is the brightest yet darkest thing about a person? --- Their smile 
+ --- 1843 --- Trevor is a bitch? --- Yep, he is
+ --- 1844 --- what is at the end of a rainbow --- the letter w
+ --- 1845 --- what is once in a minute, twice in a moment but never in a thousand years --- the letter m
+ --- 1847 --- poor people have me, rich people need me, what am i? --- the answer is nothing. poor people have nothing, and rich people need nothing
+ --- 1848 --- If a plane crashes and lands half in the US and half in Canada where do you bury the survivors? --- You don't bury survivors they are still alive
+ --- 1850 --- What is in the corner and travels all around the world --- A Stamp
+ --- 1851 --- What is in the centre of water  --- T
+ --- 1854 --- whats black and white and red all over --- a newspaper
+ --- 1857 --- how many cities are there in North America? --- 13
+ --- 1860 --- If I drink, I die, but if I eat, I am ok, what am I? --- Fire
+ --- 1864 --- What are one of the colors of people's eyes and a food that starts with a N? --- A hazelnut
+ --- 1872 --- What is 2+2 now what is 5+5 any number u say is wrong  --- Theyre math problems I asked what they were not what they equaled
+ --- 1874 --- what do you call a guy with no arms and no legs laying at your front door?  --- matt
+ --- 1877 --- what I am I ? --- question
+ --- 1879 --- What has hands but cant throw? --- A clock
+ --- 1880 --- If all people named Garrett are weird, then Garrett Canady is a Canadian. Is Philip weird? --- We don't know!
+ --- 1887 --- How many letter are in the alphabet? --- 11 letters are in "The Alphabet"
+ --- 1889 --- What do you call an aeroplane used by witches --- Witchcraft
+ --- 1890 --- What has 6 wheels and flies? --- A garbage truck!
+ --- 1891 --- I dance, I eat, I die, but if I drink, I die. Who am I? --- Fire.
+ --- 1900 --- What comes once in a minute, twice in a moment, but never in a thousand years? --- The letter M
+ --- 1909 --- Which one is heavier? A ton of feather or a ton of bricks? --- They're the same because it's all a ton.
+ --- 1911 --- What has a face but is neither dead nor alive. --- watch
+ --- 1914 --- Whats the longest word in the dictionary? --- Smile. It has a mile in it.
+ --- 1917 --- A man leaves home and takes three left turns and see's two masked men. Who are they? --- Umpire and Catcher. Man left home plate in Baseball game.
+ --- 1918 --- What has four eyes but can't see? --- Mississippi
+ --- 1920 --- What do you put in a box to make it lighter? --- You saw holes in it.
+ --- 1923 --- i shave all day, but my beard doesnt grow any shorter. what am i? --- a barber
+ --- 1924 --- What do you put on empty hands? --- A glove!
+ --- 1925 --- Which witch is watching the swatch watch? How many T's does that have?? --- 2. ThaT
+ --- 1926 --- What kind of room has no doors or windows? --- a mushroom!
+ --- 1928 --- I travel all around the world but I stay in a corner. What am I? --- A postage stamp 😊
+ --- 1935 --- What comes first.. egg or the hen? --- The one you ordered 
+ --- 1936 --- What has hair, is brown, and is an anchor --- Roots
+ --- 1938 --- There was a man in the desert laying next to a rock. The man was dying. Why was he dying?  --- The man was dying because he was Superman and the rock was Kryptonite.
+ --- 1939 --- What has four eyes but can't see? --- Mississippi. It has 4 I's but can't C.
+ --- 1941 --- How do Rabbits fly? --- They go into Hareplanes.
+ --- 1943 --- I am tall when i am young, i am short when i am old. What am I? --- A candle
+ --- 1947 --- How can pants pocket be empty but still has something inside? --- It has a hole
+ --- 1948 --- A fathers child, a mothers child, yet no ones son. Who am I ? --- Their daughter😋
+ --- 1949 --- What is so delicate just saying it breaks it? --- Silence😉
+ --- 1956 --- What months have 28 days --- All of them 
+ --- 1957 --- What Happens Once A Minuet, Twice A Moment, Never In A Thousand Years --- The Letter M
+ --- 1959 --- What was the first thing Akbar did after he ascended the throne? --- He sat on it....
+ --- 1960 --- You tear my body but you also cry? --- ONION...
+ --- 1966 --- Qhat do you call a midget british mom? --- Minimum
+ --- 1970 --- How much does the brick weigh if a brick weighs 1kg plus a half brick? --- 2Kg
+ --- 1972 --- what happens when you are born --- you start to die
+ --- 1974 --- When is a door not a door? --- When it's ajar!
+ --- 1975 --- I died a death that no one has ever died and my grave is in every grocery store.  --- Lot's wife
+ --- 1976 --- What is God's favourite food? --- Angel Cakes!
+ --- 1977 --- what rises without legs,whispers without a voice,bites without teeth, and dies without life? --- wind
+ --- 1985 --- Whats 9+10 --- 21. Its a vine. A vine is a 7 second funny video, if you didn't know.
+ --- 1987 --- Why was six afraid of 7? --- Because 7 eight,ate 9
+ --- 1988 --- Whats the same size as an elephant but weighs nothing? --- Elephants shadow
+ --- 1994 --- Hamish is standing behind Leo, but Leo is standing behind Hamish, how can this be? --- They are standing back-to-back
+ --- 1998 --- What goes up and down, but never moves? --- Stairs
+ --- 2003 --- What goes round and round a tree but never goes into the tree --- Bark
+ --- 2006 --- What Starts on four legs then in the middle goes to two then near the end goes to three  --- A Human
+ --- 2007 --- I'm there once in a minute, twice in a memory, but never in a thousand years. Who am I? --- The letter 'm'.
+ --- 2015 --- How far can a dog run into the woods? --- Half way, because the dog can run all the way through the woods, but only half of the time he is going in, the rest of the time he is going out.
+ --- 2020 --- What can come back to life as long as you feed it? ( and that it's not broken ) --- Electronics
+ --- 2022 --- Occurring once in a hundred years and once in thousands. But never in a day or a year or a century. --- The letter S.
+ --- 2023 --- At the beginning it screams, then it speaks, but then stays quiet. --- A human, baby screams, adults speak, old people usually are more quiet.
+ --- 2027 --- What is the difference between a Sphinx and a Sphynx? --- One is a cat, another is a mythical creature.
+ --- 2036 --- When angry it turns red, cold it turns blue and pale when scared. --- The human skin.
+ --- 2038 --- She lay on her soft bed. She has envy toward us. Why? --- She is dead in a casket and wants to be alive like the living.
+ --- 2047 --- If you have me, you want to share me. If you share me, you haven't got me. What am I? --- A secret
+ --- 2048 --- What gets broken without being held? --- A promise
+ --- 2049 --- A man is pushing his car along the road when he comes to a hotel. He shouts, "I'm bankrupt!" Why? --- He's playing Monopoly
+ --- 2050 --- What is at the end of a rainbow? --- The letter W
+ --- 2051 --- What is 5,000 years old and still turning? --- A wheel
+ --- 2055 --- How do you eat a tent --- With your mouth,Silly duck
+ --- 2056 --- How do you eat a tent --- With your mouth,Silly duck
+ --- 2058 --- A man gave one some 10 cents and the other son 15 cents. What time is it? --- 1:45=quater to 2
+ --- 2061 --- Rather than enjoying a lazy morning, he preferred to picture for us. --- i need corect answer please
+ --- 2062 --- The more full i get, the faster i move. What am i?  --- (i dont know. I was hoping one of you guys knew!) 
+ --- 2064 --- ACPEASAN --- I DON'T KNOW
+ --- 2066 --- Take off my skin - I won't cry, but you will! What am I? --- An onion
+ --- 2072 ---  If an electric train is travelling south, which way is the smoke going? --- There is no smoke, it’s an electric train!
+ --- 2075 ---  Can you name the two days starting with T besides Tuesday and Thursday? --- Today and tomorrow.
+ --- 2078 --- What Is Between 4 & 5? --- iv => f (iv) e.
+ --- 2079 --- The scinetist is finding what is in the middle of earth and heaven. --- and
+ --- 2080 --- What type of cheese is made backwards? --- Edam Cheese
+ --- 2081 --- Spell the word yes now put an e in front if it and say it --- Don,t know
+ --- 2086 --- A casket where five people of different age and size  are placed in with heads outside it?  --- Your foot 
+ --- 2092 --- Which WWE Wrestler Performs The STF --- John Cena
+ --- 2094 --- I fill the page with a thousand words, yet with no words at all, what am I? --- A picture
+ --- 2096 --- when you make it dirty,it becomes white but when you clean it ,it becomes black.what is that? --- blackboard
+ --- 2097 --- what is in the middle of the sky? --- the letter 'k'
+ --- 2098 --- what goes up never comes down? --- your age

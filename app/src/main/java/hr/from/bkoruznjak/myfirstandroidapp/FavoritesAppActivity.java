@@ -36,6 +36,7 @@ public class FavoritesAppActivity extends AppCompatActivity {
     private final int FAVORITE_RIDDLE_SUBSTRING_LENGTH = 40;
     private Typeface ubuntuRTypeFace;
     private Riddle returnRiddle;
+    private Riddle onCreateRiddle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class FavoritesAppActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorites_app);
         ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
         favoriteRiddleList = fetchRiddleList();
-
+        onCreateRiddle = (Riddle) (this.getIntent().getSerializableExtra("onCreateRiddle"));
         //get the list container
         mContainerView = (ViewGroup) findViewById(R.id.container);
         favoriteRiddleTextArray = fetchFavoriteRiddleTexts(favoriteRiddleList);
@@ -126,14 +127,18 @@ public class FavoritesAppActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                // Navigate "up" the demo structure to the launchpad activity.
-                // See http://developer.android.com/design/patterns/navigation.html for more.
-                Intent intent = NavUtils.getParentActivityIntent(this);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                NavUtils.navigateUpTo(this, intent);
-                return true;
+                returnRiddleToMainActivity(onCreateRiddle);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /*
+    * @desc go back to the main activity
+    */
+    @Override
+    public void onBackPressed() {
+        Log.d(TAG, "returning to main...");
+        returnRiddleToMainActivity(onCreateRiddle);
     }
 
 
@@ -157,7 +162,7 @@ public class FavoritesAppActivity extends AppCompatActivity {
         // Set the text in the new row to a random country.
         ((TextView) newView.findViewById(android.R.id.text1)).setText(
                 favoriteRiddleTextArray[itemIndex]);
-        ((TextView)newView.findViewById(android.R.id.text1)).setTypeface(ubuntuRTypeFace);
+        ((TextView) newView.findViewById(android.R.id.text1)).setTypeface(ubuntuRTypeFace);
 
         // Set a click listener for the favorite riddle textview in the row that will go to that riddle.
         newView.findViewById(android.R.id.text1).setOnClickListener(new View.OnClickListener() {
