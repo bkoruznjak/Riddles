@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
     private int numberOfRiddles;
     private boolean showAnwser;
     private int riddleNumber = 0;
+    private String riddleId;
     private DatabaseHandler dbHandler;
     private TextView riddleTextView;
     private TextView riddleAnwserTextView;
@@ -119,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
                 }
                 //increase counter after fetched riddle
                 onCreateRiddle = returnedRiddle;
+                riddleId = onCreateRiddle.getId();
                 setTextFields(onCreateRiddle);
 
                 favoriteStatusHandler(onCreateRiddle);
@@ -265,7 +267,8 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         riddleAnwser = riddle.getRiddleAnwser();
         riddleViewCount = riddle.getViewCount();
         riddleTextView.setText(riddleText);
-        riddleNumberTextView.setText(riddleNumber + 1 + " of " + numberOfRiddles);
+        riddleNumberTextView.setText(riddle.getId());
+        //riddleNumberTextView.setText(riddleNumber + 1 + " of " + numberOfRiddles);
         riddleViewCount++;
         riddleViewCountTextView.setText(getResources().getString(R.string.view_count) + riddleViewCount);
 
@@ -347,18 +350,17 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         if (riddleList.isEmpty()) {
             riddleTextView.setText(getResources().getString(R.string.no_riddles));
         } else {
-            //reach end of list condition
-            if (riddleNumber == riddleList.size() - 1) {
-                riddleNumber = 0;
-            } else {
-                riddleNumber++;
-            }
+            Random randomNumber = new Random();
+            riddleNumber = randomNumber.nextInt(riddleList.size() - 1);
             //hide Anwser again if shown
             if (showAnwser) {
                 showAnwser = !showAnwser;
                 riddleAnwserTextView.setText("");
             }
+
             //increase counter after fetched riddle
+            Log.d(TAG, "riddle number:" + riddleNumber);
+            Log.d(TAG, "riddle id:" + onCreateRiddle.getId());
             onCreateRiddle = riddleList.get(riddleNumber);
             setTextFields(onCreateRiddle);
 
@@ -377,18 +379,16 @@ public class MainActivity extends AppCompatActivity implements SimpleGestureList
         if (riddleList.isEmpty()) {
             riddleTextView.setText(getResources().getString(R.string.no_riddles));
         } else {
-            //reach end of list condition
-            if (riddleNumber == 0) {
-                riddleNumber = riddleList.size() - 1;
-            } else {
-                riddleNumber--;
-            }
+            Random randomNumber = new Random();
+            riddleNumber = randomNumber.nextInt(riddleList.size() - 1);
             //hide Anwser again if shown
             if (showAnwser) {
                 showAnwser = !showAnwser;
                 riddleAnwserTextView.setText("");
             }
             //decrease counter after fetched riddle
+            Log.d(TAG, "riddle number:" + riddleNumber);
+            Log.d(TAG, "riddle id:" + onCreateRiddle.getId());
             onCreateRiddle = riddleList.get(riddleNumber);
             setTextFields(onCreateRiddle);
 
