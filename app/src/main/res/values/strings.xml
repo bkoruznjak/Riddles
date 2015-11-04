@@ -1,8 +1,17 @@
 <resources>
     <string name="app_name">Smarter by the day</string>
 
+    <!-- MAIN MENU ACTIVITY -->
+    <string name="menu_option_one">View riddles</string>
+    <string name="menu_option_two">View favorites</string>
+    <string name="menu_option_three">About the app</string>
+    <string name="menu_option_four">Update riddles</string>
+
     <!-- MAIN ACTIVITY TEXT -->
     <string name="no_riddles">There appears to be no riddles</string>
+    <string name="generic_riddle_text">insert riddle text here</string>
+    <string name="generic_riddle_anwser">insert riddle anwser here</string>
+    <string name="generic_riddle_id">insert riddle id here</string>
     <string name="view_count">view count:</string>
     <string name="riddle_text">R Swipe to view riddle</string>
     <string name="riddle_anwser">Show anwser</string>
@@ -11,6 +20,12 @@
     <string name="riddle_number">riddle number</string>
     <string name="riddle_view_count">riddle view count</string>
     <string name="favorite_riddle">Favorite</string>
+    <string name="action_previous">Previous</string>
+    <string name="action_next">Next</string>
+    <string name="action_finish">Finish</string>
+    <string name="page_number">page number:</string>
+    <string name="title_activity_riddle_preview">Riddle Preview</string>
+
 
     <!-- OVERFLOW MENU TEXT -->
     <string name="action_about">About</string>
@@ -32,10 +47,6 @@
     <string name="action_add_item">Add item</string>
     <string name="title_activity_app_favorites">Favorites Activity</string>
     <string name="title_activity_favorites">Favorites Activity</string>
-
-
-
-
 
 
 </resources>

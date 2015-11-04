@@ -1,0 +1,52 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/riddle_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Dummy content. -->
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@android:id/text1"
+            style="?android:textAppearanceLarge"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/riddleId1"
+            style="?android:textAppearanceMedium"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_riddle_id" />
+
+        <TextView
+            android:id="@+id/riddleText1"
+            style="?android:textAppearanceMedium"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_riddle_text" />
+
+        <Button
+            android:id="@+id/button_toggle_anwser"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:hint="@string/riddle_anwser"/>
+
+        <TextView
+            android:id="@+id/riddleAnwser1"
+            style="?android:textAppearanceMedium"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/generic_riddle_anwser" />
+
+    </LinearLayout>
+
+</ScrollView>

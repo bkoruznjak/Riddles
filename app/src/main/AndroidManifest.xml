@@ -26,6 +26,14 @@
             android:configChanges="screenSize|screenLayout" >
             android:label="@string/app_name">
         </activity>
+        <activity android:name=".RiddlePreviewActivity"
+            android:label="@string/title_activity_riddle_preview"
+            android:parentActivityName=".MainActivity"
+            android:uiOptions="splitActionBarWhenNarrow">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
+        </activity>
         <activity
             android:name=".AboutActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
