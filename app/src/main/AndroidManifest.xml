@@ -29,6 +29,7 @@
         <activity android:name=".RiddlePreviewActivity"
             android:label="@string/title_activity_riddle_preview"
             android:parentActivityName=".MainActivity"
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:uiOptions="splitActionBarWhenNarrow">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
