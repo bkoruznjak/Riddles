@@ -2,13 +2,10 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,17 +20,17 @@ import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
 
 public class FavoritesAppActivity extends AppCompatActivity {
 
+    public static final String TAG = "MY_R_APP";
+    private final int FAVORITE_RIDDLE_SUBSTRING_LENGTH = 40;
     /**
      * The container view which has layout change animations turned on. In this sample, this view
      * is a {@link android.widget.LinearLayout}.
      */
     private ViewGroup mContainerView;
-    public static final String TAG = "MY_R_APP";
     private DatabaseHandler dbHandler;
     private List<Riddle> favoriteRiddleList;
     private String[] favoriteRiddleTextArray;
     private String[] favoriteRiddleIdArray;
-    private final int FAVORITE_RIDDLE_SUBSTRING_LENGTH = 40;
     private Typeface ubuntuRTypeFace;
     private Riddle returnRiddle;
     private Riddle onCreateRiddle;
@@ -88,10 +85,10 @@ public class FavoritesAppActivity extends AppCompatActivity {
         for (int i = 0; i < favoriteRiddleList.size(); i++) {
             String favoriteRiddleDisplayMessage;
             //limit the length to be displayed
-            if (((Riddle) favoriteRiddleList.get(i)).getRiddleText().length() > FAVORITE_RIDDLE_SUBSTRING_LENGTH) {
-                favoriteRiddleDisplayMessage = ((Riddle) favoriteRiddleList.get(i)).getRiddleText().substring(0, FAVORITE_RIDDLE_SUBSTRING_LENGTH - 1);
+            if (favoriteRiddleList.get(i).getRiddleText().length() > FAVORITE_RIDDLE_SUBSTRING_LENGTH) {
+                favoriteRiddleDisplayMessage = favoriteRiddleList.get(i).getRiddleText().substring(0, FAVORITE_RIDDLE_SUBSTRING_LENGTH - 1);
             } else {
-                favoriteRiddleDisplayMessage = favoriteRiddleTextArray[i] = ((Riddle) favoriteRiddleList.get(i)).getRiddleText();
+                favoriteRiddleDisplayMessage = favoriteRiddleTextArray[i] = favoriteRiddleList.get(i).getRiddleText();
             }
             //add periods to make it look more nice
             if (favoriteRiddleDisplayMessage.endsWith(".")) {
@@ -143,9 +140,9 @@ public class FavoritesAppActivity extends AppCompatActivity {
 
 
     private void returnRiddleToMainActivity(Riddle returnRiddle) {
-        Intent returnToMainIntent = new Intent(this, MainActivity.class);
-        returnToMainIntent.putExtra("returnToMainRiddle", returnRiddle);
-        startActivity(returnToMainIntent);
+        Intent returnToPreviewIntent = new Intent(this, RiddlePreviewActivity.class);
+        returnToPreviewIntent.putExtra("returnToMainRiddle", returnRiddle);
+        startActivity(returnToPreviewIntent);
         finish();
     }
 

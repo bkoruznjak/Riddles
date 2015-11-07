@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     @Override
     public void onBackPressed() {
         Log.i(TAG, "exiting...");
-        finish();
+//        finish();
+        System.exit(0);
     }
 
     @Override

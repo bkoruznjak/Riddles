@@ -28,6 +28,7 @@ public class RiddlePreviewActivity extends FragmentActivity {
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
     private DatabaseHandler dbHandler;
+    private Riddle returnedRiddle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,9 @@ public class RiddlePreviewActivity extends FragmentActivity {
         //putting the most viewed riddles to the end of the list
         Collections.sort(riddleArrayList);
         NUM_PAGES = riddleArrayList.size();
+
+        //check for callback riddles from other intents
+        returnedRiddle = (Riddle) (this.getIntent().getSerializableExtra("returnToMainRiddle"));
 
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
@@ -56,6 +60,20 @@ public class RiddlePreviewActivity extends FragmentActivity {
             }
 
         });
+        int returnedRiddleListPosition = 0;
+        if (returnedRiddle != null) {
+            Log.i(TAG, "returning from favorites activity");
+            String id = returnedRiddle.getId();
+            int counter = 0;
+            for (Riddle riddle : riddleArrayList) {
+                counter++;
+                String tempId = riddle.getId();
+                if (id.equals(tempId)) {
+                    returnedRiddleListPosition = counter;
+                }
+            }
+        }
+        mPager.setCurrentItem(returnedRiddleListPosition - 1);
     }
 
     @Override
