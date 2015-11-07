@@ -10,41 +10,34 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@android:id/text1"
-            style="?android:textAppearanceLarge"
-            android:textStyle="bold"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp" />
-
-        <TextView
             android:id="@+id/riddleId1"
             style="?android:textAppearanceMedium"
-            android:lineSpacingMultiplier="1.2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/generic_riddle_id" />
+            android:lineSpacingMultiplier="1.2"
+            android:text="@string/generic_riddle_id"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/riddleText1"
             style="?android:textAppearanceMedium"
-            android:lineSpacingMultiplier="1.2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.2"
             android:text="@string/generic_riddle_text" />
 
         <Button
             android:id="@+id/button_toggle_anwser"
-            android:layout_height="wrap_content"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:hint="@string/riddle_anwser"/>
 
         <TextView
             android:id="@+id/riddleAnwser1"
             style="?android:textAppearanceMedium"
-            android:lineSpacingMultiplier="1.2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:lineSpacingMultiplier="1.2"
             android:text="@string/generic_riddle_anwser" />
 
     </LinearLayout>

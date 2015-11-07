@@ -19,6 +19,10 @@ public class RiddleSlidePageFragment extends Fragment {
     private String riddleText;
     private String riddleAnwser;
 
+    public RiddleSlidePageFragment() {
+
+    }
+
     public static RiddleSlidePageFragment create(int pageNumber, Riddle riddle) {
         RiddleSlidePageFragment fragment = new RiddleSlidePageFragment();
         Bundle args = new Bundle();
@@ -26,10 +30,6 @@ public class RiddleSlidePageFragment extends Fragment {
         args.putSerializable(ARG_RIDDLE, riddle);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public RiddleSlidePageFragment() {
-
     }
 
     @Override
@@ -49,12 +49,8 @@ public class RiddleSlidePageFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater
                 .inflate(R.layout.fragment_riddle, container, false);
 
-        // Set the title view to show the page number.
-        ((TextView) rootView.findViewById(android.R.id.text1)).setText(
-                getString(R.string.page_number, mPageNumber + 1));
-
         // Set the id view to show the page number.
-        ((TextView) rootView.findViewById(R.id.riddleId1)).setText(riddleId + 1);
+        ((TextView) rootView.findViewById(R.id.riddleId1)).setText("Riddle number:" + mPageNumber);
 
         // Set the riddle Text view to show the page number.
         ((TextView) rootView.findViewById(R.id.riddleText1)).setText(riddleText);

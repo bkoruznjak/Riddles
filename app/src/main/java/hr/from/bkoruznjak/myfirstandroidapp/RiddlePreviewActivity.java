@@ -13,26 +13,30 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
+import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
+import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
 
 public class RiddlePreviewActivity extends FragmentActivity {
-    private static int NUM_PAGES = 5;
-
-    private ArrayList<Riddle> riddleArrayList = new ArrayList<>();
+    private static int NUM_PAGES = 0;
+    private final String TAG = "RIDDLES";
+    private List<Riddle> riddleArrayList;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
+    private DatabaseHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riddle_preview);
-
-        //set dummy riddle array data
-        for (int i = 0; i < 10 ; i++) {
-            riddleArrayList.add(i, new Riddle("" + i, "riddle text for riddle number:" + i, "riddle anwser for riddle number:" + i, 0, 0));
-        }
+        dbHandler = new DatabaseHandler(this);
+        riddleArrayList = dbHandler.getAllRiddles(RiddleParameterEnum.DEFAULT);
+        //putting the most viewed riddles to the end of the list
+        Collections.sort(riddleArrayList);
         NUM_PAGES = riddleArrayList.size();
 
         // Instantiate a ViewPager and a PagerAdapter.
@@ -40,14 +44,17 @@ public class RiddlePreviewActivity extends FragmentActivity {
         mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
         mPager.setAdapter(mPagerAdapter);
         mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+
             @Override
             public void onPageSelected(int position) {
                 // When changing pages, reset the action bar actions since they are dependent
                 // on which page is currently active. An alternative approach is to have each
                 // fragment expose actions itself (rather than the activity exposing actions),
                 // but for simplicity, the activity provides the actions in this sample.
+                Log.i(TAG, "on Page Selected called:" + position);
                 invalidateOptionsMenu();
             }
+
         });
     }
 
@@ -80,14 +87,14 @@ public class RiddlePreviewActivity extends FragmentActivity {
             case R.id.action_previous:
                 // Go to the previous step in the wizard. If there is no previous step,
                 // setCurrentItem will do nothing.
-                Log.d("test", "action prev");
+                Log.d(TAG, "action prev");
                 mPager.setCurrentItem(mPager.getCurrentItem() - 1);
                 return true;
 
             case R.id.action_next:
                 // Advance to the next step in the wizard. If there is no next step, setCurrentItem
                 // will do nothing.
-                Log.d("test", "action next");
+                Log.d(TAG, "action next");
                 mPager.setCurrentItem(mPager.getCurrentItem() + 1);
                 return true;
         }
@@ -102,6 +109,12 @@ public class RiddlePreviewActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
+            Riddle updateViewCountRiddle = riddleArrayList.get(position);
+            int riddleViewCount = updateViewCountRiddle.getViewCount();
+            updateViewCountRiddle.setViewCount(++riddleViewCount);
+            Log.i(TAG, "updating riddle viewcount to:" + updateViewCountRiddle.getViewCount());
+            (new Thread(new RiddleUpdater(RiddlePreviewActivity.this.getApplicationContext(), updateViewCountRiddle))).start();
+            Log.i(TAG, "update done");
             return RiddleSlidePageFragment.create(position, riddleArrayList.get(position));
         }
 

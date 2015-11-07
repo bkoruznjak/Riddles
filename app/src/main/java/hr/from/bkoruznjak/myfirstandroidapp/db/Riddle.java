@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by borna on 20.09.15..
  */
-public class Riddle implements Serializable {
+public class Riddle implements Serializable, Comparable<Riddle> {
 
     private String id;
     private String riddleText;
@@ -13,16 +13,31 @@ public class Riddle implements Serializable {
     private int viewCount;
     private int favorite;
 
-    public Riddle(){
+    public Riddle() {
 
     }
 
-    public Riddle(String id, String riddleText, String riddleAnwser, int viewCount, int favorite){
+    public Riddle(String id, String riddleText, String riddleAnwser, int viewCount, int favorite) {
         this.id = id;
         this.riddleText = riddleText;
         this.riddleAnwser = riddleAnwser;
         this.viewCount = viewCount;
         this.favorite = favorite;
+    }
+
+    public int compareTo(Riddle compareViewCount) {
+
+        int compareQuantity = compareViewCount.getViewCount();
+
+        //ascending order
+        return this.viewCount - compareQuantity;
+
+        //descending order
+        //return compareQuantity - this.quantity;
+    }
+
+    public String toString() {
+        return "id:" + id + " viewcount:" + viewCount + " favorite" + favorite;
     }
 
     public String getId() {
