@@ -18,27 +18,23 @@
             android:text="@string/generic_riddle_id"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/riddleText1"
-            style="?android:textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/generic_riddle_text" />
-
         <Button
             android:id="@+id/button_toggle_anwser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:hint="@string/riddle_anwser"/>
 
-        <TextView
-            android:id="@+id/riddleAnwser1"
-            style="?android:textAppearanceMedium"
+        <TextSwitcher
+            android:id="@+id/textSwitcher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:lineSpacingMultiplier="1.2"
-            android:text="@string/generic_riddle_anwser" />
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/buttonNext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="NEXT" />
 
     </LinearLayout>
 

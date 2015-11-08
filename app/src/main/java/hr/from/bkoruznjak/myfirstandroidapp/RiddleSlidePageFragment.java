@@ -2,13 +2,19 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.ViewSwitcher;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
@@ -24,6 +30,10 @@ public class RiddleSlidePageFragment extends Fragment {
     private String riddleText;
     private String riddleAnwser;
     private Riddle argRiddle;
+    private boolean isAnwserShown;
+
+    private TextSwitcher mSwitcher;
+    private Button mNextButton;
 
     public RiddleSlidePageFragment() {
 
@@ -60,12 +70,6 @@ public class RiddleSlidePageFragment extends Fragment {
         // Set the id view to show the page number.
         ((TextView) rootView.findViewById(R.id.riddleId1)).setText("Riddle number:" + mPageNumber);
 
-        // Set the riddle Text view to show the page number.
-        ((TextView) rootView.findViewById(R.id.riddleText1)).setText(riddleText);
-
-        // Set the riddle Anwser view to show the page number.
-        ((TextView) rootView.findViewById(R.id.riddleAnwser1)).setText(riddleAnwser);
-
         Button changeToFavoriteButton = (Button) rootView.findViewById(R.id.button_toggle_anwser);
         changeToFavoriteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,6 +86,48 @@ public class RiddleSlidePageFragment extends Fragment {
                     Log.i(TAG, "changing riddle favorite status to:" + argRiddle.getFavorite());
                     (new Thread(new RiddleUpdater(context, argRiddle))).start();
                     Log.i(TAG, "update done");
+                }
+            }
+        });
+
+
+        mNextButton = (Button) rootView.findViewById(R.id.buttonNext);
+        mSwitcher = (TextSwitcher) rootView.findViewById(R.id.textSwitcher);
+
+        // Set the ViewFactory of the TextSwitcher that will create TextView object when asked
+        mSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
+
+            public View makeView() {
+                // TODO Auto-generated method stub
+                // create new textView and set the properties like clolr, size etc
+                TextView myText = new TextView(context);
+                myText.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
+                myText.setTextSize(36);
+                myText.setTextColor(Color.BLUE);
+                return myText;
+            }
+        });
+
+        //set initial display of riddle text
+
+        mSwitcher.setText(riddleText);
+        // Declare the in and out animations and initialize them
+        Animation in = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
+        Animation out = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+
+        // set the animation type of textSwitcher
+        mSwitcher.setInAnimation(in);
+        mSwitcher.setOutAnimation(out);
+
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                if (isAnwserShown) {
+                    mSwitcher.setText(riddleText);
+                    isAnwserShown = false;
+                } else {
+                    mSwitcher.setText(riddleAnwser);
+                    isAnwserShown = true;
                 }
             }
         });
