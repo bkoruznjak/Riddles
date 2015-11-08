@@ -1,6 +1,7 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,14 +18,22 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
 
+        Typeface ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
+        Typeface ubuntuBTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
+        Typeface ubuntuLTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-L.ttf");
+
         Button menuButtonOne = (Button) findViewById(R.id.main_riddle_activity_button);
         menuButtonOne.setOnClickListener(this);
+        menuButtonOne.setTypeface(ubuntuLTypeFace);
         Button menuButtonTwo = (Button) findViewById(R.id.favorite_riddle_activity_button);
         menuButtonTwo.setOnClickListener(this);
+        menuButtonTwo.setTypeface(ubuntuLTypeFace);
         Button menuButtonThree = (Button) findViewById(R.id.about_the_app_activity_button);
         menuButtonThree.setOnClickListener(this);
+        menuButtonThree.setTypeface(ubuntuLTypeFace);
         Button menuButtonFour = (Button) findViewById(R.id.update_riddles_activity_button);
         menuButtonFour.setOnClickListener(this);
+        menuButtonFour.setTypeface(ubuntuLTypeFace);
     }
 
     @Override

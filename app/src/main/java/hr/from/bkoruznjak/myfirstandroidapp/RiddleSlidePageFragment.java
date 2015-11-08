@@ -3,6 +3,7 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -12,8 +13,10 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
@@ -31,9 +34,12 @@ public class RiddleSlidePageFragment extends Fragment {
     private String riddleAnwser;
     private Riddle argRiddle;
     private boolean isAnwserShown;
-
+    private CheckBox riddleFavoriteCheckbox;
     private TextSwitcher mSwitcher;
-    private Button mNextButton;
+    private Button mShowAnwserButton;
+    private Typeface ubuntuRTypeFace;
+    private Typeface ubuntuBTypeFace;
+    private Typeface ubuntuLTypeFace;
 
     public RiddleSlidePageFragment() {
 
@@ -67,20 +73,26 @@ public class RiddleSlidePageFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater
                 .inflate(R.layout.fragment_riddle, container, false);
 
-        // Set the id view to show the page number.
-        ((TextView) rootView.findViewById(R.id.riddleId1)).setText("Riddle number:" + mPageNumber);
+        //set all views
+        ubuntuRTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-R.ttf");
+        ubuntuBTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-B.ttf");
+        ubuntuLTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-L.ttf");
 
-        Button changeToFavoriteButton = (Button) rootView.findViewById(R.id.button_toggle_anwser);
-        changeToFavoriteButton.setOnClickListener(new View.OnClickListener() {
+        TextView favoriteCheckboxText = (TextView) rootView.findViewById(R.id.checkBox_toggle_favorite_text);
+        favoriteCheckboxText.setTypeface(ubuntuLTypeFace);
+        riddleFavoriteCheckbox = (CheckBox) rootView.findViewById(R.id.checkBox_toggle_favorite);
+        riddleFavoriteCheckbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (argRiddle != null) {
                     switch (argRiddle.getFavorite()) {
                         case 0:
                             argRiddle.setFavorite(1);
+                            addToFavoritesToast(context, "Riddle added to favorites");
                             break;
                         case 1:
                             argRiddle.setFavorite(0);
+                            addToFavoritesToast(context, "Riddle removed from favorites");
                             break;
                     }
                     Log.i(TAG, "changing riddle favorite status to:" + argRiddle.getFavorite());
@@ -89,21 +101,22 @@ public class RiddleSlidePageFragment extends Fragment {
                 }
             }
         });
+        favoriteStatusHandler(argRiddle);
 
 
-        mNextButton = (Button) rootView.findViewById(R.id.buttonNext);
+        mShowAnwserButton = (Button) rootView.findViewById(R.id.buttonShowAnwser);
+        mShowAnwserButton.setTypeface(ubuntuLTypeFace);
         mSwitcher = (TextSwitcher) rootView.findViewById(R.id.textSwitcher);
 
         // Set the ViewFactory of the TextSwitcher that will create TextView object when asked
         mSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
             public View makeView() {
-                // TODO Auto-generated method stub
-                // create new textView and set the properties like clolr, size etc
                 TextView myText = new TextView(context);
+                myText.setTypeface(ubuntuLTypeFace);
                 myText.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
                 myText.setTextSize(36);
-                myText.setTextColor(Color.BLUE);
+                myText.setTextColor(Color.GRAY);
                 return myText;
             }
         });
@@ -113,20 +126,24 @@ public class RiddleSlidePageFragment extends Fragment {
         mSwitcher.setText(riddleText);
         // Declare the in and out animations and initialize them
         Animation in = AnimationUtils.loadAnimation(context, android.R.anim.fade_in);
+        in.setDuration(2000);
         Animation out = AnimationUtils.loadAnimation(context, android.R.anim.fade_out);
+        out.setDuration(500);
 
         // set the animation type of textSwitcher
         mSwitcher.setInAnimation(in);
         mSwitcher.setOutAnimation(out);
 
-        mNextButton.setOnClickListener(new View.OnClickListener() {
+        mShowAnwserButton.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 if (isAnwserShown) {
                     mSwitcher.setText(riddleText);
+                    mShowAnwserButton.setText(R.string.button_show_anwser);
                     isAnwserShown = false;
                 } else {
                     mSwitcher.setText(riddleAnwser);
+                    mShowAnwserButton.setText(R.string.button_show_riddle);
                     isAnwserShown = true;
                 }
             }
@@ -137,5 +154,32 @@ public class RiddleSlidePageFragment extends Fragment {
 
     public int getPageNumber() {
         return mPageNumber;
+    }
+
+    /**
+     * @param riddle object
+     * @desc checks or unchecks the favorite checkbox based
+     * on the riddle status
+     */
+    private void favoriteStatusHandler(Riddle riddle) {
+        if (riddle.getFavorite() == 1 && !riddleFavoriteCheckbox.isChecked()) {
+            //checkbox must be checked
+            riddleFavoriteCheckbox.setChecked(true);
+        } else if (riddle.getFavorite() == 0 && riddleFavoriteCheckbox.isChecked()) {
+            //checkbox can't be checked
+            riddleFavoriteCheckbox.setChecked(false);
+        }
+    }
+
+    /**
+     * @param application context
+     * @param message     to toast display
+     * @desc handles the Toast display when favorites checkbox is clicked
+     */
+    public void addToFavoritesToast(Context context, String message) {
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, message, duration);
+        toast.setGravity(Gravity.BOTTOM, 0, 65);
+        toast.show();
     }
 }

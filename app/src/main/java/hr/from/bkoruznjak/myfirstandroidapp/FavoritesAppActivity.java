@@ -3,6 +3,7 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -124,7 +125,11 @@ public class FavoritesAppActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                returnRiddleToMainActivity(onCreateRiddle);
+                // This ID represents the Home or Up button.
+                Intent intent = NavUtils.getParentActivityIntent(this);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                NavUtils.navigateUpTo(this, intent);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

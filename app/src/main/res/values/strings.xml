@@ -24,6 +24,8 @@
     <string name="action_next">Next</string>
     <string name="action_finish">Finish</string>
     <string name="title_activity_riddle_preview">Riddle Preview</string>
+    <string name="button_show_anwser">I give up...show me the truth</string>
+    <string name="button_show_riddle">Ok, thanks</string>
 
 
     <!-- OVERFLOW MENU TEXT -->
