@@ -111,6 +111,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         } else if(parameter == RiddleParameterEnum.FAVORITE) {
             // Select Only favorites
             selectQuery = "SELECT  * FROM " + TABLE_RIDDLES + " WHERE " + KEY_FAVORITE + " = 1";
+        } else if (parameter == RiddleParameterEnum.SEEN) {
+            // Select Only seen riddles
+            selectQuery = "SELECT  * FROM " + TABLE_RIDDLES + " WHERE " + KEY_VIEW_COUNT + " > 0";
         }
         List<Riddle> riddleList = new ArrayList<Riddle>();
 

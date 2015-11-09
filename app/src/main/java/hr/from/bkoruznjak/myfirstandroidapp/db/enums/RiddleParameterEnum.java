@@ -5,5 +5,6 @@ package hr.from.bkoruznjak.myfirstandroidapp.db.enums;
  */
 public enum RiddleParameterEnum {
     DEFAULT,
-    FAVORITE;
+    FAVORITE,
+    SEEN
 }

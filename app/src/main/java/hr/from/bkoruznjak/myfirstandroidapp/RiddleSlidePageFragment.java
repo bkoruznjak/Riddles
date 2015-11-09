@@ -37,8 +37,6 @@ public class RiddleSlidePageFragment extends Fragment {
     private CheckBox riddleFavoriteCheckbox;
     private TextSwitcher mSwitcher;
     private Button mShowAnwserButton;
-    private Typeface ubuntuRTypeFace;
-    private Typeface ubuntuBTypeFace;
     private Typeface ubuntuLTypeFace;
 
     public RiddleSlidePageFragment() {
@@ -74,8 +72,6 @@ public class RiddleSlidePageFragment extends Fragment {
                 .inflate(R.layout.fragment_riddle, container, false);
 
         //set all views
-        ubuntuRTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-R.ttf");
-        ubuntuBTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-B.ttf");
         ubuntuLTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-L.ttf");
 
         TextView favoriteCheckboxText = (TextView) rootView.findViewById(R.id.checkBox_toggle_favorite_text);

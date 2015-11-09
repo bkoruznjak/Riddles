@@ -27,6 +27,15 @@
     <string name="button_show_anwser">I give up...show me the truth</string>
     <string name="button_show_riddle">Ok, thanks</string>
 
+    <!-- RESET VIEWCOUNT DIALOG TEXT -->
+    <string name="dialog_reset_viewcount_text">We count riddle views so you get the chance to see them all, if you reset the viewcount everything goes back as if you first started the app. Go?</string>
+    <string name="dialog_reset_viewcount_action">Reset</string>
+    <string name="dialog_reset_viewcount_cancel">Cancel</string>
+
+    <!-- ERASE FAVORITES DIALOG TEXT -->
+    <string name="dialog_erase_favorites_text">Remove all riddles from the favorite list?</string>
+    <string name="dialog_erase_favorites_action">Reset</string>
+    <string name="dialog_erase_favorites_cancel">Cancel</string>
 
     <!-- OVERFLOW MENU TEXT -->
     <string name="action_reset_viewcount">Reset view count</string>

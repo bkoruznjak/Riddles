@@ -12,18 +12,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import hr.from.bkoruznjak.myfirstandroidapp.util.ResetViewCountDialog;
+
 public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     public static final String TAG = "RIDDLES";
+
+    private Typeface ubuntuLTypeFace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
 
-        Typeface ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
-        Typeface ubuntuBTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
-        Typeface ubuntuLTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-L.ttf");
+        ubuntuLTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-L.ttf");
 
         Button menuButtonOne = (Button) findViewById(R.id.main_riddle_activity_button);
         menuButtonOne.setOnClickListener(this);
@@ -52,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         switch (item.getItemId()) {
             case R.id.action_reset_viewcount:
                 Log.i(TAG, "reseting view count...");
+                ResetViewCountDialog resetViewCountDialog = new ResetViewCountDialog();
+                resetViewCountDialog.show(getFragmentManager(), "resetViewCount");
+
                 return true;
             case R.id.action_reset_favorites:
                 Log.i(TAG, "reseting favorites...");
