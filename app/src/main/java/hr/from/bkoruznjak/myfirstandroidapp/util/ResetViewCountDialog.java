@@ -9,7 +9,10 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.Gravity;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,5 +67,22 @@ public class ResetViewCountDialog extends DialogFragment {
             resetRiddleList.add(seenRiddle);
         }
         (new Thread(new RiddleUpdater(tempContext, resetRiddleList))).start();
+        summonToast(tempContext, "View count reset!");
+    }
+
+    /**
+     * @param application context
+     * @param message     to toast display
+     * @desc handles the Toast display when settings options are done executing
+     */
+    public void summonToast(Context context, String message) {
+        final Typeface ubuntuLTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-L.ttf");
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, message, duration);
+        LinearLayout toastLayout = (LinearLayout) toast.getView();
+        TextView toastText = (TextView) toastLayout.getChildAt(0);
+        toastText.setTypeface(ubuntuLTypeFace);
+        toast.setGravity(Gravity.BOTTOM, 0, 65);
+        toast.show();
     }
 }

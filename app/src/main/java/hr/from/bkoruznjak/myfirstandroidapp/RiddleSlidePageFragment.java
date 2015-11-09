@@ -14,6 +14,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.LinearLayout;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -173,8 +174,12 @@ public class RiddleSlidePageFragment extends Fragment {
      * @desc handles the Toast display when favorites checkbox is clicked
      */
     public void addToFavoritesToast(Context context, String message) {
+        final Typeface ubuntuLTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-L.ttf");
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, message, duration);
+        LinearLayout toastLayout = (LinearLayout) toast.getView();
+        TextView toastText = (TextView) toastLayout.getChildAt(0);
+        toastText.setTypeface(ubuntuLTypeFace);
         toast.setGravity(Gravity.BOTTOM, 0, 65);
         toast.show();
     }
