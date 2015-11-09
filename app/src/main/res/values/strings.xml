@@ -29,10 +29,8 @@
 
 
     <!-- OVERFLOW MENU TEXT -->
-    <string name="action_about">About</string>
-    <string name="action_favorites">Favorites</string>
-    <string name="action_challenge">1v1 a friend</string>
-    <string name="action_contribute">Contribute</string>
+    <string name="action_reset_viewcount">Reset view count</string>
+    <string name="action_reset_favorites">Erase all favorites</string>
 
     <!-- ABOUT ACTIVITY TEXT -->
     <string name="title_activity_about">About</string>
