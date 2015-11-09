@@ -35,12 +35,16 @@ public class FavoritesAppActivity extends AppCompatActivity {
     private Typeface ubuntuRTypeFace;
     private Riddle returnRiddle;
     private Riddle onCreateRiddle;
+    private TextView emptyTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites_app);
         ubuntuRTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-R.ttf");
+        emptyTextview = (TextView) findViewById(android.R.id.empty);
+        emptyTextview.setTextSize(15);
+        emptyTextview.setTypeface(ubuntuRTypeFace);
         favoriteRiddleList = fetchRiddleList();
         onCreateRiddle = (Riddle) (this.getIntent().getSerializableExtra("onCreateRiddle"));
         //get the list container
@@ -80,7 +84,7 @@ public class FavoritesAppActivity extends AppCompatActivity {
     private String[] fetchFavoriteRiddleTexts(List<Riddle> favoriteRiddleList) {
         //hide the empty list text if there are elements in list
         if (favoriteRiddleList.size() > 0) {
-            findViewById(android.R.id.empty).setVisibility(View.GONE);
+            emptyTextview.setVisibility(View.GONE);
         }
         favoriteRiddleTextArray = new String[favoriteRiddleList.size()];
         for (int i = 0; i < favoriteRiddleList.size(); i++) {
@@ -111,7 +115,7 @@ public class FavoritesAppActivity extends AppCompatActivity {
     private String[] fetchFavoriteRiddleIds(List<Riddle> favoriteRiddleList) {
         //hide the empty list text if there are elements in list
         if (favoriteRiddleList.size() > 0) {
-            findViewById(android.R.id.empty).setVisibility(View.GONE);
+            emptyTextview.setVisibility(View.GONE);
         }
         favoriteRiddleIdArray = new String[favoriteRiddleList.size()];
         for (int i = 0; i < favoriteRiddleList.size(); i++) {
@@ -195,7 +199,7 @@ public class FavoritesAppActivity extends AppCompatActivity {
 
                 // If there are no rows remaining, show the empty view.
                 if (mContainerView.getChildCount() == 0) {
-                    findViewById(android.R.id.empty).setVisibility(View.VISIBLE);
+                    emptyTextview.setVisibility(View.VISIBLE);
                 }
             }
         });
