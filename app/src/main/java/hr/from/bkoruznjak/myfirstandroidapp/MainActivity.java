@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import hr.from.bkoruznjak.myfirstandroidapp.util.ResetFavoritesDialog;
 import hr.from.bkoruznjak.myfirstandroidapp.util.ResetViewCountDialog;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener {
@@ -55,11 +56,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
             case R.id.action_reset_viewcount:
                 Log.i(TAG, "reseting view count...");
                 ResetViewCountDialog resetViewCountDialog = new ResetViewCountDialog();
-                resetViewCountDialog.show(getFragmentManager(), "resetViewCount");
+                resetViewCountDialog.show(getFragmentManager(), "resetViewCountDialog");
 
                 return true;
             case R.id.action_reset_favorites:
                 Log.i(TAG, "reseting favorites...");
+                ResetFavoritesDialog resetFavoritesDialog = new ResetFavoritesDialog();
+                resetFavoritesDialog.show(getFragmentManager(), "resetFavoritesDialog");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
