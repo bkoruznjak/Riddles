@@ -23,7 +23,7 @@
     <string name="action_previous">Previous</string>
     <string name="action_next">Next</string>
     <string name="action_finish">Finish</string>
-    <string name="title_activity_riddle_preview">Riddle Preview</string>
+    <string name="title_activity_riddle_preview">Riddle viewer</string>
     <string name="button_show_anwser">I give up...show me the truth</string>
     <string name="button_show_riddle">Ok, thanks</string>
 
@@ -43,18 +43,18 @@
 
     <!-- ABOUT ACTIVITY TEXT -->
     <string name="title_activity_about">About</string>
-    <string name="about_text">Smarter every day is an app you can use to train your brain during transportation.\nIt is made free of adds and other annoing content to ensure maximum fun and joy.\nHappy learning.</string>
+    <string name="about_text">Smarter by the day is an app you can use to train your brain during transportation.\nIt is made free of adds and other annoing content to ensure maximum fun and joy.\nHappy learning.</string>
     <string name="credits_title">Credits</string>
     <string name="credits_text">coding and design: Borna Koružnjak\napp name: Andreas Söderberg\nfont: Ubuntu\nriddles: Wiki</string>
-    <string name="title_activity_about_app">AboutAppActivity</string>
+    <string name="title_activity_about_app">About</string>
 
 
     <!-- FAVORITES ACTIVITY TEXT -->
     <string name="message_empty_favorites_list">You currently have no favorite riddles, go back and get some...</string>
     <string name="action_remove_item">Remove item</string>
     <string name="action_add_item">Add item</string>
-    <string name="title_activity_app_favorites">Favorites Activity</string>
-    <string name="title_activity_favorites">Favorites Activity</string>
+    <string name="title_activity_app_favorites">Favorite riddles</string>
+    <string name="title_activity_favorites">Favorite riddles</string>
 
 
 </resources>

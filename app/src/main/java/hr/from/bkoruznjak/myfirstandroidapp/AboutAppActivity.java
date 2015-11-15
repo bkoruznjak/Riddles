@@ -1,18 +1,14 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TextView;
 
-public class AboutAppActivity extends AppCompatActivity {
+public class AboutAppActivity extends Activity {
 
     private TextView aboutTextView;
     private TextView creditsTitleTextView;
@@ -30,10 +26,6 @@ public class AboutAppActivity extends AppCompatActivity {
         aboutTextView.setTypeface(ubuntuRTypeFace);
         creditsTitleTextView.setTypeface(ubuntuRTypeFace);
         creditsTextView.setTypeface(ubuntuRTypeFace);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     /**

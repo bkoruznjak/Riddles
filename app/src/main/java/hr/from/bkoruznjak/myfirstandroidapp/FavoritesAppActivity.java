@@ -1,10 +1,10 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
 import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
 
-public class FavoritesAppActivity extends AppCompatActivity {
+public class FavoritesAppActivity extends Activity {
 
     public static final String TAG = "MY_R_APP";
     private final int FAVORITE_RIDDLE_SUBSTRING_LENGTH = 40;

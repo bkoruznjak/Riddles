@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hr.from.bkoruznjak.myfirstandroidapp" >
+    package="hr.from.bkoruznjak.myfirstandroidapp">
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/icon_sed_launch"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+        <!--android:theme="@style/AppTheme" -->
 
         <!-- Splash screen -->
         <activity
@@ -14,7 +15,7 @@
             android:label="@string/app_name"
             android:noHistory="true"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            android:theme="@android:style/Theme.Black.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,24 +24,22 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:configChanges="screenSize|screenLayout" >
+            android:configChanges="screenSize|screenLayout">
             android:label="@string/app_name">
         </activity>
-        <activity android:name=".RiddlePreviewActivity"
+        <activity
+            android:name=".RiddlePreviewActivity"
             android:label="@string/title_activity_riddle_preview"
             android:parentActivityName=".MainActivity"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar"
             android:uiOptions="splitActionBarWhenNarrow">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
         </activity>
         <activity
-            android:name=".AboutActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/FullscreenTheme" >
+            android:name=".FavoritesAppActivity"
+            android:label="@string/title_activity_app_favorites"
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
@@ -48,15 +47,7 @@
         <activity
             android:name=".AboutAppActivity"
             android:label="@string/title_activity_about_app"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
-        </activity>
-        <activity android:name=".FavoritesAppActivity"
-            android:label="@string/title_activity_app_favorites"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />

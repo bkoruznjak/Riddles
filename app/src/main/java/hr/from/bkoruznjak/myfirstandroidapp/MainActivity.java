@@ -1,9 +1,9 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,7 +15,7 @@ import android.widget.Button;
 import hr.from.bkoruznjak.myfirstandroidapp.util.ResetFavoritesDialog;
 import hr.from.bkoruznjak.myfirstandroidapp.util.ResetViewCountDialog;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener {
 
     public static final String TAG = "RIDDLES";
 
