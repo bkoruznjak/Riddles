@@ -37,9 +37,6 @@ public class MainActivity extends Activity implements OnClickListener {
         Button menuButtonThree = (Button) findViewById(R.id.about_the_app_activity_button);
         menuButtonThree.setOnClickListener(this);
         menuButtonThree.setTypeface(ubuntuLTypeFace);
-        Button menuButtonFour = (Button) findViewById(R.id.update_riddles_activity_button);
-        menuButtonFour.setOnClickListener(this);
-        menuButtonFour.setTypeface(ubuntuLTypeFace);
     }
 
     @Override
@@ -92,10 +89,6 @@ public class MainActivity extends Activity implements OnClickListener {
                 Log.i(TAG, "about app pressed...");
                 Intent aboutPreviewIntent = new Intent(this, AboutAppActivity.class);
                 startActivity(aboutPreviewIntent);
-                break;
-            case R.id.update_riddles_activity_button:
-                Log.i(TAG, "update riddles pressed...");
-                checkForUpdates();
                 break;
             default:
                 break;
