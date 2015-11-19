@@ -5,7 +5,7 @@
     <string name="menu_option_one">View riddles</string>
     <string name="menu_option_two">View favorites</string>
     <string name="menu_option_three">About the app</string>
-    <string name="menu_option_four">Update riddles</string>
+    <string name="menu_option_four">Sync riddles</string>
 
     <!-- MAIN ACTIVITY TEXT -->
     <string name="no_riddles">There appears to be no riddles</string>

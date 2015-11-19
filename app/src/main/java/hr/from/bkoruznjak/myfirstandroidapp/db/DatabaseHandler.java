@@ -18,7 +18,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 8;
 
     // Database Name
     private static final String DATABASE_NAME = "riddleManager";
@@ -26,12 +26,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Riddle table name
     private static final String TABLE_RIDDLES = "riddles";
 
+    // Version table name
+    private static final String TABLE_VERSION = "version_table";
+
     // Riddle Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_RIDDLE_TEXT = "riddle_text";
     private static final String KEY_RIDDLE_ANWSER = "riddle_anwser";
     private static final String KEY_VIEW_COUNT = "view_count";
     private static final String KEY_FAVORITE = "favorite";
+
+    // Version Table Column names
+    private static final String KEY_RIDDLE_DATABASE_VERSION = "riddle_version";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -49,7 +55,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_VIEW_COUNT + " INTEGER,"
                 + KEY_FAVORITE + " INTEGER"
                 + ")";
+
+        String CREATE_VERSION_TABLE = "CREATE TABLE "
+                + TABLE_VERSION
+                + "("
+                + KEY_ID + " VARCHAR(10) PRIMARY KEY,"
+                + KEY_RIDDLE_DATABASE_VERSION + " INTEGER"
+                + ")";
+
         db.execSQL(CREATE_RIDDLE_TABLE);
+        db.execSQL(CREATE_VERSION_TABLE);
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_ID, "1"); // Version id
+        values.put(KEY_RIDDLE_DATABASE_VERSION, DATABASE_VERSION);
+        db.insert(TABLE_VERSION, null, values);
     }
 
     // Upgrading database
@@ -57,6 +77,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_RIDDLES);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_VERSION);
 
         // Create tables again
         onCreate(db);
@@ -65,6 +86,33 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * All CRUD(Create, Read, Update, Delete) Operations
      */
+
+    // Get table value of riddle database version
+    public int getRiddleVersion() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(TABLE_VERSION, new String[]{KEY_ID,
+                        KEY_RIDDLE_DATABASE_VERSION}, KEY_ID + "=?",
+                new String[]{"1"}, null, null, null, null);
+        if (cursor != null)
+            cursor.moveToFirst();
+
+        int version = Integer.parseInt(cursor.getString(1));
+        // return riddle
+        return version;
+    }
+
+    // Change table value of riddle database version
+    public void changeRiddleVersion(int version) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_RIDDLE_DATABASE_VERSION, version);
+
+        // updating row
+        db.update(TABLE_VERSION, values, KEY_ID + " = ?",
+                new String[]{"1"});
+    }
 
     // Adding new riddle
     public void addRiddle(Riddle riddle) {
