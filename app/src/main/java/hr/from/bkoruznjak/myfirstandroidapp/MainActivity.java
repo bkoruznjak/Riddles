@@ -162,7 +162,6 @@ public class MainActivity extends Activity implements OnClickListener {
                         Log.i(TAG, "you have the latest riddles version");
                     } else {
                         Log.i(TAG, "updating your riddles database");
-                        launchBarDialog();
                         dbHandler.changeRiddleVersion(latestDatabaseVersion);
                         riddleDatabaseVersion = dbHandler.getRiddleVersion();
                     }
