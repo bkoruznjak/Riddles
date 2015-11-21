@@ -252,8 +252,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         return true;
                     } else {
                         Log.i(TAG, "updating riddle database...");
-                        //odkomentiraj ovo ispod , to nam je za test jer ne zelim update database-a trenutno
-                        //dbHandler.changeRiddleVersion(latestDatabaseVersion);
+                        dbHandler.changeRiddleVersion(latestDatabaseVersion);
                         return false;
                     }
                 }
