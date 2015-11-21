@@ -14,14 +14,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.LinearLayout;
 import android.widget.TextSwitcher;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
+import hr.from.bkoruznjak.myfirstandroidapp.util.ToastHelper;
 
 public class RiddleSlidePageFragment extends Fragment {
 
@@ -85,11 +84,11 @@ public class RiddleSlidePageFragment extends Fragment {
                     switch (argRiddle.getFavorite()) {
                         case 0:
                             argRiddle.setFavorite(1);
-                            addToFavoritesToast(context, "Riddle added to favorites");
+                            new ToastHelper(context, "Riddle added to favorites", 65, ubuntuLTypeFace).show();
                             break;
                         case 1:
                             argRiddle.setFavorite(0);
-                            addToFavoritesToast(context, "Riddle removed from favorites");
+                            new ToastHelper(context, "Riddle removed from favorites", 65, ubuntuLTypeFace).show();
                             break;
                     }
                     Log.i(TAG, "changing riddle favorite status to:" + argRiddle.getFavorite());
@@ -166,21 +165,5 @@ public class RiddleSlidePageFragment extends Fragment {
             //checkbox can't be checked
             riddleFavoriteCheckbox.setChecked(false);
         }
-    }
-
-    /**
-     * @param application context
-     * @param message     to toast display
-     * @desc handles the Toast display when favorites checkbox is clicked
-     */
-    public void addToFavoritesToast(Context context, String message) {
-        final Typeface ubuntuLTypeFace = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-L.ttf");
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, message, duration);
-        LinearLayout toastLayout = (LinearLayout) toast.getView();
-        TextView toastText = (TextView) toastLayout.getChildAt(0);
-        toastText.setTypeface(ubuntuLTypeFace);
-        toast.setGravity(Gravity.BOTTOM, 0, 65);
-        toast.show();
     }
 }
