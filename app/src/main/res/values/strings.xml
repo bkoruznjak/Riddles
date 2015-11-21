@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Smarter by the day</string>
+    <string name="web_version_uri">http://borna-koruznjak.from.hr/projects/riddles/riddle_versions.txt</string>
+    <string name="web_data_uri">http://borna-koruznjak.from.hr/projects/riddles/riddles.txt</string>
 
     <!-- MAIN MENU ACTIVITY -->
     <string name="menu_option_one">View riddles</string>
@@ -26,6 +28,9 @@
     <string name="title_activity_riddle_preview">Riddle viewer</string>
     <string name="button_show_anwser">I give up...show me the truth</string>
     <string name="button_show_riddle">Ok, thanks</string>
+
+    <!-- UPDATE RIDDLES DIALOG TEXT -->
+    <string name="dialog_update_riddles_up_to_date">Your riddles are up to date!</string>
 
     <!-- RESET VIEWCOUNT DIALOG TEXT -->
     <string name="dialog_reset_viewcount_text">We count riddle views so you get the chance to see them all, if you reset the viewcount everything goes back as if you first started the app. Proceed?</string>

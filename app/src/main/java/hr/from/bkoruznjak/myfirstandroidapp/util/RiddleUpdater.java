@@ -44,7 +44,11 @@ public class RiddleUpdater implements Runnable {
             // (new Thread(new RiddleUpdater(tempContext, resetRiddleList))).start();
             case 2:
                 for (Riddle riddle : riddleList) {
-                    dbHandler.updateRiddle(riddle);
+                    if (dbHandler.recordIdExistsInDb(riddle.getId())) {
+                        dbHandler.updateRiddle(riddle);
+                    } else {
+                        dbHandler.addRiddle(riddle);
+                    }
                 }
                 break;
             default:

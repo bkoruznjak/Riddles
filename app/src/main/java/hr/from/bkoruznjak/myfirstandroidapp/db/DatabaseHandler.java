@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +17,10 @@ import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
  */
 public class DatabaseHandler extends SQLiteOpenHelper {
 
+    public static final String TAG = "RIDDLES";
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 8;
-
+    private static final int DATABASE_VERSION = 10;
     // Database Name
     private static final String DATABASE_NAME = "riddleManager";
 
@@ -91,15 +92,23 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int getRiddleVersion() {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_VERSION, new String[]{KEY_ID,
-                        KEY_RIDDLE_DATABASE_VERSION}, KEY_ID + "=?",
-                new String[]{"1"}, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
+        Cursor cursor = null;
+        try {
+            cursor = db.query(TABLE_VERSION, new String[]{KEY_ID,
+                            KEY_RIDDLE_DATABASE_VERSION}, KEY_ID + "=?",
+                    new String[]{"1"}, null, null, null, null);
+            if (cursor != null)
+                cursor.moveToFirst();
 
-        int version = Integer.parseInt(cursor.getString(1));
-        // return riddle
-        return version;
+            int version = Integer.parseInt(cursor.getString(1));
+            // return riddle
+            return version;
+        } catch (Exception e) {
+            Log.e(TAG, "" + e);
+        } finally {
+            cursor.close();
+        }
+        return 0;
     }
 
     // Change table value of riddle database version
@@ -133,30 +142,37 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Getting single riddle
     public Riddle getRiddle(String id) {
         SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            cursor = db.query(TABLE_RIDDLES, new String[]{KEY_ID,
+                            KEY_RIDDLE_TEXT, KEY_RIDDLE_ANWSER, KEY_VIEW_COUNT, KEY_FAVORITE}, KEY_ID + "=?",
+                    new String[]{id}, null, null, null, null);
+            if (cursor != null)
+                cursor.moveToFirst();
 
-        Cursor cursor = db.query(TABLE_RIDDLES, new String[]{KEY_ID,
-                        KEY_RIDDLE_TEXT, KEY_RIDDLE_ANWSER, KEY_VIEW_COUNT, KEY_FAVORITE}, KEY_ID + "=?",
-                new String[]{id}, null, null, null, null);
-        if (cursor != null)
-            cursor.moveToFirst();
-
-        Riddle riddle = new Riddle(
-                cursor.getString(0),
-                cursor.getString(1),
-                cursor.getString(2),
-                Integer.parseInt(cursor.getString(3)),
-                Integer.parseInt(cursor.getString(4)));
-        // return riddle
-        return riddle;
+            Riddle riddle = new Riddle(
+                    cursor.getString(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    Integer.parseInt(cursor.getString(3)),
+                    Integer.parseInt(cursor.getString(4)));
+            // return riddle
+            return riddle;
+        } catch (Exception e) {
+            Log.e(TAG, "" + e);
+        } finally {
+            cursor.close();
+        }
+        return null;
     }
 
     // Getting All Riddles
     public List<Riddle> getAllRiddles(RiddleParameterEnum parameter) {
         String selectQuery = "";
-        if(parameter == RiddleParameterEnum.DEFAULT) {
+        if (parameter == RiddleParameterEnum.DEFAULT) {
             // Select All Query
             selectQuery = "SELECT  * FROM " + TABLE_RIDDLES;
-        } else if(parameter == RiddleParameterEnum.FAVORITE) {
+        } else if (parameter == RiddleParameterEnum.FAVORITE) {
             // Select Only favorites
             selectQuery = "SELECT  * FROM " + TABLE_RIDDLES + " WHERE " + KEY_FAVORITE + " = 1";
         } else if (parameter == RiddleParameterEnum.SEEN) {
@@ -166,24 +182,32 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         List<Riddle> riddleList = new ArrayList<Riddle>();
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
+        Cursor cursor = null;
+        try {
+            cursor = db.rawQuery(selectQuery, null);
 
-        // looping through all rows and adding to list
-        if (cursor.moveToFirst()) {
-            do {
-                Riddle riddle = new Riddle();
-                riddle.setId(cursor.getString(0));
-                riddle.setRiddleText(cursor.getString(1));
-                riddle.setRiddleAnwser(cursor.getString(2));
-                riddle.setViewCount(Integer.parseInt(cursor.getString(3)));
-                riddle.setFavorite(Integer.parseInt(cursor.getString(4)));
-                // Adding riddles to list
-                riddleList.add(riddle);
-            } while (cursor.moveToNext());
+            // looping through all rows and adding to list
+            if (cursor.moveToFirst()) {
+                do {
+                    Riddle riddle = new Riddle();
+                    riddle.setId(cursor.getString(0));
+                    riddle.setRiddleText(cursor.getString(1));
+                    riddle.setRiddleAnwser(cursor.getString(2));
+                    riddle.setViewCount(Integer.parseInt(cursor.getString(3)));
+                    riddle.setFavorite(Integer.parseInt(cursor.getString(4)));
+                    // Adding riddles to list
+                    riddleList.add(riddle);
+                } while (cursor.moveToNext());
+            }
+
+            // return riddle list
+            return riddleList;
+        } catch (Exception e) {
+            Log.e(TAG, "" + e);
+        } finally {
+            cursor.close();
         }
-
-        // return riddle list
-        return riddleList;
+        return null;
     }
 
     // Updating single riddle

@@ -65,7 +65,6 @@ public class SplashScreen extends Activity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            // before making http calls
             riddleLoadingBar = (ProgressBar) findViewById(R.id.riddle_progress_bar);
             try {
                 Resources res = getResources();

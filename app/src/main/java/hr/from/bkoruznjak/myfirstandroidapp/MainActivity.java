@@ -3,7 +3,6 @@ package hr.from.bkoruznjak.myfirstandroidapp;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,32 +14,43 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ProgressBar;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 
 import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
+import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 import hr.from.bkoruznjak.myfirstandroidapp.util.ResetFavoritesDialog;
 import hr.from.bkoruznjak.myfirstandroidapp.util.ResetViewCountDialog;
+import hr.from.bkoruznjak.myfirstandroidapp.util.ToastHelper;
 
 public class MainActivity extends Activity implements OnClickListener {
 
     public static final String TAG = "RIDDLES";
     Handler updateBarHandler;
     ProgressDialog barProgressDialog;
+    ProgressBar riddleLoadingBar;
+    private String WEB_DATA_URI;
+    private String WEB_VERSION_URI;
     private Typeface ubuntuLTypeFace;
-    private int riddleDatabaseVersion;
     private DatabaseHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
+        riddleLoadingBar = (ProgressBar) findViewById(R.id.fetch_from_web_progress_bar);
+        riddleLoadingBar.setVisibility(View.GONE);
+        WEB_DATA_URI = getResources().getString(R.string.web_data_uri);
+        WEB_VERSION_URI = getResources().getString(R.string.web_version_uri);
         ubuntuLTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-L.ttf");
         dbHandler = new DatabaseHandler(this);
-        riddleDatabaseVersion = dbHandler.getRiddleVersion();
         updateBarHandler = new Handler();
         Button menuButtonOne = (Button) findViewById(R.id.main_riddle_activity_button);
         menuButtonOne.setOnClickListener(this);
@@ -109,36 +119,55 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
             case R.id.check_updates:
                 Log.i(TAG, "check updates pressed...");
-                new FetchWebsiteData().execute();
-                launchBarDialog();
+                new FetchWebsiteVersion().execute();
                 break;
             default:
                 break;
         }
     }
 
-    public void launchBarDialog() {
+
+    /**
+     * @param riddleArrayList
+     * @desc method creates a riddle update dialog bar on the UI thread
+     */
+    public void launchRiddleUpdateBar(final ArrayList<Riddle> riddleArrayList) {
         barProgressDialog = new ProgressDialog(MainActivity.this);
-        barProgressDialog.setTitle("Updating riddles ...");
+        barProgressDialog.setTitle("Riddle Updater");
         barProgressDialog.setMessage("Update in progress ...");
         barProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
         barProgressDialog.setProgress(0);
-        barProgressDialog.setMax(20);
+        barProgressDialog.setMax(riddleArrayList.size());
         barProgressDialog.show();
         new Thread(new Runnable() {
             @Override
             public void run() {
+                //handle thread delay regarding capacity
+                int delayTimeInMilis = 0;
+                if (riddleArrayList.size() < 100) {
+                    delayTimeInMilis = 20;
+                } else {
+                    delayTimeInMilis = 2;
+                }
                 try {
-                    // Here you should write your time consuming task...
-                    while (barProgressDialog.getProgress() <= barProgressDialog.getMax()) {
-                        Thread.sleep(200);
+                    for (int index = 0; index < riddleArrayList.size(); index++) {
+                        Log.d(TAG, "updating riddle:" + index);
+                        Thread.sleep(delayTimeInMilis);
+                        if (dbHandler.recordIdExistsInDb(riddleArrayList.get(index).getId())) {
+                            dbHandler.updateRiddle(riddleArrayList.get(index));
+                        } else {
+                            dbHandler.addRiddle(riddleArrayList.get(index));
+                        }
+
                         updateBarHandler.post(new Runnable() {
                             public void run() {
-                                barProgressDialog.incrementProgressBy(2);
+                                barProgressDialog.incrementProgressBy(1);
                             }
                         });
-                        if (barProgressDialog.getProgress() == barProgressDialog.getMax()) {
+                        if (barProgressDialog.getProgress() == barProgressDialog.getMax() - 1) {
+                            Thread.sleep(2000);
                             barProgressDialog.dismiss();
+                            Log.i(TAG, "Update done, bar dissmissed!");
                         }
                     }
                 } catch (Exception e) {
@@ -147,10 +176,70 @@ public class MainActivity extends Activity implements OnClickListener {
         }).start();
     }
 
-    private void checkForUpdates() {
+    /**
+     * @param webURI
+     * @return riddle ArrayList
+     * @desc method returns Arraylist with riddles parsed from the web .txt file
+     */
+    private InputStream fetchRiddleStreamFromWeb(String webURI) {
+        InputStream webStream = null;
+        try {
+            //get the riddles file
+            URL riddlesUrl = new URL(webURI);
+            HttpURLConnection urlConnection = (HttpURLConnection) riddlesUrl.openConnection();
+            webStream = urlConnection.getInputStream();
+        } catch (Exception e) {
+            Log.e(TAG, "" + e);
+        }
+        return webStream;
+    }
+
+    /**
+     * @param webInputStream
+     * @return riddle ArrayList
+     * @desc method returns Arraylist with riddles parsed from the web .txt file stream
+     */
+    private ArrayList<Riddle> getRiddleListFromInputStream(InputStream webInputStream) {
+        ArrayList<Riddle> returnedRiddleList = new ArrayList<Riddle>();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(webInputStream));
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                Log.v(TAG, line);
+                String[] riddleData = line.split(" --- ");
+                String riddleId = riddleData[1].replaceAll("<br/>", "\n");
+                String riddleText = riddleData[2].replaceAll("<br/>", "\n");
+                String riddleAnwser = riddleData[3].replaceAll("<br/>", "\n");
+                Log.d(TAG + " id:", riddleId);
+                Log.d(TAG + " text:", riddleText);
+                Log.d(TAG + " anwser:", riddleAnwser);
+                if (dbHandler.recordIdExistsInDb(riddleId)) {
+                    Log.d(TAG, "existing riddle with id:" + riddleId + " changed and added to ArrayList");
+                    Riddle oldRiddle = dbHandler.getRiddle(riddleId);
+                    returnedRiddleList.add(new Riddle(riddleId, riddleText, riddleAnwser, oldRiddle.getViewCount(), oldRiddle.getFavorite()));
+                } else {
+                    Log.d(TAG, "found new riddle with id:" + riddleId + " and added to ArrayList");
+                    returnedRiddleList.add(new Riddle(riddleId, riddleText, riddleAnwser, 0, 0));
+                }
+            }
+            bufferedReader.close();
+        } catch (IOException ioEx) {
+            Log.e(TAG, "" + ioEx);
+        }
+        return returnedRiddleList;
+    }
+
+    /**
+     * @return is the latest database version boolean value
+     * @desc method checks if entry in table version_table matches the one from the website
+     * if so true will be returned, if not table entry will be updated to latest version and false
+     * will be returned
+     */
+    private boolean isLatestDatabaseVersion() {
+        int riddleDatabaseVersion = dbHandler.getRiddleVersion();
         Log.i(TAG, "Riddle Database version:" + riddleDatabaseVersion);
         try {
-            URL versionUrl = new URL("http://borna-koruznjak.from.hr/projects/riddles/riddle_versions.txt");
+            URL versionUrl = new URL(WEB_VERSION_URI);
             HttpURLConnection urlConnection = (HttpURLConnection) versionUrl.openConnection();
             try {
                 BufferedReader breader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -159,39 +248,73 @@ public class MainActivity extends Activity implements OnClickListener {
                 if (versionLine != null) {
                     int latestDatabaseVersion = Integer.parseInt(versionLine);
                     if (riddleDatabaseVersion == latestDatabaseVersion) {
-                        Log.i(TAG, "you have the latest riddles version");
+                        Log.i(TAG, "riddle database is up to date...");
+                        return true;
                     } else {
-                        Log.i(TAG, "updating your riddles database");
-                        dbHandler.changeRiddleVersion(latestDatabaseVersion);
-                        riddleDatabaseVersion = dbHandler.getRiddleVersion();
+                        Log.i(TAG, "updating riddle database...");
+                        //odkomentiraj ovo ispod , to nam je za test jer ne zelim update database-a trenutno
+                        //dbHandler.changeRiddleVersion(latestDatabaseVersion);
+                        return false;
                     }
                 }
-
-
             } finally {
                 urlConnection.disconnect();
             }
         } catch (Exception ex) {
             Log.e(TAG, "" + ex);
         }
+        return true;
     }
 
-    private void updateDatabaseVersionAndContent(int version) {
-        SQLiteDatabase db = new DatabaseHandler(this).getWritableDatabase();
-        //update riddles first
-        db.setVersion(version);
-        Log.i(TAG, "database updated sucessfully");
+    private class FetchWebsiteVersion extends AsyncTask<Void, Void, Void> {
+
+        private boolean isLatestDatabase;
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            isLatestDatabase = isLatestDatabaseVersion();
+            Log.i(TAG, "riddle version fetched sucessfully");
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void param) {
+            super.onPostExecute(param);
+            if (isLatestDatabase) {
+                new ToastHelper(MainActivity.this.getApplicationContext(), getResources().getString(R.string.dialog_update_riddles_up_to_date), 300, ubuntuLTypeFace).show();
+            } else {
+                new FetchWebsiteData().execute();
+            }
+        }
     }
 
     private class FetchWebsiteData extends AsyncTask<Void, Void, Void> {
 
+        private InputStream webInputStream;
+        private ArrayList<Riddle> webRiddleArrayList = new ArrayList<Riddle>();
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            riddleLoadingBar.setVisibility(View.VISIBLE);
+            riddleLoadingBar.setIndeterminate(true);
+        }
+
         @Override
         protected Void doInBackground(Void... params) {
-            checkForUpdates();
+            //fetch the riddle data
+            webInputStream = fetchRiddleStreamFromWeb(WEB_DATA_URI);
+            webRiddleArrayList = getRiddleListFromInputStream(webInputStream);
+            Log.i(TAG, "riddle stream fetched sucessfully");
             return null;
         }
+
+        @Override
+        protected void onPostExecute(Void param) {
+            super.onPostExecute(param);
+            riddleLoadingBar.setVisibility(View.GONE);
+            launchRiddleUpdateBar(webRiddleArrayList);
+        }
     }
-
-
 }
 
