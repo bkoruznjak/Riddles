@@ -1,6 +1,7 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -138,10 +139,12 @@ public class FavoritesAppActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void returnRiddleToMainActivity(Riddle returnRiddle) {
+    private void returnRiddleToMainActivity(Riddle returnRiddle, View v) {
+        ActivityOptions opts = ActivityOptions.makeScaleUpAnimation(v, 0, 0,
+                v.getWidth(), v.getHeight());
         Intent returnToPreviewIntent = new Intent(this, RiddlePreviewActivity.class);
         returnToPreviewIntent.putExtra("returnToMainRiddle", returnRiddle);
-        startActivity(returnToPreviewIntent);
+        startActivity(returnToPreviewIntent, opts.toBundle());
         finish();
     }
 
@@ -168,7 +171,7 @@ public class FavoritesAppActivity extends Activity {
                 Log.d(TAG, "setting up the main activity with the riddle id:" + favoriteRiddleIdArray[itemIndex] + " : " + favoriteRiddleTextArray[itemIndex]);
                 returnRiddle = dbHandler.getRiddle(favoriteRiddleIdArray[itemIndex]);
                 Log.d(TAG, "returning to main...");
-                returnRiddleToMainActivity(returnRiddle);
+                returnRiddleToMainActivity(returnRiddle, view);
             }
         });
 
