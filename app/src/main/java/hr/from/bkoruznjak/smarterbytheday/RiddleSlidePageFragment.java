@@ -102,7 +102,6 @@ public class RiddleSlidePageFragment extends Fragment {
         mShowAnwserButton = (Button) rootView.findViewById(R.id.buttonShowAnwser);
         mShowAnwserButton.setTypeface(ubuntuLTypeFace);
         mSwitcher = (TextSwitcher) rootView.findViewById(R.id.textSwitcher);
-
         // Set the ViewFactory of the TextSwitcher that will create TextView object when asked
         mSwitcher.setFactory(new ViewSwitcher.ViewFactory() {
 
@@ -143,6 +142,7 @@ public class RiddleSlidePageFragment extends Fragment {
                 }
             }
         });
+
 
         return rootView;
     }

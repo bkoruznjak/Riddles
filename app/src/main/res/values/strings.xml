@@ -54,9 +54,9 @@
     <string name="app_version_content">1.0</string>
     <string name="riddle_version_content">1.1</string>
     <string name="riddle_count_content">666</string>
-    <string name="about_text">Smarter by the day is an app you can use to train your brain during transportation or some other activity.\nIt is made free of adds and other annoing content to ensure maximum fun and joy or frustration.\nHappy learning.</string>
+    <string name="about_text">Smarter by the day is an app you can use to train your brain during public transportation or some other boring activity.\nIt is made free of adds and other annoing content to ensure maximum fun and joy or frustration.\nHappy learning.</string>
     <string name="credits_title">Credits</string>
-    <string name="credits_text">Coding &amp; design: Borna Koružnjak\nApp name: Andreas Söderberg\nfont: Ubuntu\nRiddles: Good riddles now\nIcons: Freepik</string>
+    <string name="credits_text">Coding &amp; design: Borna Koružnjak\nApp name: Andreas Söderberg\nFont: Ubuntu\nRiddles: Good riddles now\nIcons: designed by Freepik</string>
     <string name="title_activity_about_app">About</string>
 
 
