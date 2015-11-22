@@ -145,6 +145,7 @@ public class FavoritesAppActivity extends Activity {
         Intent returnToPreviewIntent = new Intent(this, RiddlePreviewActivity.class);
         returnToPreviewIntent.putExtra("returnToMainRiddle", returnRiddle);
         startActivity(returnToPreviewIntent, opts.toBundle());
+
         finish();
     }
 
