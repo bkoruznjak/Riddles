@@ -1,11 +1,10 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v13.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -46,7 +45,7 @@ public class RiddlePreviewActivity extends FragmentActivity {
         // Instantiate a ViewPager and a PagerAdapter.
         mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setPageTransformer(true, new NeatPageTransformer());
-        mPagerAdapter = new ScreenSlidePagerAdapter(getFragmentManager());
+        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
         mPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 
@@ -127,7 +126,7 @@ public class RiddlePreviewActivity extends FragmentActivity {
         }
 
         @Override
-        public Fragment getItem(int position) {
+        public android.support.v4.app.Fragment getItem(int position) {
             Riddle updateViewCountRiddle = riddleArrayList.get(position);
             int riddleViewCount = updateViewCountRiddle.getViewCount();
             updateViewCountRiddle.setViewCount(++riddleViewCount);

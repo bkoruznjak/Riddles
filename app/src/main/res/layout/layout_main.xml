@@ -1,36 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="1">
-    <Button
-        android:id="@+id/main_riddle_activity_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_option_one" />
-    <Button
-        android:id="@+id/favorite_riddle_activity_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_option_two"/>
-    <Button
-        android:id="@+id/about_the_app_activity_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_option_three"/>
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/check_updates"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_option_four" />
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:orientation="horizontal">
 
-    <ProgressBar
-        android:id="@+id/fetch_from_web_progress_bar"
-        style="@android:style/Widget.ProgressBar.Large"
+        <Button
+            android:id="@+id/main_riddle_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:text="@string/menu_option_one" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp" />
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/favorite_riddle_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:text="@string/menu_option_two" />
+
+        <Button
+            android:id="@+id/about_the_app_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:text="@string/menu_option_three" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <Button
+                android:id="@+id/check_updates"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/menu_option_four" />
+
+            <ProgressBar
+                android:id="@+id/fetch_from_web_progress_bar"
+                style="@android:style/Widget.ProgressBar.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>

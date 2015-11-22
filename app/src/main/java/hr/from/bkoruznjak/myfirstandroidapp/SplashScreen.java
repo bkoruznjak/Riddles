@@ -24,10 +24,9 @@ import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
 
 public class SplashScreen extends Activity {
 
-    public static final String TAG = "MY_R_APP";
+    public static final String TAG = "RIDDLES";
     private static final int PROGRESS = 0x1;
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 3000;
     private int riddleLoadingBarStatus = 0;
     private Handler mHandler = new Handler();
 

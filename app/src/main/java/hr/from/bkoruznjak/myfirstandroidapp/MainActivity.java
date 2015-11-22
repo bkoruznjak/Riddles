@@ -14,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
@@ -281,7 +282,7 @@ public class MainActivity extends Activity implements OnClickListener {
         protected void onPostExecute(Void param) {
             super.onPostExecute(param);
             if (isLatestDatabase) {
-                new ToastHelper(MainActivity.this.getApplicationContext(), getResources().getString(R.string.dialog_update_riddles_up_to_date), 300, ubuntuLTypeFace).show();
+                new ToastHelper(MainActivity.this.getApplicationContext(), getResources().getString(R.string.dialog_update_riddles_up_to_date), 65, ubuntuLTypeFace).show();
             } else {
                 new FetchWebsiteData().execute();
             }
@@ -296,8 +297,11 @@ public class MainActivity extends Activity implements OnClickListener {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+            MainActivity.this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                    WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             riddleLoadingBar.setVisibility(View.VISIBLE);
             riddleLoadingBar.setIndeterminate(true);
+
         }
 
         @Override
@@ -313,6 +317,7 @@ public class MainActivity extends Activity implements OnClickListener {
         protected void onPostExecute(Void param) {
             super.onPostExecute(param);
             riddleLoadingBar.setVisibility(View.GONE);
+            MainActivity.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             launchRiddleUpdateBar(webRiddleArrayList);
         }
     }
