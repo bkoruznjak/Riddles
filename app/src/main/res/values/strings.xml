@@ -4,7 +4,7 @@
     <string name="web_data_uri">http://borna-koruznjak.from.hr/projects/riddles/riddles.txt</string>
 
     <!-- MAIN MENU ACTIVITY -->
-    <string name="menu_option_one">View riddles</string>
+    <string name="menu_option_one">Get smarter</string>
     <string name="menu_option_two">View favorites</string>
     <string name="menu_option_three">About the app</string>
     <string name="menu_option_four">Sync riddles</string>
@@ -21,7 +21,7 @@
     <string name="riddle_number_text">Riddle number:</string>
     <string name="riddle_number">riddle number:</string>
     <string name="riddle_view_count">riddle view count</string>
-    <string name="favorite_riddle">Favourite</string>
+    <string name="favorite_riddle">Favorite</string>
     <string name="action_previous">Previous</string>
     <string name="action_next">Next</string>
     <string name="action_finish">Finish</string>

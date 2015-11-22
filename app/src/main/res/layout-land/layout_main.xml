@@ -15,9 +15,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
+            android:background="@drawable/main_menu_button"
+            android:drawableTop="@drawable/doubt64"
             android:text="@string/menu_option_one" />
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -25,21 +25,6 @@
         android:layout_height="match_parent"
         android:layout_weight="1.0"
         android:orientation="horizontal">
-
-
-        <Button
-            android:id="@+id/favorite_riddle_activity_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:text="@string/menu_option_two" />
-
-        <Button
-            android:id="@+id/about_the_app_activity_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:text="@string/menu_option_three" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -50,6 +35,8 @@
                 android:id="@+id/check_updates"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/main_menu_button"
+                android:drawableTop="@drawable/synchronize"
                 android:text="@string/menu_option_four" />
 
             <ProgressBar
@@ -59,5 +46,23 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true" />
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/favorite_riddle_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/main_menu_button"
+            android:drawableTop="@drawable/favorites"
+            android:text="@string/menu_option_two" />
+
+        <Button
+            android:id="@+id/about_the_app_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/main_menu_button"
+            android:drawableTop="@drawable/about_the_app"
+            android:text="@string/menu_option_three" />
     </LinearLayout>
 </LinearLayout>
