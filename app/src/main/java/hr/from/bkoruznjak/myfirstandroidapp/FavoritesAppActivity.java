@@ -138,16 +138,6 @@ public class FavoritesAppActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*
-    * @desc go back to the main activity
-    */
-    @Override
-    public void onBackPressed() {
-        Log.d(TAG, "returning to main...");
-        returnRiddleToMainActivity(onCreateRiddle);
-    }
-
-
     private void returnRiddleToMainActivity(Riddle returnRiddle) {
         Intent returnToPreviewIntent = new Intent(this, RiddlePreviewActivity.class);
         returnToPreviewIntent.putExtra("returnToMainRiddle", returnRiddle);

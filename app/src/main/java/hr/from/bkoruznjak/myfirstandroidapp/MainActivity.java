@@ -1,6 +1,7 @@
 package hr.from.bkoruznjak.myfirstandroidapp;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -101,21 +102,23 @@ public class MainActivity extends Activity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
+        ActivityOptions opts = ActivityOptions.makeScaleUpAnimation(v, 0, 0,
+                v.getWidth(), v.getHeight());
         switch (v.getId()) {
             case R.id.main_riddle_activity_button:
                 Log.i(TAG, "main riddles pressed...");
-                Intent riddlePreviewIntent = new Intent(this, RiddlePreviewActivity.class);
-                startActivity(riddlePreviewIntent);
+                startActivity(new Intent(this, RiddlePreviewActivity.class),
+                        opts.toBundle());
                 break;
             case R.id.favorite_riddle_activity_button:
                 Log.i(TAG, "favorite riddles pressed...");
-                Intent favoritePreviewIntent = new Intent(this, FavoritesAppActivity.class);
-                startActivity(favoritePreviewIntent);
+                startActivity(new Intent(this, FavoritesAppActivity.class),
+                        opts.toBundle());
                 break;
             case R.id.about_the_app_activity_button:
                 Log.i(TAG, "about app pressed...");
-                Intent aboutPreviewIntent = new Intent(this, AboutAppActivity.class);
-                startActivity(aboutPreviewIntent);
+                startActivity(new Intent(this, AboutAppActivity.class),
+                        opts.toBundle());
                 break;
             case R.id.check_updates:
                 Log.i(TAG, "check updates pressed...");
@@ -125,8 +128,6 @@ public class MainActivity extends Activity implements OnClickListener {
                 break;
         }
     }
-
-
     /**
      * @param riddleArrayList
      * @desc method creates a riddle update dialog bar on the UI thread
