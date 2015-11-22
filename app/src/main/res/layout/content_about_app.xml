@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,6 +17,11 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#585858" />
+
         <TextView
             android:id="@+id/about_content"
             android:layout_width="match_parent"
@@ -30,12 +35,121 @@
             android:textSize="20dp"
             android:textStyle="bold" />
 
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#585858" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/app_version_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1.0"
+                android:keepScreenOn="true"
+                android:text="@string/app_version"
+                android:textColor="#585858"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/app_version_content_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1.0"
+                android:keepScreenOn="true"
+                android:text="@string/app_version_content"
+                android:textColor="#585858"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/riddle_version_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1.0"
+                android:keepScreenOn="true"
+                android:text="@string/riddle_version"
+                android:textColor="#585858"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/riddle_version_content_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1.0"
+                android:keepScreenOn="true"
+                android:text="@string/riddle_version_content"
+                android:textColor="#585858"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/riddle_count_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1.0"
+                android:keepScreenOn="true"
+                android:text="@string/riddle_count"
+                android:textColor="#585858"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/riddle_count_content_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1.0"
+                android:keepScreenOn="true"
+                android:text="@string/riddle_count_content"
+                android:textColor="#585858"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:background="#585858" />
+
         <TextView
             android:id="@+id/credits_title_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:keepScreenOn="true"
             android:text="@string/credits_title"
@@ -48,13 +162,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp"
             android:gravity="center"
             android:keepScreenOn="true"
             android:text="@string/credits_text"
             android:textColor="#585858"
-            android:textSize="20dp"
+            android:textSize="15dp"
             android:textStyle="bold" />
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

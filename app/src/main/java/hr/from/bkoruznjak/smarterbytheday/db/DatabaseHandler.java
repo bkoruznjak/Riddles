@@ -238,11 +238,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int getRiddleCount() {
         String countQuery = "SELECT  * FROM " + TABLE_RIDDLES;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(countQuery, null);
-        cursor.close();
-
-        // return count
-        return cursor.getCount();
+        Cursor cursor = null;
+        try {
+            cursor = db.rawQuery(countQuery, null);
+            return cursor.getCount();
+        } catch (Exception ex) {
+            Log.e(TAG, "" + ex);
+        } finally {
+            cursor.close();
+        }
+        return 0;
     }
 
     // Check if record already exists
