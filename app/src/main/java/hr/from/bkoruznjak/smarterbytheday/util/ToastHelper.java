@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp.util;
+package hr.from.bkoruznjak.smarterbytheday.util;
 
 import android.content.Context;
 import android.graphics.Typeface;

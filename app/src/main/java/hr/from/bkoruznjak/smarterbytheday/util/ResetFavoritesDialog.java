@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp.util;
+package hr.from.bkoruznjak.smarterbytheday.util;
 
 /**
  * Created by Borna on 9.11.15.
@@ -18,10 +18,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import hr.from.bkoruznjak.myfirstandroidapp.R;
-import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
-import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
-import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
+import hr.from.bkoruznjak.smarterbytheday.R;
+import hr.from.bkoruznjak.smarterbytheday.db.DatabaseHandler;
+import hr.from.bkoruznjak.smarterbytheday.db.Riddle;
+import hr.from.bkoruznjak.smarterbytheday.db.enums.RiddleParameterEnum;
 
 public class ResetFavoritesDialog extends DialogFragment {
 

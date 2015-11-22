@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp;
+package hr.from.bkoruznjak.smarterbytheday;
 
 import android.support.v4.view.ViewPager;
 import android.view.View;

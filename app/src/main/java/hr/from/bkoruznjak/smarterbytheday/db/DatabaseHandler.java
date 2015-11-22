@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp.db;
+package hr.from.bkoruznjak.smarterbytheday.db;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
+import hr.from.bkoruznjak.smarterbytheday.db.enums.RiddleParameterEnum;
 
 /**
  * Created by borna on 20.09.15..

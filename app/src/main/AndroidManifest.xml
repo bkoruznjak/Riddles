@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="hr.from.bkoruznjak.myfirstandroidapp">
+    package="hr.from.bkoruznjak.smarterbytheday">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,7 @@
 
         <!-- Splash screen -->
         <activity
-            android:name=".SplashScreen"
+            android:name="hr.from.bkoruznjak.smarterbytheday.SplashScreen"
             android:label="@string/app_name"
             android:noHistory="true"
             android:screenOrientation="portrait"
@@ -25,34 +25,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="hr.from.bkoruznjak.smarterbytheday.MainActivity"
             android:configChanges="screenSize|screenLayout">
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name=".RiddlePreviewActivity"
+            android:name="hr.from.bkoruznjak.smarterbytheday.RiddlePreviewActivity"
             android:label="@string/title_activity_riddle_preview"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="hr.from.bkoruznjak.smarterbytheday.MainActivity"
             android:uiOptions="splitActionBarWhenNarrow">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
+                android:value="hr.from.bkoruznjak.smarterbytheday.MainActivity" />
         </activity>
         <activity
-            android:name=".FavoritesAppActivity"
+            android:name="hr.from.bkoruznjak.smarterbytheday.FavoritesAppActivity"
             android:label="@string/title_activity_app_favorites"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="hr.from.bkoruznjak.smarterbytheday.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
+                android:value="hr.from.bkoruznjak.smarterbytheday.MainActivity" />
         </activity>
         <activity
-            android:name=".AboutAppActivity"
+            android:name="hr.from.bkoruznjak.smarterbytheday.AboutAppActivity"
             android:label="@string/title_activity_about_app"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="hr.from.bkoruznjak.smarterbytheday.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="hr.from.bkoruznjak.myfirstandroidapp.MainActivity" />
+                android:value="hr.from.bkoruznjak.smarterbytheday.MainActivity" />
         </activity>
         <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
              App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->

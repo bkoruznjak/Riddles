@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp.db;
+package hr.from.bkoruznjak.smarterbytheday.db;
 
 import java.io.Serializable;
 

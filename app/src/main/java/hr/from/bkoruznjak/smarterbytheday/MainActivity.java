@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp;
+package hr.from.bkoruznjak.smarterbytheday;
 
 import android.app.Activity;
 import android.app.ActivityOptions;
@@ -26,11 +26,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
-import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
-import hr.from.bkoruznjak.myfirstandroidapp.util.ResetFavoritesDialog;
-import hr.from.bkoruznjak.myfirstandroidapp.util.ResetViewCountDialog;
-import hr.from.bkoruznjak.myfirstandroidapp.util.ToastHelper;
+import hr.from.bkoruznjak.smarterbytheday.db.DatabaseHandler;
+import hr.from.bkoruznjak.smarterbytheday.db.Riddle;
+import hr.from.bkoruznjak.smarterbytheday.util.ResetFavoritesDialog;
+import hr.from.bkoruznjak.smarterbytheday.util.ResetViewCountDialog;
+import hr.from.bkoruznjak.smarterbytheday.util.ToastHelper;
 
 public class MainActivity extends Activity implements OnClickListener {
 

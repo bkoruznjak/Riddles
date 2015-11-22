@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp;
+package hr.from.bkoruznjak.smarterbytheday;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -18,9 +18,9 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
-import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
-import hr.from.bkoruznjak.myfirstandroidapp.util.ToastHelper;
+import hr.from.bkoruznjak.smarterbytheday.db.Riddle;
+import hr.from.bkoruznjak.smarterbytheday.util.RiddleUpdater;
+import hr.from.bkoruznjak.smarterbytheday.util.ToastHelper;
 
 public class RiddleSlidePageFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp;
+package hr.from.bkoruznjak.smarterbytheday;
 
 import android.app.Activity;
 import android.content.Intent;

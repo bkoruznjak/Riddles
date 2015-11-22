@@ -1,12 +1,12 @@
-package hr.from.bkoruznjak.myfirstandroidapp.util;
+package hr.from.bkoruznjak.smarterbytheday.util;
 
 import android.content.Context;
 import android.util.Log;
 
 import java.util.List;
 
-import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
-import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
+import hr.from.bkoruznjak.smarterbytheday.db.DatabaseHandler;
+import hr.from.bkoruznjak.smarterbytheday.db.Riddle;
 
 /**
  * Created by Borna on 27.9.15.

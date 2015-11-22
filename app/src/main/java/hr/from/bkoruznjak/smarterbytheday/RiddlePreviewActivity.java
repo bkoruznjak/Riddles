@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp;
+package hr.from.bkoruznjak.smarterbytheday;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +15,10 @@ import android.view.MenuItem;
 import java.util.Collections;
 import java.util.List;
 
-import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
-import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
-import hr.from.bkoruznjak.myfirstandroidapp.db.enums.RiddleParameterEnum;
-import hr.from.bkoruznjak.myfirstandroidapp.util.RiddleUpdater;
+import hr.from.bkoruznjak.smarterbytheday.db.DatabaseHandler;
+import hr.from.bkoruznjak.smarterbytheday.db.Riddle;
+import hr.from.bkoruznjak.smarterbytheday.db.enums.RiddleParameterEnum;
+import hr.from.bkoruznjak.smarterbytheday.util.RiddleUpdater;
 
 public class RiddlePreviewActivity extends FragmentActivity {
     private static int NUM_PAGES = 0;

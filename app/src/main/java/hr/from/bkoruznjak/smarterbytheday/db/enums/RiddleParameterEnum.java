@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp.db.enums;
+package hr.from.bkoruznjak.smarterbytheday.db.enums;
 
 /**
  * Created by Borna on 24.10.15.

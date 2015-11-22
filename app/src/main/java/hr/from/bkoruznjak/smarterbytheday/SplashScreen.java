@@ -1,4 +1,4 @@
-package hr.from.bkoruznjak.myfirstandroidapp;
+package hr.from.bkoruznjak.smarterbytheday;
 
 /**
  * Created by borna on 19.09.15..
@@ -19,8 +19,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-import hr.from.bkoruznjak.myfirstandroidapp.db.DatabaseHandler;
-import hr.from.bkoruznjak.myfirstandroidapp.db.Riddle;
+import hr.from.bkoruznjak.smarterbytheday.db.DatabaseHandler;
+import hr.from.bkoruznjak.smarterbytheday.db.Riddle;
 
 public class SplashScreen extends Activity {
 
