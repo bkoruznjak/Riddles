@@ -4,7 +4,7 @@
     <string name="web_data_uri">http://borna-koruznjak.from.hr/projects/riddles/riddles.txt</string>
 
     <!-- MAIN MENU ACTIVITY -->
-    <string name="menu_option_one">Get smarter</string>
+    <string name="menu_option_one">Get smarter...</string>
     <string name="menu_option_two">View favorites</string>
     <string name="menu_option_three">About the app</string>
     <string name="menu_option_four">Sync riddles</string>
@@ -26,19 +26,19 @@
     <string name="action_next">Next</string>
     <string name="action_finish">Finish</string>
     <string name="title_activity_riddle_preview">Riddle viewer</string>
-    <string name="button_show_anwser">I give up...show me the truth</string>
+    <string name="button_show_anwser">Reveal the answer</string>
     <string name="button_show_riddle">Ok, thanks</string>
 
     <!-- UPDATE RIDDLES DIALOG TEXT -->
     <string name="dialog_update_riddles_up_to_date">Your riddles are up to date!</string>
 
     <!-- RESET VIEWCOUNT DIALOG TEXT -->
-    <string name="dialog_reset_viewcount_text">We count riddle views so you get the chance to see them all, if you reset the viewcount everything goes back as if you first started the app. Proceed?</string>
+    <string name="dialog_reset_viewcount_text">We count riddle views so you get the chance to see them all, if you reset the viewcount everything goes back as if you first started the app.\n\nProceed?</string>
     <string name="dialog_reset_viewcount_action">Reset</string>
     <string name="dialog_reset_viewcount_cancel">Cancel</string>
 
     <!-- ERASE FAVORITES DIALOG TEXT -->
-    <string name="dialog_erase_favorites_text">Do you really want to erase your favorites list? There is no going back beyond this point. Proceed?</string>
+    <string name="dialog_erase_favorites_text">Do you really want to erase your favorites list? There is no going back beyond this point.\n\nProceed?</string>
     <string name="dialog_erase_favorites_action">Erase</string>
     <string name="dialog_erase_favorites_cancel">Cancel</string>
 
@@ -54,11 +54,10 @@
     <string name="app_version_content">1.0</string>
     <string name="riddle_version_content">1.1</string>
     <string name="riddle_count_content">666</string>
-    <string name="about_text">Smarter by the day is an app you can use to train your brain during public transportation or some other boring activity.\nIt is made free of adds and other annoing content to ensure maximum fun and joy or frustration.\nHappy learning.</string>
+    <string name="about_text">Smarter by the day is an app you can use to train your brain during public transportation or some other boring activity.\nIt is made free of ads and other annoying content to ensure maximum fun and joy or frustration.\nHappy learning.</string>
     <string name="credits_title">Credits</string>
     <string name="credits_text">Coding &amp; design: Borna Koružnjak\nApp name: Andreas Söderberg\nFont: Ubuntu\nRiddles: Good riddles now\nIcons: designed by Freepik</string>
     <string name="title_activity_about_app">About</string>
-
 
     <!-- FAVORITES ACTIVITY TEXT -->
     <string name="message_empty_favorites_list">You currently have no favorite riddles, go back and get some...</string>
@@ -66,6 +65,4 @@
     <string name="action_add_item">Add item</string>
     <string name="title_activity_app_favorites">Favorite riddles</string>
     <string name="title_activity_favorites">Favorite riddles</string>
-
-
 </resources>

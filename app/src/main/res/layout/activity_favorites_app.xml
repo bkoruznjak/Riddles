@@ -13,12 +13,12 @@
         <LinearLayout android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:showDividers="middle"
-            android:divider="?android:dividerHorizontal"
             android:animateLayoutChanges="true"
+            android:divider="?android:dividerHorizontal"
+            android:orientation="vertical"
             android:paddingLeft="16dp"
-            android:paddingRight="16dp" />
+            android:paddingRight="16dp"
+            android:showDividers="middle" />
 
     </ScrollView>
 
@@ -32,6 +32,6 @@
         android:gravity="center"
         android:padding="32dp"
         android:text="@string/message_empty_favorites_list"
-        android:textColor="?android:textColorSecondary" />
+        android:textColor="#FF888888" />
 
 </FrameLayout>

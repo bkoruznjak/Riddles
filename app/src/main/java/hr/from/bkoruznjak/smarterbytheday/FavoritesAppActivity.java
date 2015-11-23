@@ -3,6 +3,7 @@ package hr.from.bkoruznjak.smarterbytheday;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
@@ -163,6 +164,7 @@ public class FavoritesAppActivity extends Activity {
         ((TextView) newView.findViewById(android.R.id.text1)).setText(
                 favoriteRiddleTextArray[itemIndex]);
         ((TextView) newView.findViewById(android.R.id.text1)).setTypeface(ubuntuRTypeFace);
+        ((TextView) newView.findViewById(android.R.id.text1)).setTextColor(Color.parseColor("#FF888888"));
 
         // Set a click listener for the favorite riddle textview in the row that will go to that riddle.
         newView.findViewById(android.R.id.text1).setOnClickListener(new View.OnClickListener() {

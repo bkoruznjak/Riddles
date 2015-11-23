@@ -35,7 +35,7 @@ public class ResetViewCountDialog extends DialogFragment {
         resetText.setText(R.string.dialog_reset_viewcount_text);
         resetText.setTextSize(15);
         resetText.setPadding(10, 10, 10, 10);
-        resetText.setTextColor(Color.parseColor("#000000"));
+        resetText.setTextColor(Color.parseColor("#FF888888"));
         resetText.setTypeface(ubuntuLTypeFace);
         builder.setView(resetText);
         builder.setPositiveButton(R.string.dialog_reset_viewcount_action, new DialogInterface.OnClickListener() {

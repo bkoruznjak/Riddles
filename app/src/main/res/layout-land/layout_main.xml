@@ -17,7 +17,8 @@
             android:layout_weight="1.0"
             android:background="@drawable/main_menu_button"
             android:drawableTop="@drawable/doubt64"
-            android:text="@string/menu_option_one" />
+            android:text="@string/menu_option_one"
+            android:textSize="22dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,15 +49,6 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/favorite_riddle_activity_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:background="@drawable/main_menu_button"
-            android:drawableTop="@drawable/favorites"
-            android:text="@string/menu_option_two" />
-
-        <Button
             android:id="@+id/about_the_app_activity_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -64,5 +56,14 @@
             android:background="@drawable/main_menu_button"
             android:drawableTop="@drawable/about_the_app"
             android:text="@string/menu_option_three" />
+
+        <Button
+            android:id="@+id/favorite_riddle_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:background="@drawable/main_menu_button"
+            android:drawableTop="@drawable/favorites"
+            android:text="@string/menu_option_two" />
     </LinearLayout>
 </LinearLayout>
