@@ -1,7 +1,6 @@
 package hr.from.bkoruznjak.smarterbytheday.util;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.List;
 
@@ -33,7 +32,7 @@ public class RiddleUpdater implements Runnable {
 
     @Override
     public void run() {
-        Log.d(TAG, "started the run method for " + this.toString());
+        //Log.d(TAG, "started the run method for " + this.toString());
         DatabaseHandler dbHandler = new DatabaseHandler(context);
         switch (option) {
             // use for single riddles

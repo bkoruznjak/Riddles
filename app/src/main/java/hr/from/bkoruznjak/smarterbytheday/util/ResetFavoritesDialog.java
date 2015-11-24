@@ -12,7 +12,6 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -41,13 +40,13 @@ public class ResetFavoritesDialog extends DialogFragment {
         builder.setView(resetText);
         builder.setPositiveButton(R.string.dialog_erase_favorites_action, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Log.i(TAG, "reseting favorites...");
+                //Log.i(TAG, "reseting favorites...");
                 resetFavorites();
             }
         })
                 .setNegativeButton(R.string.dialog_erase_favorites_cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.i(TAG, "canceling...");
+                        //Log.i(TAG, "canceling...");
                     }
                 });
 
@@ -55,13 +54,13 @@ public class ResetFavoritesDialog extends DialogFragment {
     }
 
     public void resetFavorites() {
-        Log.i(TAG, "resetViewCount called...");
+        //Log.i(TAG, "resetViewCount called...");
         Context tempContext = getActivity().getApplicationContext();
         DatabaseHandler dbHandler = new DatabaseHandler(tempContext);
         List<Riddle> favoriteRiddleList = dbHandler.getAllRiddles(RiddleParameterEnum.FAVORITE);
         List<Riddle> resetRiddleList = new ArrayList<>();
         for (Riddle seenRiddle : favoriteRiddleList) {
-            Log.i(TAG, "" + seenRiddle.getId() + " fav status:" + seenRiddle.getFavorite());
+            //Log.i(TAG, "" + seenRiddle.getId() + " fav status:" + seenRiddle.getFavorite());
             seenRiddle.setFavorite(0);
             resetRiddleList.add(seenRiddle);
         }

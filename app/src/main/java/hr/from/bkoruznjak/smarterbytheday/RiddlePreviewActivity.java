@@ -8,7 +8,6 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.NavUtils;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -55,14 +54,14 @@ public class RiddlePreviewActivity extends FragmentActivity {
                 // on which page is currently active. An alternative approach is to have each
                 // fragment expose actions itself (rather than the activity exposing actions),
                 // but for simplicity, the activity provides the actions in this sample.
-                Log.i(TAG, "on Page Selected called:" + position);
+                //Log.i(TAG, "on Page Selected called:" + position);
                 invalidateOptionsMenu();
             }
 
         });
         int returnedRiddleListPosition = 0;
         if (returnedRiddle != null) {
-            Log.i(TAG, "returning from favorites activity");
+            //Log.i(TAG, "returning from favorites activity");
             String id = returnedRiddle.getId();
             int counter = 0;
             for (Riddle riddle : riddleArrayList) {
@@ -105,14 +104,14 @@ public class RiddlePreviewActivity extends FragmentActivity {
             case R.id.action_previous:
                 // Go to the previous step in the wizard. If there is no previous step,
                 // setCurrentItem will do nothing.
-                Log.d(TAG, "action prev");
+                //Log.d(TAG, "action prev");
                 mPager.setCurrentItem(mPager.getCurrentItem() - 1);
                 return true;
 
             case R.id.action_next:
                 // Advance to the next step in the wizard. If there is no next step, setCurrentItem
                 // will do nothing.
-                Log.d(TAG, "action next");
+                //Log.d(TAG, "action next");
                 mPager.setCurrentItem(mPager.getCurrentItem() + 1);
                 return true;
         }
@@ -130,9 +129,9 @@ public class RiddlePreviewActivity extends FragmentActivity {
             Riddle updateViewCountRiddle = riddleArrayList.get(position);
             int riddleViewCount = updateViewCountRiddle.getViewCount();
             updateViewCountRiddle.setViewCount(++riddleViewCount);
-            Log.i(TAG, "updating riddle viewcount to:" + updateViewCountRiddle.getViewCount());
+            //Log.i(TAG, "updating riddle viewcount to:" + updateViewCountRiddle.getViewCount());
             (new Thread(new RiddleUpdater(RiddlePreviewActivity.this.getApplicationContext(), updateViewCountRiddle))).start();
-            Log.i(TAG, "update done");
+            //Log.i(TAG, "update done");
             return RiddleSlidePageFragment.create(position, riddleArrayList.get(position));
         }
 

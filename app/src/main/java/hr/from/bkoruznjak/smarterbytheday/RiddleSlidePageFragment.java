@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,9 +89,9 @@ public class RiddleSlidePageFragment extends Fragment {
                             new ToastHelper(context, "Riddle removed from favorites", 65, ubuntuLTypeFace).show();
                             break;
                     }
-                    Log.i(TAG, "changing riddle favorite status to:" + argRiddle.getFavorite());
+                    //Log.i(TAG, "changing riddle favorite status to:" + argRiddle.getFavorite());
                     (new Thread(new RiddleUpdater(context, argRiddle))).start();
-                    Log.i(TAG, "update done");
+                    //Log.i(TAG, "update done");
                 }
             }
         });

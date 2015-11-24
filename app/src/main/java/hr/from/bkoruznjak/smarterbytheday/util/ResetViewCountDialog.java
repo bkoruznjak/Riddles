@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -40,13 +39,13 @@ public class ResetViewCountDialog extends DialogFragment {
         builder.setView(resetText);
         builder.setPositiveButton(R.string.dialog_reset_viewcount_action, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Log.i(TAG, "reseting viewcount...");
+                //Log.i(TAG, "reseting viewcount...");
                 resetViewCount();
             }
         })
                 .setNegativeButton(R.string.dialog_reset_viewcount_cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Log.i(TAG, "canceling...");
+                        //Log.i(TAG, "canceling...");
                     }
                 });
 
@@ -54,13 +53,13 @@ public class ResetViewCountDialog extends DialogFragment {
     }
 
     public void resetViewCount() {
-        Log.i(TAG, "resetViewCount called...");
+        //Log.i(TAG, "resetViewCount called...");
         Context tempContext = getActivity().getApplicationContext();
         DatabaseHandler dbHandler = new DatabaseHandler(tempContext);
         List<Riddle> seenRiddleList = dbHandler.getAllRiddles(RiddleParameterEnum.SEEN);
         List<Riddle> resetRiddleList = new ArrayList<>();
         for (Riddle seenRiddle : seenRiddleList) {
-            Log.i(TAG, "" + seenRiddle.getViewCount());
+            //Log.i(TAG, "" + seenRiddle.getViewCount());
             seenRiddle.setViewCount(0);
             resetRiddleList.add(seenRiddle);
         }

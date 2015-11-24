@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -57,7 +56,7 @@ public class AboutAppActivity extends Activity {
             String version = pInfo.versionName;
             appVersionData.setText(version);
         } catch (PackageManager.NameNotFoundException nnfEx) {
-            Log.e(TAG, "" + nnfEx);
+            //Log.e(TAG, "" + nnfEx);
         }
         //set the riddle database data
         DatabaseHandler dbHandler = new DatabaseHandler(this);

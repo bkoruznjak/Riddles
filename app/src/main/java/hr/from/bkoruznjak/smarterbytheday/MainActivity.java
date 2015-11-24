@@ -8,7 +8,6 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -80,13 +79,13 @@ public class MainActivity extends Activity implements OnClickListener {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.action_reset_viewcount:
-                Log.i(TAG, "reseting view count...");
+                //Log.i(TAG, "reseting view count...");
                 ResetViewCountDialog resetViewCountDialog = new ResetViewCountDialog();
                 resetViewCountDialog.show(getFragmentManager(), "resetViewCountDialog");
 
                 return true;
             case R.id.action_reset_favorites:
-                Log.i(TAG, "reseting favorites...");
+                //Log.i(TAG, "reseting favorites...");
                 ResetFavoritesDialog resetFavoritesDialog = new ResetFavoritesDialog();
                 resetFavoritesDialog.show(getFragmentManager(), "resetFavoritesDialog");
                 return true;
@@ -97,7 +96,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     @Override
     public void onBackPressed() {
-        Log.i(TAG, "exiting...");
+        //Log.i(TAG, "exiting...");
         finish();
     }
 
@@ -107,22 +106,22 @@ public class MainActivity extends Activity implements OnClickListener {
                 v.getWidth(), v.getHeight());
         switch (v.getId()) {
             case R.id.main_riddle_activity_button:
-                Log.i(TAG, "main riddles pressed...");
+                //Log.i(TAG, "main riddles pressed...");
                 startActivity(new Intent(this, RiddlePreviewActivity.class),
                         opts.toBundle());
                 break;
             case R.id.favorite_riddle_activity_button:
-                Log.i(TAG, "favorite riddles pressed...");
+                //Log.i(TAG, "favorite riddles pressed...");
                 startActivity(new Intent(this, FavoritesAppActivity.class),
                         opts.toBundle());
                 break;
             case R.id.about_the_app_activity_button:
-                Log.i(TAG, "about app pressed...");
+                //Log.i(TAG, "about app pressed...");
                 startActivity(new Intent(this, AboutAppActivity.class),
                         opts.toBundle());
                 break;
             case R.id.check_updates:
-                Log.i(TAG, "check updates pressed...");
+                //Log.i(TAG, "check updates pressed...");
                 new FetchWebsiteVersion().execute();
                 break;
             default:
@@ -153,7 +152,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 }
                 try {
                     for (int index = 0; index < riddleArrayList.size(); index++) {
-                        Log.d(TAG, "updating riddle:" + index);
+                        //Log.d(TAG, "updating riddle:" + index);
                         Thread.sleep(delayTimeInMilis);
                         if (dbHandler.recordIdExistsInDb(riddleArrayList.get(index).getId())) {
                             dbHandler.updateRiddle(riddleArrayList.get(index));
@@ -169,7 +168,7 @@ public class MainActivity extends Activity implements OnClickListener {
                         if (barProgressDialog.getProgress() == barProgressDialog.getMax() - 1) {
                             Thread.sleep(2000);
                             barProgressDialog.dismiss();
-                            Log.i(TAG, "Update done, bar dissmissed!");
+                            //Log.i(TAG, "Update done, bar dissmissed!");
                         }
                     }
                 } catch (Exception e) {
@@ -191,7 +190,7 @@ public class MainActivity extends Activity implements OnClickListener {
             HttpURLConnection urlConnection = (HttpURLConnection) riddlesUrl.openConnection();
             webStream = urlConnection.getInputStream();
         } catch (Exception e) {
-            Log.e(TAG, "" + e);
+            //Log.e(TAG, "" + e);
         }
         return webStream;
     }
@@ -207,26 +206,26 @@ public class MainActivity extends Activity implements OnClickListener {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(webInputStream));
             String line;
             while ((line = bufferedReader.readLine()) != null) {
-                Log.v(TAG, line);
+                //Log.v(TAG, line);
                 String[] riddleData = line.split(" --- ");
                 String riddleId = riddleData[1].replaceAll("<br/>", "\n");
                 String riddleText = riddleData[2].replaceAll("<br/>", "\n");
                 String riddleAnwser = riddleData[3].replaceAll("<br/>", "\n");
-                Log.d(TAG + " id:", riddleId);
-                Log.d(TAG + " text:", riddleText);
-                Log.d(TAG + " anwser:", riddleAnwser);
+                //Log.d(TAG + " id:", riddleId);
+                //Log.d(TAG + " text:", riddleText);
+                //Log.d(TAG + " anwser:", riddleAnwser);
                 if (dbHandler.recordIdExistsInDb(riddleId)) {
-                    Log.d(TAG, "existing riddle with id:" + riddleId + " changed and added to ArrayList");
+                    //Log.d(TAG, "existing riddle with id:" + riddleId + " changed and added to ArrayList");
                     Riddle oldRiddle = dbHandler.getRiddle(riddleId);
                     returnedRiddleList.add(new Riddle(riddleId, riddleText, riddleAnwser, oldRiddle.getViewCount(), oldRiddle.getFavorite()));
                 } else {
-                    Log.d(TAG, "found new riddle with id:" + riddleId + " and added to ArrayList");
+                    //Log.d(TAG, "found new riddle with id:" + riddleId + " and added to ArrayList");
                     returnedRiddleList.add(new Riddle(riddleId, riddleText, riddleAnwser, 0, 0));
                 }
             }
             bufferedReader.close();
         } catch (IOException ioEx) {
-            Log.e(TAG, "" + ioEx);
+            //Log.e(TAG, "" + ioEx);
         }
         return returnedRiddleList;
     }
@@ -239,21 +238,21 @@ public class MainActivity extends Activity implements OnClickListener {
      */
     private boolean isLatestDatabaseVersion() {
         int riddleDatabaseVersion = dbHandler.getRiddleVersion();
-        Log.i(TAG, "Riddle Database version:" + riddleDatabaseVersion);
+        //Log.i(TAG, "Riddle Database version:" + riddleDatabaseVersion);
         try {
             URL versionUrl = new URL(WEB_VERSION_URI);
             HttpURLConnection urlConnection = (HttpURLConnection) versionUrl.openConnection();
             try {
                 BufferedReader breader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                 String versionLine = breader.readLine();
-                Log.i(TAG, "" + versionLine);
+                //Log.i(TAG, "" + versionLine);
                 if (versionLine != null) {
                     int latestDatabaseVersion = Integer.parseInt(versionLine);
                     if (riddleDatabaseVersion == latestDatabaseVersion) {
-                        Log.i(TAG, "riddle database is up to date...");
+                        //Log.i(TAG, "riddle database is up to date...");
                         return true;
                     } else {
-                        Log.i(TAG, "updating riddle database...");
+                        //Log.i(TAG, "updating riddle database...");
                         dbHandler.changeRiddleVersion(latestDatabaseVersion);
                         return false;
                     }
@@ -262,7 +261,7 @@ public class MainActivity extends Activity implements OnClickListener {
                 urlConnection.disconnect();
             }
         } catch (Exception ex) {
-            Log.e(TAG, "" + ex);
+            //Log.e(TAG, "" + ex);
         }
         return true;
     }
@@ -274,7 +273,7 @@ public class MainActivity extends Activity implements OnClickListener {
         @Override
         protected Void doInBackground(Void... params) {
             isLatestDatabase = isLatestDatabaseVersion();
-            Log.i(TAG, "riddle version fetched sucessfully");
+            //Log.i(TAG, "riddle version fetched sucessfully");
             return null;
         }
 
@@ -309,7 +308,7 @@ public class MainActivity extends Activity implements OnClickListener {
             //fetch the riddle data
             webInputStream = fetchRiddleStreamFromWeb(WEB_DATA_URI);
             webRiddleArrayList = getRiddleListFromInputStream(webInputStream);
-            Log.i(TAG, "riddle stream fetched sucessfully");
+            //Log.i(TAG, "riddle stream fetched sucessfully");
             return null;
         }
 

@@ -7,7 +7,6 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,9 +52,9 @@ public class FavoritesAppActivity extends Activity {
         mContainerView = (ViewGroup) findViewById(R.id.container);
         favoriteRiddleTextArray = fetchFavoriteRiddleTexts(favoriteRiddleList);
         favoriteRiddleIdArray = fetchFavoriteRiddleIds(favoriteRiddleList);
-        Log.d(TAG, "populating the list...");
+        //Log.d(TAG, "populating the list...");
         populateTheListLayout(favoriteRiddleTextArray, favoriteRiddleIdArray);
-        Log.d(TAG, "popularing finished...");
+        //Log.d(TAG, "popularing finished...");
     }
 
 
@@ -171,9 +170,9 @@ public class FavoritesAppActivity extends Activity {
             @Override
             public void onClick(View view) {
                 // Get details about the riddle and open that particular favorite riddle
-                Log.d(TAG, "setting up the main activity with the riddle id:" + favoriteRiddleIdArray[itemIndex] + " : " + favoriteRiddleTextArray[itemIndex]);
+                //Log.d(TAG, "setting up the main activity with the riddle id:" + favoriteRiddleIdArray[itemIndex] + " : " + favoriteRiddleTextArray[itemIndex]);
                 returnRiddle = dbHandler.getRiddle(favoriteRiddleIdArray[itemIndex]);
-                Log.d(TAG, "returning to main...");
+                //Log.d(TAG, "returning to main...");
                 returnRiddleToMainActivity(returnRiddle, view);
             }
         });
@@ -185,7 +184,7 @@ public class FavoritesAppActivity extends Activity {
                 //remove riddle from favorites
                 returnRiddle = dbHandler.getRiddle(favoriteRiddleIdArray[itemIndex]);
                 returnRiddle.setFavorite(0);
-                Log.d(TAG, "removing riddle: " + returnRiddle.getId() + " from favorites...");
+                //Log.d(TAG, "removing riddle: " + returnRiddle.getId() + " from favorites...");
                 (new Thread(new RiddleUpdater(FavoritesAppActivity.this, returnRiddle))).start();
 
                 // Remove the row from its parent (the container view).

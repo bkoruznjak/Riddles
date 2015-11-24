@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -104,7 +103,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             // return riddle
             return version;
         } catch (Exception e) {
-            Log.e(TAG, "" + e);
+            //Log.e(TAG, "" + e);
         } finally {
             cursor.close();
         }
@@ -159,9 +158,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             // return riddle
             return riddle;
         } catch (Exception e) {
-            Log.e(TAG, "" + e);
+            //Log.e(TAG, "" + e);
         } finally {
             cursor.close();
+            db.close();
         }
         return null;
     }
@@ -203,9 +203,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             // return riddle list
             return riddleList;
         } catch (Exception e) {
-            Log.e(TAG, "" + e);
+            //Log.e(TAG, "" + e);
         } finally {
             cursor.close();
+            db.close();
         }
         return null;
     }
@@ -243,9 +244,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor = db.rawQuery(countQuery, null);
             return cursor.getCount();
         } catch (Exception ex) {
-            Log.e(TAG, "" + ex);
+            //Log.e(TAG, "" + ex);
         } finally {
             cursor.close();
+            db.close();
         }
         return 0;
     }
@@ -260,6 +262,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             return false;
         }
         cursor.close();
+        db.close();
         return true;
     }
 }
