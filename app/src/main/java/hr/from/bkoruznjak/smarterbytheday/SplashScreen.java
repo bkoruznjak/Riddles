@@ -10,6 +10,7 @@ import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -67,10 +68,10 @@ public class SplashScreen extends Activity {
             try {
                 Resources res = getResources();
                 int numberOfLines = countLines(res.openRawResource(R.raw.riddles));
-                //Log.i(TAG, "number of line:" + numberOfLines);
+                Log.i(TAG, "number of lines:" + numberOfLines);
                 riddleLoadingBar.setMax(numberOfLines);
             } catch (IOException ioEx) {
-                //Log.e(TAG, "" + ioEx);
+                Log.e(TAG, "" + ioEx);
             }
         }
 
@@ -79,7 +80,7 @@ public class SplashScreen extends Activity {
 
             //init the database
             DatabaseHandler dbHandler = new DatabaseHandler(SplashScreen.this);
-            //Log.d("dbHandler: ", "createdDbHandler ..");
+            Log.d("dbHandler: ", "createdDbHandler ..");
 
             try {
                 //get resources file
@@ -88,26 +89,26 @@ public class SplashScreen extends Activity {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(riddleInputStream));
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
-                    //Log.v(TAG, line);
+                    Log.v(TAG, line);
                     String[] riddleData = line.split(" --- ");
                     String riddleId = riddleData[1].replaceAll("<br/>", "\n");
                     String riddleText = riddleData[2].replaceAll("<br/>", "\n");
                     String riddleAnwser = riddleData[3].replaceAll("<br/>", "\n");
-                    //Log.d(TAG + " id:", riddleId);
-                    //Log.d(TAG + " text:", riddleText);
-                    //Log.d(TAG + " anwser:", riddleAnwser);
+                    Log.d(TAG + " id:", riddleId);
+                    Log.d(TAG + " text:", riddleText);
+                    Log.d(TAG + " anwser:", riddleAnwser);
                     if (dbHandler.recordIdExistsInDb(riddleId)) {
-                        //Log.d(TAG, "row already exists");
+                        Log.d(TAG, "row already exists");
                     } else {
                         dbHandler.addRiddle(new Riddle(riddleId, riddleText, riddleAnwser, 0, 0));
-                        //Log.d(TAG, "row inserted successfully");
+                        Log.d(TAG, "row inserted successfully");
                     }
                     //increase loading bar
                     riddleLoadingBarStatus++;
                     publishProgress(riddleLoadingBarStatus);
                 }
             } catch (Exception e) {
-                //Log.e(TAG, "" + e);
+                Log.e(TAG, "" + e);
             }
 
             return null;
@@ -117,11 +118,11 @@ public class SplashScreen extends Activity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             riddleLoadingBar.setVisibility(View.GONE);
-            //Log.v(TAG, "setting up the intent");
+            Log.v(TAG, "setting up the intent");
             Intent i = new Intent(SplashScreen.this, MainActivity.class);
-            //Log.v(TAG, "starting activity");
+            Log.v(TAG, "starting activity");
             startActivity(i);
-            //Log.v(TAG, "calling finish");
+            Log.v(TAG, "calling finish");
             finish();
         }
 

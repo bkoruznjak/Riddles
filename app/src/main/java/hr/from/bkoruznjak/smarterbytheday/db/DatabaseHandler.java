@@ -19,7 +19,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String TAG = "RIDDLES";
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 10;
+    private static final int DATABASE_VERSION = 1;
     // Database Name
     private static final String DATABASE_NAME = "riddleManager";
 
