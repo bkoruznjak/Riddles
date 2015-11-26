@@ -15,7 +15,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.ProgressBar;
+
+import com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class MainActivity extends Activity implements OnClickListener {
     public static final String TAG = "RIDDLES";
     Handler updateBarHandler;
     ProgressDialog barProgressDialog;
-    ProgressBar riddleLoadingBar;
+    CircleProgressBar circleProgressBar;
     private String WEB_DATA_URI;
     private String WEB_VERSION_URI;
     private Typeface ubuntuLTypeFace;
@@ -46,8 +47,7 @@ public class MainActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
-        riddleLoadingBar = (ProgressBar) findViewById(R.id.fetch_from_web_progress_bar);
-        riddleLoadingBar.setVisibility(View.GONE);
+        circleProgressBar = (CircleProgressBar) findViewById(R.id.fetch_from_web_progress_bar);
         WEB_DATA_URI = getResources().getString(R.string.web_data_uri);
         WEB_VERSION_URI = getResources().getString(R.string.web_version_uri);
         ubuntuLTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-L.ttf");
@@ -298,8 +298,7 @@ public class MainActivity extends Activity implements OnClickListener {
             super.onPreExecute();
             MainActivity.this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
                     WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
-            riddleLoadingBar.setVisibility(View.VISIBLE);
-            riddleLoadingBar.setIndeterminate(true);
+            circleProgressBar.setVisibility(View.VISIBLE);
 
         }
 
@@ -315,7 +314,7 @@ public class MainActivity extends Activity implements OnClickListener {
         @Override
         protected void onPostExecute(Void param) {
             super.onPostExecute(param);
-            riddleLoadingBar.setVisibility(View.GONE);
+            circleProgressBar.setVisibility(View.GONE);
             MainActivity.this.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
             launchRiddleUpdateBar(webRiddleArrayList);
         }
